@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Tanisha Jain | Finance Portfolio</title>
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>
+Tanisha Jain | Finance Portfolio
+</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:Inter,"Segoe UI",Arial,sans-serif;
 background:#F7FBF8;
@@ -16,1150 +32,2241 @@ line-height:1.6;
 overflow-x:hidden;
 transition:.35s;
 }
+
 body.dark{
 background:#050B14;
 color:#F5F7FA;
 }
 
 :root{
+
 --bg:#F7FBF8;
 --card:#fff;
 --text:#172018;
 --muted:#657268;
 --line:rgba(49,92,58,.13);
+
 --green:#69A84F;
 --green-dark:#315C3A;
 --green-light:#DDF2E3;
+
 --mint:#D8F1E3;
 --cream:#FFF8E7;
 --yellow:#F4E7A8;
+
 --shadow:0 18px 50px rgba(49,92,58,.08);
+
 }
 
 body.dark{
+
 --bg:#050B14;
 --card:#0D1828;
 --text:#F5F7FA;
 --muted:#8D9CAF;
 --line:rgba(255,255,255,.09);
+
 --green:#8CFF70;
 --green-dark:#8CFF70;
 --green-light:rgba(140,255,112,.10);
+
 --mint:#08111F;
 --cream:#111D30;
 --yellow:#17263A;
+
 --shadow:0 18px 50px rgba(0,0,0,.35);
+
 }
 
-a{text-decoration:none;color:inherit}
-button,input{font-family:inherit}
-.container{width:min(1160px,92%);margin:auto}
+a{
+text-decoration:none;
+color:inherit;
+}
+
+button,
+input{
+font-family:inherit;
+}
+
+.container{
+width:min(1160px,92%);
+margin:auto;
+}
+
 
 /* NAVIGATION */
 
 nav{
+
 position:fixed;
 top:0;
 left:0;
+
 width:100%;
 height:72px;
+
 z-index:1000;
+
 background:rgba(255,255,255,.85);
+
 backdrop-filter:blur(18px);
+
 border-bottom:1px solid var(--line);
+
 }
 
-body.dark nav{background:rgba(5,11,20,.9)}
+body.dark nav{
+background:rgba(5,11,20,.9);
+}
 
 .nav{
+
 height:72px;
+
 display:flex;
+
 align-items:center;
+
 justify-content:space-between;
+
 }
 
 .logo{
+
 font-size:25px;
+
 font-weight:900;
+
 letter-spacing:-1px;
+
 color:var(--green-dark);
+
 }
 
-.logo span{color:var(--green)}
+.logo span{
+color:var(--green);
+}
 
 .links{
+
 display:flex;
+
 gap:28px;
+
 }
 
 .links a{
+
 font-size:11px;
+
 color:var(--muted);
+
 transition:.3s;
+
 }
 
-.links a:hover{color:var(--green)}
+.links a:hover{
+color:var(--green);
+}
 
-.nav-right{display:flex;gap:9px}
+.nav-right{
 
-.theme,.menu{
+display:flex;
+
+gap:9px;
+
+}
+
+.theme,
+.menu{
+
 width:40px;
+
 height:40px;
+
 border-radius:50%;
+
 border:1px solid var(--line);
+
 background:var(--card);
+
 color:var(--text);
+
 cursor:pointer;
+
 transition:.3s;
+
 }
 
-.theme:hover{transform:rotate(20deg)}
+.theme:hover{
+transform:rotate(20deg);
+}
 
 .menu{
+
 display:none;
+
 border-radius:9px;
+
 }
+
 
 /* HERO */
 
 .hero{
+
 min-height:100vh;
+
 padding-top:110px;
+
 display:grid;
+
 grid-template-columns:1.05fr .95fr;
+
 align-items:center;
+
 gap:65px;
+
 position:relative;
+
 }
 
 .hero:before{
+
 content:"";
+
 position:absolute;
+
 width:450px;
+
 height:450px;
+
 left:-250px;
+
 top:150px;
-background:radial-gradient(circle,rgba(216,241,227,.85),transparent 70%);
+
+background:
+radial-gradient(
+circle,
+rgba(216,241,227,.85),
+transparent 70%
+);
+
 z-index:-1;
+
 }
 
 .hero:after{
+
 content:"";
+
 position:absolute;
+
 width:420px;
+
 height:420px;
+
 right:-200px;
+
 top:110px;
-background:radial-gradient(circle,rgba(244,231,168,.55),transparent 70%);
+
+background:
+radial-gradient(
+circle,
+rgba(244,231,168,.55),
+transparent 70%
+);
+
 z-index:-1;
+
 }
 
 body.dark .hero:before{
-background:radial-gradient(circle,rgba(35,124,255,.08),transparent 70%);
+
+background:
+radial-gradient(
+circle,
+rgba(35,124,255,.08),
+transparent 70%
+);
+
 }
 
 body.dark .hero:after{
-background:radial-gradient(circle,rgba(140,255,112,.05),transparent 70%);
+
+background:
+radial-gradient(
+circle,
+rgba(140,255,112,.05),
+transparent 70%
+);
+
 }
 
 .eyebrow{
+
 font-family:monospace;
+
 font-size:10px;
+
 letter-spacing:3px;
+
 color:var(--green-dark);
+
 }
 
 .hero h1{
+
 font-size:clamp(55px,8vw,100px);
+
 line-height:.92;
+
 letter-spacing:-7px;
+
 margin:24px 0;
+
 white-space:nowrap;
+
 }
 
 .gradient{
-background:linear-gradient(90deg,#315C3A,#69A84F);
+
+background:
+linear-gradient(
+90deg,
+#315C3A,
+#69A84F
+);
+
 -webkit-background-clip:text;
+
 color:transparent;
+
 }
 
 body.dark .gradient{
-background:linear-gradient(90deg,#8CFF70,#237CFF);
+
+background:
+linear-gradient(
+90deg,
+#8CFF70,
+#237CFF
+);
+
 -webkit-background-clip:text;
+
 color:transparent;
+
 }
 
 .hero-description{
+
 max-width:630px;
+
 font-size:15px;
+
 color:var(--muted);
+
 }
 
 .hero-buttons{
+
 display:flex;
+
 gap:12px;
+
 margin-top:32px;
+
 }
 
 .btn{
+
 display:inline-flex;
+
 align-items:center;
+
 justify-content:center;
+
 padding:13px 19px;
+
 border-radius:9px;
+
 font-size:11px;
+
 font-weight:700;
+
 border:1px solid var(--line);
+
 transition:.3s;
+
 }
 
 .btn-primary{
+
 background:var(--green);
+
 color:white;
+
 border-color:var(--green);
+
 }
 
 .btn-secondary{
+
 background:var(--card);
+
 color:var(--green-dark);
+
 }
 
 .btn:hover{
+
 transform:translateY(-4px);
-box-shadow:0 14px 30px rgba(49,92,58,.13);
+
+box-shadow:
+0 14px 30px
+rgba(49,92,58,.13);
+
 }
+
 
 /* PHOTO BOX */
 
 .hero-visual{
+
 height:520px;
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
+
 }
 
 .hero-photo-card{
+
 width:100%;
+
 height:430px;
-border:1px dashed rgba(105,168,79,.65);
+
+border:
+1px dashed
+rgba(105,168,79,.65);
+
 border-radius:30px;
-background:linear-gradient(145deg,#fff,#EEF9F2 58%,#FFF8E7);
+
+background:
+linear-gradient(
+145deg,
+#fff,
+#EEF9F2 58%,
+#FFF8E7
+);
+
 position:relative;
+
 overflow:hidden;
+
 box-shadow:var(--shadow);
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
+
 }
 
 .hero-photo-card:before{
+
 content:"";
+
 position:absolute;
+
 width:270px;
+
 height:270px;
+
 border-radius:50%;
+
 top:-105px;
+
 right:-80px;
-background:rgba(244,231,168,.55);
+
+background:
+rgba(244,231,168,.55);
+
 }
 
 .hero-photo-card:after{
+
 content:"";
+
 position:absolute;
+
 width:240px;
+
 height:240px;
+
 border-radius:50%;
+
 bottom:-120px;
+
 left:-75px;
-background:rgba(216,241,227,.9);
+
+background:
+rgba(216,241,227,.9);
+
 }
 
 body.dark .hero-photo-card{
-background:linear-gradient(145deg,#0D1828,#08111F);
-border-color:rgba(140,255,112,.42);
+
+background:
+linear-gradient(
+145deg,
+#0D1828,
+#08111F
+);
+
+border-color:
+rgba(140,255,112,.42);
+
 }
 
 body.dark .hero-photo-card:before{
-background:rgba(35,124,255,.08);
+
+background:
+rgba(35,124,255,.08);
+
 }
 
 body.dark .hero-photo-card:after{
-background:rgba(140,255,112,.05);
+
+background:
+rgba(140,255,112,.05);
+
 }
 
 .hero-photo-inner{
+
 width:78%;
+
 height:82%;
-border:1px dashed rgba(105,168,79,.5);
+
+border:
+1px dashed
+rgba(105,168,79,.5);
+
 border-radius:24px;
+
 position:relative;
+
 z-index:2;
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
+
 overflow:hidden;
-background:rgba(255,255,255,.38);
+
+background:
+rgba(255,255,255,.38);
+
 }
 
 body.dark .hero-photo-inner{
-background:rgba(5,11,20,.35);
-border-color:rgba(140,255,112,.35);
+
+background:
+rgba(5,11,20,.35);
+
+border-color:
+rgba(140,255,112,.35);
+
 }
 
 .hero-photo-placeholder{
+
 text-align:center;
+
 padding:25px;
+
 position:relative;
+
 z-index:3;
+
 }
 
 .hero-photo-icon{
+
 width:72px;
+
 height:72px;
+
 margin:0 auto 18px;
+
 border-radius:50%;
+
 display:grid;
+
 place-items:center;
+
 font-size:31px;
+
 background:var(--green-light);
+
 color:var(--green-dark);
+
 border:1px solid var(--line);
+
 }
 
 .hero-photo-placeholder h3{
+
 font-size:20px;
+
 margin-bottom:6px;
+
 }
 
 .hero-photo-placeholder p{
+
 font-size:10px;
+
 color:var(--muted);
+
 margin-bottom:17px;
+
 }
 
 .upload-btn{
+
 display:inline-block;
+
 padding:9px 13px;
+
 background:var(--green);
+
 color:white;
+
 border-radius:7px;
+
 font-size:9px;
+
 font-weight:800;
+
 cursor:pointer;
+
 transition:.3s;
+
 }
 
 .upload-btn:hover{
+
 background:var(--green-dark);
+
 transform:translateY(-2px);
+
 }
 
 .hero-photo-image{
+
 display:none;
+
 width:100%;
+
 height:100%;
+
 object-fit:cover;
+
 position:absolute;
+
 inset:0;
+
 z-index:4;
+
 }
+
 
 /* SECTIONS */
 
 section{
+
 padding:110px 0;
+
 border-top:1px solid var(--line);
+
 }
 
 .section-number{
+
 font-family:monospace;
+
 font-size:10px;
+
 letter-spacing:2px;
+
 color:var(--green-dark);
+
 }
 
 .section-title{
+
 font-size:clamp(40px,5vw,65px);
+
 line-height:1;
+
 letter-spacing:-4px;
+
 margin:15px 0 55px;
+
 }
 
 .section-intro{
+
 max-width:500px;
+
 font-size:13px;
+
 color:var(--muted);
+
 }
+
 
 /* ABOUT */
 
 .about-grid{
+
 display:grid;
+
 grid-template-columns:1fr 1fr;
+
 gap:70px;
+
 }
 
 .about-main{
+
 font-size:14px;
+
 color:var(--muted);
+
 }
 
 .about-main .lead{
+
 font-size:21px;
+
 line-height:1.5;
+
 color:var(--text);
+
 margin-bottom:25px;
+
 }
 
-.about-main p{margin-bottom:20px}
+.about-main p{
+
+margin-bottom:20px;
+
+}
 
 .about-highlight{
+
 padding:20px;
-border-left:3px solid var(--green);
-background:linear-gradient(90deg,var(--green-light),rgba(255,255,255,.4));
-border-radius:0 12px 12px 0;
+
+border-left:
+3px solid var(--green);
+
+background:
+linear-gradient(
+90deg,
+var(--green-light),
+rgba(255,255,255,.4)
+);
+
+border-radius:
+0 12px 12px 0;
+
 }
 
 body.dark .about-highlight{
-background:rgba(140,255,112,.06);
+
+background:
+rgba(140,255,112,.06);
+
 }
 
 .about-highlight strong{
+
 display:block;
+
 margin-bottom:5px;
+
 color:var(--green-dark);
+
 }
 
 .about-highlight span{
+
 font-size:11px;
+
 color:var(--muted);
+
 }
 
 .about-cards{
+
 display:grid;
+
 grid-template-columns:1fr 1fr;
+
 gap:14px;
+
 }
 
 .about-card{
+
 padding:25px;
+
 min-height:190px;
+
 background:var(--card);
+
 border:1px solid var(--line);
+
 border-radius:17px;
+
 display:flex;
+
 flex-direction:column;
+
 justify-content:flex-end;
-box-shadow:0 8px 28px rgba(49,92,58,.045);
+
+box-shadow:
+0 8px 28px
+rgba(49,92,58,.045);
+
 transition:.35s;
+
 }
 
 .about-card:hover{
+
 transform:translateY(-7px);
+
 box-shadow:var(--shadow);
+
 }
 
 .about-icon{
+
 font-size:26px;
+
 color:var(--green);
+
 margin-bottom:auto;
+
 }
 
 .about-card h3{
+
 font-size:16px;
+
 margin-bottom:7px;
+
 color:var(--green-dark);
+
 }
 
 .about-card p{
+
 font-size:10px;
+
 color:var(--muted);
+
 }
+
 
 /* INTERNSHIP */
 
 .internship{
+
 display:grid;
+
 grid-template-columns:.9fr 1.1fr;
+
 border:1px solid var(--line);
+
 border-radius:24px;
+
 overflow:hidden;
+
 background:var(--card);
+
 box-shadow:var(--shadow);
+
 }
 
 .internship-image{
+
 min-height:470px;
-background:linear-gradient(135deg,#DDF2E3,#FFF8E7);
+
+background:
+linear-gradient(
+135deg,
+#DDF2E3,
+#FFF8E7
+);
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
+
 position:relative;
+
 overflow:hidden;
+
 }
 
 body.dark .internship-image{
-background:linear-gradient(135deg,#08111F,#0D1828);
+
+background:
+linear-gradient(
+135deg,
+#08111F,
+#0D1828
+);
+
 }
 
 .internship-image img{
+
 display:none;
+
 width:100%;
+
 height:100%;
+
 object-fit:cover;
+
 position:absolute;
+
 z-index:2;
+
 }
 
 .image-placeholder{
+
 position:relative;
+
 z-index:3;
+
 text-align:center;
+
 color:var(--muted);
+
 padding:25px;
+
 }
 
 .image-placeholder .big{
+
 font-size:50px;
+
 margin-bottom:10px;
+
 color:var(--green);
+
 }
 
 .image-placeholder p{
+
 font-size:10px;
+
 margin-bottom:15px;
+
 }
 
-.internship-content{padding:48px}
+.internship-content{
+
+padding:48px;
+
+}
 
 .company-name{
+
 font-family:monospace;
+
 font-size:10px;
+
 letter-spacing:2px;
+
 color:var(--green-dark);
+
 }
 
 .internship-content h3{
+
 font-size:35px;
+
 margin:8px 0;
+
 }
 
 .internship-date{
+
 font-size:10px;
+
 color:var(--muted);
+
 margin-bottom:30px;
+
 }
 
 .internship-content p{
+
 font-size:12px;
+
 color:var(--muted);
+
 margin-bottom:18px;
+
 }
 
 .tags{
+
 display:flex;
+
 flex-wrap:wrap;
+
 gap:7px;
+
 margin-top:25px;
+
 }
 
 .tag{
+
 padding:7px 10px;
+
 border:1px solid var(--line);
+
 background:var(--green-light);
+
 border-radius:6px;
+
 font-size:9px;
+
 color:var(--green-dark);
+
 }
+
 
 /* PROJECTS */
 
 .project-header{
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:end;
+
 gap:30px;
+
 }
 
 .filters{
+
 display:flex;
+
 gap:8px;
+
 margin:35px 0;
+
 flex-wrap:wrap;
+
 }
 
 .filter{
+
 padding:9px 16px;
+
 border-radius:20px;
+
 border:1px solid var(--line);
+
 background:var(--card);
+
 color:var(--muted);
+
 font-size:9px;
+
 cursor:pointer;
+
 }
 
-.filter.active,.filter:hover{
+.filter.active,
+.filter:hover{
+
 background:var(--green);
+
 color:white;
+
 border-color:var(--green);
+
 }
 
 .projects{
+
 display:grid;
-grid-template-columns:repeat(2,1fr);
+
+grid-template-columns:
+repeat(2,1fr);
+
 gap:17px;
+
 }
 
 .project{
+
 min-height:360px;
+
 padding:30px;
+
 background:var(--card);
+
 border:1px solid var(--line);
+
 border-radius:18px;
+
 position:relative;
+
 overflow:hidden;
+
 cursor:pointer;
+
 transition:.35s;
-box-shadow:0 8px 28px rgba(49,92,58,.045);
+
+box-shadow:
+0 8px 28px
+rgba(49,92,58,.045);
+
 }
 
 .project:hover{
+
 transform:translateY(-8px);
+
 box-shadow:var(--shadow);
+
 }
 
 .project-number{
+
 font-family:monospace;
+
 font-size:10px;
+
 color:var(--green-dark);
+
 }
 
 .project h3{
+
 font-size:24px;
+
 margin:40px 0 10px;
+
 }
 
 .project p{
+
 font-size:11px;
+
 color:var(--muted);
+
 }
 
 .project-footer{
+
 position:absolute;
+
 left:30px;
+
 right:30px;
+
 bottom:22px;
+
 padding-top:14px;
+
 border-top:1px solid var(--line);
+
 display:flex;
+
 justify-content:space-between;
+
 font-size:9px;
+
 color:var(--muted);
+
 }
+
 
 /* SKILLS */
 
-.skills-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:18px;
+.skills-layout{
+
+display:grid !important;
+
+grid-template-columns:
+1fr 1fr !important;
+
+gap:15px !important;
+
+width:100% !important;
+
+margin-top:20px !important;
+
 }
 
-.skill-box{
-padding:32px;
-background:var(--card);
-border:1px solid var(--line);
-border-radius:18px;
-box-shadow:0 8px 28px rgba(49,92,58,.045);
+.skill-card{
+
+display:block !important;
+
+background:var(--card) !important;
+
+border:1px solid var(--line) !important;
+
+border-radius:17px !important;
+
+padding:32px !important;
+
+min-height:290px !important;
+
+box-shadow:
+0 8px 28px
+rgba(49,92,58,.045) !important;
+
+transition:
+all .35s ease !important;
+
 }
 
-.skill-box h3{
-font-size:19px;
-margin-bottom:25px;
-color:var(--green-dark);
+.skill-card:hover{
+
+transform:translateY(-5px) !important;
+
+box-shadow:
+var(--shadow) !important;
+
 }
 
-.skill-items{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
+.skill-card h3{
+
+display:block !important;
+
+font-size:19px !important;
+
+font-weight:700 !important;
+
+color:var(--green-dark) !important;
+
+margin:
+0 0 28px 0 !important;
+
 }
 
-.skill-item{
-padding:11px 13px;
-background:var(--mint);
-border:1px solid var(--line);
-border-radius:8px;
-font-size:10px;
-color:var(--green-dark);
+.skill-grid{
+
+display:grid !important;
+
+grid-template-columns:
+1fr 1fr !important;
+
+gap:10px !important;
+
+width:100% !important;
+
 }
+
+.skill-inline{
+
+display:flex !important;
+
+flex-wrap:wrap !important;
+
+gap:8px !important;
+
+width:100% !important;
+
+}
+
+.skill-pill{
+
+display:inline-flex !important;
+
+align-items:center !important;
+
+justify-content:center !important;
+
+min-height:38px !important;
+
+padding:9px 14px !important;
+
+background:var(--mint) !important;
+
+border:1px solid var(--line) !important;
+
+border-radius:7px !important;
+
+font-size:10px !important;
+
+color:var(--green-dark) !important;
+
+white-space:nowrap !important;
+
+transition:
+all .3s ease !important;
+
+}
+
+.skill-pill:hover{
+
+transform:translateY(-2px) !important;
+
+border-color:var(--green) !important;
+
+background:var(--green-light) !important;
+
+}
+
+.power-title{
+
+margin-top:40px !important;
+
+margin-bottom:28px !important;
+
+}
+
+
+/* NIGHT THEME */
+
+body.dark .skill-card{
+
+background:#0B1524 !important;
+
+border-color:
+rgba(255,255,255,.09) !important;
+
+}
+
+body.dark .skill-card h3{
+
+color:#FFFFFF !important;
+
+}
+
+body.dark .skill-pill{
+
+background:#111D30 !important;
+
+border-color:
+rgba(255,255,255,.08) !important;
+
+color:#C7D2E0 !important;
+
+}
+
+body.dark .skill-pill:hover{
+
+background:
+rgba(140,255,112,.08) !important;
+
+border-color:
+rgba(140,255,112,.35) !important;
+
+color:#8CFF70 !important;
+
+}
+
 
 /* EDUCATION */
 
 .education-grid{
+
 display:grid;
+
 grid-template-columns:1fr 1fr;
+
 gap:70px;
+
 }
 
 .timeline{
+
 border-left:1px solid var(--line);
+
 }
 
 .education-item{
-padding:0 0 45px 35px;
+
+padding:
+0 0 45px 35px;
+
 position:relative;
+
 }
 
 .dot{
+
 position:absolute;
+
 left:-5px;
+
 top:5px;
+
 width:10px;
+
 height:10px;
+
 border-radius:50%;
+
 background:var(--green);
+
 }
 
 .education-date{
+
 font-family:monospace;
+
 font-size:9px;
+
 color:var(--green-dark);
+
 }
 
 .education-item h3{
+
 font-size:17px;
+
 margin:8px 0;
+
 }
 
 .education-item p{
+
 font-size:10px;
+
 color:var(--muted);
+
 }
+
 
 /* CERTIFICATIONS */
 
 .certifications{
+
 padding:30px;
+
 border:1px solid var(--line);
+
 background:var(--card);
+
 border-radius:18px;
+
 box-shadow:var(--shadow);
+
 }
 
 .certifications h3{
+
 font-size:22px;
+
 color:var(--green-dark);
+
 }
 
 .cert-note{
+
 font-size:10px;
+
 color:var(--muted);
+
 margin:5px 0 20px;
+
 }
 
 .cert{
+
 padding:16px 0;
+
 border-bottom:1px solid var(--line);
+
 }
 
 .cert strong{
+
 font-size:11px;
+
 display:block;
+
 margin-bottom:4px;
+
 }
 
 .cert span{
+
 font-size:9px;
+
 color:var(--muted);
+
 display:block;
+
 margin-bottom:9px;
+
 }
 
 .cert-preview{
+
 display:none;
+
 width:100%;
+
 max-height:170px;
+
 object-fit:contain;
+
 margin-top:12px;
+
 border-radius:8px;
+
 background:var(--mint);
+
 }
+
 
 /* ACHIEVEMENT */
 
 .achievement{
+
 display:grid;
+
 grid-template-columns:70px 1fr auto;
+
 gap:25px;
+
 align-items:start;
+
 padding:35px;
-border:1px solid rgba(111,174,85,.28);
+
+border:
+1px solid
+rgba(111,174,85,.28);
+
 border-radius:20px;
-background:linear-gradient(120deg,rgba(216,241,227,.65),rgba(255,248,231,.65));
+
+background:
+linear-gradient(
+120deg,
+rgba(216,241,227,.65),
+rgba(255,248,231,.65)
+);
+
 box-shadow:var(--shadow);
+
 }
 
 body.dark .achievement{
-background:linear-gradient(120deg,#08111F,#0D1828);
+
+background:
+linear-gradient(
+120deg,
+#08111F,
+#0D1828
+);
+
 }
 
 .achievement-icon{
+
 width:60px;
+
 height:60px;
+
 display:grid;
+
 place-items:center;
+
 border-radius:14px;
+
 background:var(--green-light);
+
 color:var(--green-dark);
+
 font-size:25px;
+
 }
 
 .achievement-label{
+
 font-family:monospace;
+
 font-size:9px;
+
 color:var(--green-dark);
+
 }
 
 .achievement h3{
+
 font-size:22px;
+
 margin:7px 0;
+
 }
 
 .achievement p{
+
 font-size:11px;
+
 color:var(--muted);
+
 }
 
 .cs-photo{
+
 width:100px;
+
 height:100px;
+
 margin-top:18px;
-border:1px dashed var(--green);
+
+border:
+1px dashed
+var(--green);
+
 border-radius:10px;
+
 background:var(--card);
+
 display:grid;
+
 place-items:center;
+
 overflow:hidden;
+
 }
 
 .cs-photo img{
+
 display:none;
+
 width:100%;
+
 height:100%;
+
 object-fit:cover;
+
 }
 
-.cs-placeholder{font-size:24px}
+.cs-placeholder{
+
+font-size:24px;
+
+}
 
 .year{
+
 font-family:monospace;
+
 font-size:10px;
+
 color:var(--green-dark);
+
 }
+
 
 /* CONTACT */
 
 .contact{
+
 text-align:center;
+
 padding:150px 0;
+
 }
 
 .contact h2{
-font-size:clamp(45px,7vw,88px);
+
+font-size:
+clamp(45px,7vw,88px);
+
 letter-spacing:-6px;
+
 line-height:.95;
+
 margin:20px 0;
+
 }
 
 .contact p{
+
 max-width:570px;
+
 margin:auto;
+
 font-size:13px;
+
 color:var(--muted);
+
 }
 
 .contact-buttons{
+
 display:flex;
+
 justify-content:center;
+
 gap:10px;
+
 margin-top:30px;
+
 }
 
 .contact-details{
+
 margin-top:25px;
+
 font-family:monospace;
+
 font-size:9px;
+
 color:var(--muted);
+
 }
+
 
 /* FOOTER */
 
 footer{
+
 padding:30px 0;
+
 border-top:1px solid var(--line);
+
 }
 
 .footer{
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
+
 }
 
 .footer small{
+
 font-size:9px;
+
 color:var(--muted);
+
 }
+
 
 /* MODAL */
 
 .modal{
+
 display:none;
+
 position:fixed;
+
 inset:0;
+
 z-index:2000;
-background:rgba(25,40,30,.55);
+
+background:
+rgba(25,40,30,.55);
+
 backdrop-filter:blur(12px);
+
 align-items:center;
+
 justify-content:center;
+
 padding:20px;
+
 }
 
-body.dark .modal{background:rgba(0,0,0,.72)}
+body.dark .modal{
 
-.modal.show{display:flex}
+background:
+rgba(0,0,0,.72);
+
+}
+
+.modal.show{
+
+display:flex;
+
+}
 
 .modal-box{
+
 width:min(700px,100%);
+
 max-height:90vh;
+
 overflow:auto;
+
 padding:40px;
+
 background:var(--card);
+
 border:1px solid var(--line);
+
 border-radius:20px;
+
 position:relative;
-box-shadow:0 30px 90px rgba(49,92,58,.22);
+
+box-shadow:
+0 30px 90px
+rgba(49,92,58,.22);
+
 }
 
 .close{
+
 position:absolute;
+
 right:15px;
+
 top:15px;
+
 width:36px;
+
 height:36px;
+
 border-radius:50%;
+
 border:1px solid var(--line);
+
 background:var(--card);
+
 color:var(--text);
+
 font-size:20px;
+
 cursor:pointer;
+
 }
 
 .modal-category{
+
 font-family:monospace;
+
 font-size:9px;
+
 color:var(--green-dark);
+
 letter-spacing:2px;
+
 }
 
 .modal-box h2{
+
 font-size:32px;
+
 margin:8px 0;
+
 }
 
 .modal-description{
+
 font-size:11px;
+
 color:var(--muted);
+
 }
 
 .modal-image{
+
 height:240px;
+
 margin-top:22px;
+
 border-radius:12px;
-border:1px dashed var(--green);
+
+border:
+1px dashed
+var(--green);
+
 background:var(--mint);
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
+
 overflow:hidden;
+
 text-align:center;
+
 }
 
 .modal-image img{
+
 display:none;
+
 width:100%;
+
 height:100%;
+
 object-fit:cover;
+
 }
 
 .modal-image-text{
+
 font-size:10px;
+
 color:var(--muted);
+
 }
 
-.modal-list{margin-top:20px}
+.modal-list{
+
+margin-top:20px;
+
+}
 
 .modal-list div{
+
 display:flex;
+
 gap:12px;
+
 padding:12px 0;
+
 border-bottom:1px solid var(--line);
+
 font-size:11px;
+
 color:var(--muted);
+
 }
 
-.modal-list span{color:var(--green)}
+.modal-list span{
+
+color:var(--green);
+
+}
+
 
 /* MOBILE */
 
 @media(max-width:900px){
 
 .links{
+
 display:none;
+
 position:absolute;
+
 top:72px;
+
 left:0;
+
 width:100%;
+
 padding:25px;
+
 background:var(--card);
+
 flex-direction:column;
+
 }
 
-.links.open{display:flex}
+.links.open{
 
-.menu{display:block}
+display:flex;
+
+}
+
+.menu{
+
+display:block;
+
+}
 
 .hero{
+
 grid-template-columns:1fr;
+
 padding-top:120px;
+
 }
 
 .hero-visual{
+
 height:400px;
+
 order:-1;
+
 }
 
-.hero h1{font-size:58px}
+.hero h1{
+
+font-size:58px;
+
+}
 
 .about-grid,
 .education-grid,
 .skills-grid{
+
 grid-template-columns:1fr;
+
 }
 
-.internship{grid-template-columns:1fr}
+.internship{
 
-.internship-image{min-height:300px}
+grid-template-columns:1fr;
 
-.projects{grid-template-columns:1fr}
 }
+
+.internship-image{
+
+min-height:300px;
+
+}
+
+.projects{
+
+grid-template-columns:1fr;
+
+}
+
+.skills-layout{
+
+grid-template-columns:
+1fr !important;
+
+}
+
+}
+
+
+/* MOBILE SKILLS */
 
 @media(max-width:600px){
 
 .hero h1{
+
 font-size:45px;
+
 letter-spacing:-4px;
+
 }
 
 .hero-buttons{
+
 flex-direction:column;
+
 }
 
 .about-cards{
+
 grid-template-columns:1fr;
+
 }
 
 .project-header{
+
 display:block;
+
 }
 
 .achievement{
+
 grid-template-columns:1fr;
+
 }
 
-.year{display:none}
+.year{
+
+display:none;
+
+}
 
 .contact-buttons{
+
 flex-direction:column;
+
 }
 
 .footer{
+
 flex-direction:column;
+
 gap:10px;
+
 text-align:center;
+
 }
+
+.skill-card{
+
+padding:24px !important;
+
 }
+
+.skill-grid{
+
+grid-template-columns:
+1fr 1fr !important;
+
+}
+
+.skill-pill{
+
+font-size:9px !important;
+
+padding:8px 10px !important;
+
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
+
 <!-- NAVIGATION -->
 
 <nav>
+
 <div class="container nav">
 
-<a href="#home" class="logo">TJ<span>.</span></a>
+<a href="#home" class="logo">
+
+TJ<span>.</span>
+
+</a>
 
 <div class="links" id="links">
+
 <a href="#home">Home</a>
+
 <a href="#about">About</a>
+
 <a href="#internship">Internship</a>
+
 <a href="#projects">Projects</a>
+
 <a href="#skills">Skills</a>
+
 <a href="#education">Education</a>
+
 <a href="#contact">Contact</a>
+
 </div>
 
 <div class="nav-right">
 
-<button class="theme" onclick="toggleTheme()" title="Change theme">
+<button
+class="theme"
+onclick="toggleTheme()"
+title="Change theme">
+
 🌙
+
 </button>
 
-<button class="menu" onclick="toggleMenu()">
+<button
+class="menu"
+onclick="toggleMenu()">
+
 ☰
+
 </button>
 
 </div>
+
 </div>
+
 </nav>
+
 
 <!-- COVER PAGE -->
 
-<header class="container hero" id="home">
+<header
+class="container hero"
+id="home">
 
 <div class="hero-content">
 
 <div class="eyebrow">
+
 MBA FINANCE · FINANCIAL ANALYSIS · VALUATION
+
 </div>
 
 <h1>
-Tanisha <span class="gradient">Jain</span>
+
+Tanisha
+<span class="gradient">
+Jain
+</span>
+
 </h1>
 
 <p class="hero-description">
-MBA Finance student with a strong foundation in Accounting
-and Finance and a passion for understanding the financial
-drivers behind successful business.
+
+MBA Finance student with a strong foundation
+in Accounting and Finance and a passion for
+understanding the financial drivers behind
+successful business.
+
 </p>
 
 <div class="hero-buttons">
 
-<a href="#about" class="btn btn-primary">
+<a
+href="#about"
+class="btn btn-primary">
+
 Explore My Profile →
+
 </a>
 
-<a href="resume.pdf" target="_blank" class="btn btn-secondary">
+<a
+href="resume.pdf"
+target="_blank"
+class="btn btn-secondary">
+
 ↓ View Resume
+
 </a>
 
 </div>
 
 </div>
 
-<!-- LARGE PHOTO BOX ON RIGHT -->
+
+<!-- PHOTO BOX -->
 
 <div class="hero-visual">
 
@@ -1167,22 +2274,34 @@ Explore My Profile →
 
 <div class="hero-photo-inner">
 
-<div class="hero-photo-placeholder" id="heroPhotoPlaceholder">
+<div
+class="hero-photo-placeholder"
+id="heroPhotoPlaceholder">
 
 <div class="hero-photo-icon">
+
 👤
+
 </div>
 
 <h3>
+
 Insert Your Photo
+
 </h3>
 
 <p>
+
 Add your professional photograph here.
+
 </p>
 
-<label class="upload-btn" for="heroPhotoInput">
+<label
+class="upload-btn"
+for="heroPhotoInput">
+
 Upload Photo
+
 </label>
 
 </div>
@@ -1199,10 +2318,13 @@ accept="image/*"
 hidden>
 
 </div>
+
 </div>
+
 </div>
 
 </header>
+
 
 <!-- ABOUT -->
 
@@ -1211,14 +2333,21 @@ hidden>
 <div class="container">
 
 <div class="section-number">
+
 01 / ABOUT ME
+
 </div>
 
 <h2 class="section-title">
+
 Analytical thinking.<br>
+
 <span class="gradient">
+
 Business perspective.
+
 </span>
+
 </h2>
 
 <div class="about-grid">
@@ -1226,34 +2355,46 @@ Business perspective.
 <div class="about-main">
 
 <p class="lead">
-I am an MBA Finance student with a strong foundation
-in Accounting and Finance and a passion for understanding
-the financial drivers behind successful business.
+
+I am an MBA Finance student with a strong
+foundation in Accounting and Finance and
+a passion for understanding the financial
+drivers behind successful business.
+
 </p>
 
 <p>
-My academic journey, internship experience and hands-on
-finance projects have equipped me with practical skills
-to analyse financial statements and evaluate investments
-business problems with a structured analytical approach.
+
+My academic journey, internship experience
+and hands-on finance projects have equipped
+me with practical skills to analyse financial
+statements and evaluate investments business
+problems with a structured analytical approach.
+
 </p>
 
 <p>
-Driven by curiosity, integrity, and continuous learning,
-I aspire to build a career in Corporate Finance where
-I can contribute analytical expertise while creating
-long-term value for organization.
+
+Driven by curiosity, integrity, and continuous
+learning, I aspire to build a career in Corporate
+Finance where I can contribute analytical expertise
+while creating long-term value for organization.
+
 </p>
 
 <div class="about-highlight">
 
 <strong>
+
 Professional Direction
+
 </strong>
 
 <span>
-Corporate Finance · Financial Analysis · Valuation ·
-Financial Consulting
+
+Corporate Finance · Financial Analysis ·
+Valuation · Financial Consulting
+
 </span>
 
 </div>
@@ -1263,45 +2404,89 @@ Financial Consulting
 <div class="about-cards">
 
 <div class="about-card">
-<div class="about-icon">↗</div>
-<h3>Financial Analysis</h3>
+
+<div class="about-icon">
+↗
+</div>
+
+<h3>
+Financial Analysis
+</h3>
+
 <p>
+
 Interpreting financial statements and identifying
 performance drivers.
+
 </p>
+
 </div>
 
 <div class="about-card">
-<div class="about-icon">◈</div>
-<h3>Valuation</h3>
+
+<div class="about-icon">
+◈
+</div>
+
+<h3>
+Valuation
+</h3>
+
 <p>
+
 Applying valuation frameworks to understand
 business value.
+
 </p>
+
 </div>
 
 <div class="about-card">
-<div class="about-icon">▣</div>
-<h3>Corporate Finance</h3>
+
+<div class="about-icon">
+▣
+</div>
+
+<h3>
+Corporate Finance
+</h3>
+
 <p>
+
 Connecting financial decisions with strategic
 business objectives.
+
 </p>
+
 </div>
 
 <div class="about-card">
-<div class="about-icon">✦</div>
-<h3>Continuous Learning</h3>
+
+<div class="about-icon">
+✦
+</div>
+
+<h3>
+Continuous Learning
+</h3>
+
 <p>
+
 Building practical knowledge through projects,
 certifications and experience.
+
 </p>
+
 </div>
 
 </div>
+
 </div>
+
 </div>
+
 </section>
+
 
 <!-- INTERNSHIP -->
 
@@ -1310,32 +2495,50 @@ certifications and experience.
 <div class="container">
 
 <div class="section-number">
+
 02 / INTERNSHIP
+
 </div>
 
 <h2 class="section-title">
+
 From classroom<br>
+
 <span class="gradient">
+
 to corporate exposure.
+
 </span>
+
 </h2>
 
 <div class="internship">
 
 <div class="internship-image">
 
-<img id="internshipImage">
+<img
+id="internshipImage">
 
-<div class="image-placeholder" id="internshipPlaceholder">
+<div
+class="image-placeholder"
+id="internshipPlaceholder">
 
-<div class="big">⌂</div>
+<div class="big">
+⌂
+</div>
 
 <p>
+
 Add your company / internship photograph
+
 </p>
 
-<label class="upload-btn" for="internshipInput">
+<label
+class="upload-btn"
+for="internshipInput">
+
 Upload Image
+
 </label>
 
 <input
@@ -1351,49 +2554,81 @@ hidden>
 <div class="internship-content">
 
 <div class="company-name">
-IOL CHEMICALS & PHARMACEUTICALS LTD
+
+IOL CHEMICALS &amp; PHARMACEUTICALS LTD
+
 </div>
 
 <h3>
+
 Finance Intern
+
 </h3>
 
 <div class="internship-date">
+
 Ludhiana · Summer Internship
+
 </div>
 
 <p>
-Evaluated six years of financial statements to assess
-liquidity, profitability, solvency, efficiency and
-cash flow, providing a holistic view of company performance.
+
+Evaluated six years of financial statements
+to assess liquidity, profitability, solvency,
+efficiency and cash flow, providing a holistic
+view of company performance.
+
 </p>
 
 <p>
-Developed a comprehensive financial model incorporating
-trend analysis and common-size statements to generate
-actionable financial insights.
+
+Developed a comprehensive financial model
+incorporating trend analysis and common-size
+statements to generate actionable financial insights.
+
 </p>
 
 <p>
-Delivered a report that revealed declining profitability
-despite stable revenue, assessed creditworthiness and
-recommended actions based on financial performance.
+
+Delivered a report that revealed declining
+profitability despite stable revenue, assessed
+creditworthiness and recommended actions
+based on financial performance.
+
 </p>
 
 <div class="tags">
 
-<span class="tag">Financial Statements</span>
-<span class="tag">Ratio Analysis</span>
-<span class="tag">Trend Analysis</span>
-<span class="tag">Cash Flow</span>
-<span class="tag">Creditworthiness</span>
+<span class="tag">
+Financial Statements
+</span>
+
+<span class="tag">
+Ratio Analysis
+</span>
+
+<span class="tag">
+Trend Analysis
+</span>
+
+<span class="tag">
+Cash Flow
+</span>
+
+<span class="tag">
+Creditworthiness
+</span>
 
 </div>
 
 </div>
+
 </div>
+
 </div>
+
 </section>
+
 
 <!-- PROJECTS -->
 
@@ -1406,53 +2641,76 @@ recommended actions based on financial performance.
 <div>
 
 <div class="section-number">
+
 03 / PROJECTS
+
 </div>
 
 <h2 class="section-title">
+
 Selected work.<br>
+
 <span class="gradient">
+
 Applied finance.
+
 </span>
+
 </h2>
 
 </div>
 
 <p class="section-intro">
+
 A selection of academic and practical projects
 showcasing financial analysis, valuation,
 working capital and strategic thinking.
+
 </p>
 
 </div>
 
 <div class="filters">
 
-<button class="filter active"
+<button
+class="filter active"
 onclick="filterProjects('all',this)">
+
 All
+
 </button>
 
-<button class="filter"
+<button
+class="filter"
 onclick="filterProjects('valuation',this)">
+
 Valuation
+
 </button>
 
-<button class="filter"
+<button
+class="filter"
 onclick="filterProjects('analysis',this)">
+
 Financial Analysis
+
 </button>
 
-<button class="filter"
+<button
+class="filter"
 onclick="filterProjects('business',this)">
+
 Business
+
 </button>
 
 </div>
 
 <div class="projects">
 
-<div class="project"
+
+<div
+class="project"
 data-category="valuation"
 onclick="openProject(
 'M&A Valuation Model',
@@ -1463,29 +2721,59 @@ onclick="openProject(
 'Generated insights on deal value, shareholder impact and strategic fit.'
 ])">
 
-<div class="project-number">01 / M&A</div>
+<div class="project-number">
 
-<h3>M&A Valuation Model</h3>
+01 / M&A
+
+</div>
+
+<h3>
+
+M&A Valuation Model
+
+</h3>
 
 <p>
+
 Financial model evaluating merger feasibility,
-value creation, synergy potential and shareholder impact.
+value creation, synergy potential and
+shareholder impact.
+
 </p>
 
 <div class="tags">
-<span class="tag">Financial Modeling</span>
-<span class="tag">Valuation</span>
-<span class="tag">M&A</span>
+
+<span class="tag">
+Financial Modeling
+</span>
+
+<span class="tag">
+Valuation
+</span>
+
+<span class="tag">
+M&A
+</span>
+
 </div>
 
 <div class="project-footer">
-<span>Finance</span>
-<span>View Case Study →</span>
-</div>
+
+<span>
+Finance
+</span>
+
+<span>
+View Case Study →
+</span>
 
 </div>
 
-<div class="project"
+</div>
+
+
+<div
+class="project"
 data-category="valuation"
 onclick="openProject(
 'NMDC Steel Valuation Model',
@@ -1497,29 +2785,58 @@ onclick="openProject(
 'Compared intrinsic and market value to support investment decision-making.'
 ])">
 
-<div class="project-number">02 / VALUATION</div>
+<div class="project-number">
 
-<h3>NMDC Steel Valuation Model</h3>
+02 / VALUATION
+
+</div>
+
+<h3>
+
+NMDC Steel Valuation Model
+
+</h3>
 
 <p>
-Integrated financial valuation model using financial
-statements and investment metrics.
+
+Integrated financial valuation model using
+financial statements and investment metrics.
+
 </p>
 
 <div class="tags">
-<span class="tag">NPV</span>
-<span class="tag">IRR</span>
-<span class="tag">Payback</span>
+
+<span class="tag">
+NPV
+</span>
+
+<span class="tag">
+IRR
+</span>
+
+<span class="tag">
+Payback
+</span>
+
 </div>
 
 <div class="project-footer">
-<span>Valuation</span>
-<span>View Case Study →</span>
-</div>
+
+<span>
+Valuation
+</span>
+
+<span>
+View Case Study →
+</span>
 
 </div>
 
-<div class="project"
+</div>
+
+
+<div
+class="project"
 data-category="analysis"
 onclick="openProject(
 'Working Capital Analysis',
@@ -1531,29 +2848,58 @@ onclick="openProject(
 'Focused on inventory-to-cash conversion and financial stability.'
 ])">
 
-<div class="project-number">03 / ANALYSIS</div>
+<div class="project-number">
 
-<h3>Working Capital Analysis</h3>
+03 / ANALYSIS
+
+</div>
+
+<h3>
+
+Working Capital Analysis
+
+</h3>
 
 <p>
-Analysis of working capital cycle and operational
-efficiency.
+
+Analysis of working capital cycle and
+operational efficiency.
+
 </p>
 
 <div class="tags">
-<span class="tag">Working Capital</span>
-<span class="tag">CCC</span>
-<span class="tag">Efficiency</span>
+
+<span class="tag">
+Working Capital
+</span>
+
+<span class="tag">
+CCC
+</span>
+
+<span class="tag">
+Efficiency
+</span>
+
 </div>
 
 <div class="project-footer">
-<span>Analysis</span>
-<span>View Case Study →</span>
-</div>
+
+<span>
+Analysis
+</span>
+
+<span>
+View Case Study →
+</span>
 
 </div>
 
-<div class="project"
+</div>
+
+
+<div
+class="project"
 data-category="business"
 onclick="openProject(
 'Rootsy Branding Strategy',
@@ -1565,29 +2911,58 @@ onclick="openProject(
 'Generated sales through targeted marketing and sales execution.'
 ])">
 
-<div class="project-number">04 / STRATEGY</div>
+<div class="project-number">
 
-<h3>Rootsy Branding Strategy</h3>
+04 / STRATEGY
+
+</div>
+
+<h3>
+
+Rootsy Branding Strategy
+
+</h3>
 
 <p>
+
 Transformed an unbranded plant-based product
 into a market-ready brand.
+
 </p>
 
 <div class="tags">
-<span class="tag">Market Research</span>
-<span class="tag">Branding</span>
-<span class="tag">Strategy</span>
+
+<span class="tag">
+Market Research
+</span>
+
+<span class="tag">
+Branding
+</span>
+
+<span class="tag">
+Strategy
+</span>
+
 </div>
 
 <div class="project-footer">
-<span>Business</span>
-<span>View Case Study →</span>
-</div>
+
+<span>
+Business
+</span>
+
+<span>
+View Case Study →
+</span>
 
 </div>
 
-<div class="project"
+</div>
+
+
+<div
+class="project"
 data-category="business"
 onclick="openProject(
 'Strategic Cost Management',
@@ -1599,31 +2974,62 @@ onclick="openProject(
 'Proposed cost-efficient and user-friendly specifications.'
 ])">
 
-<div class="project-number">05 / COST</div>
+<div class="project-number">
 
-<h3>Strategic Cost Management</h3>
+05 / COST
+
+</div>
+
+<h3>
+
+Strategic Cost Management
+
+</h3>
 
 <p>
-Target costing project focused on a posture-corrector
-smart band.
+
+Target costing project focused on a
+posture-corrector smart band.
+
 </p>
 
 <div class="tags">
-<span class="tag">Target Costing</span>
-<span class="tag">Cost Management</span>
-<span class="tag">Research</span>
+
+<span class="tag">
+Target Costing
+</span>
+
+<span class="tag">
+Cost Management
+</span>
+
+<span class="tag">
+Research
+</span>
+
 </div>
 
 <div class="project-footer">
-<span>Strategy</span>
-<span>View Case Study →</span>
-</div>
+
+<span>
+Strategy
+</span>
+
+<span>
+View Case Study →
+</span>
 
 </div>
 
 </div>
+
+
 </div>
+
+</div>
+
 </section>
+
 
 <!-- SKILLS -->
 
@@ -1632,106 +3038,154 @@ smart band.
 <div class="container">
 
 <div class="section-number">
+
 04 / SKILLS
+
 </div>
 
 <h2 class="section-title">
+
 Solve problems.
+
 </h2>
 
 <div class="skills-layout">
 
-    <!-- LEFT CARD -->
 
-    <div class="skill-card">
+<!-- LEFT CARD -->
 
-        <h3>Finance &amp; Analysis</h3>
+<div class="skill-card">
 
-        <div class="skill-grid">
+<h3>
 
-            <span class="skill-pill">
-                Financial Analysis
-            </span>
+Financial Analysis Skills
 
-            <span class="skill-pill">
-                Financial Modeling
-            </span>
+</h3>
 
-            <span class="skill-pill">
-                Valuation
-            </span>
+<div class="skill-grid">
 
-            <span class="skill-pill">
-                Ratio Analysis
-            </span>
+<span class="skill-pill">
 
-            <span class="skill-pill">
-                Financial Statements
-            </span>
+Financial Analysis
 
-            <span class="skill-pill">
-                Cash Flow Analysis
-            </span>
+</span>
 
-        </div>
+<span class="skill-pill">
 
-    </div>
+Financial Modeling
 
+</span>
 
-    <!-- RIGHT CARD -->
+<span class="skill-pill">
 
-    <div class="skill-card">
+Valuation
 
-        <h3>Tools &amp; Platforms</h3>
+</span>
 
-        <div class="skill-inline">
+<span class="skill-pill">
 
-            <span class="skill-pill">MS Excel</span>
+Ratio Analysis
 
-            <span class="skill-pill">Power BI</span>
+</span>
 
-            <span class="skill-pill">Tableau</span>
+<span class="skill-pill">
 
-            <span class="skill-pill">PowerPoint</span>
+Financial Statements
 
-            <span class="skill-pill">Canva</span>
+</span>
 
-            <span class="skill-pill">Tally</span>
+<span class="skill-pill">
 
-        </div>
+Cash Flow Analysis
+
+</span>
+
+</div>
+
+</div>
 
 
-        <h3 class="power-title">
-            Power Skills
-        </h3>
+<!-- RIGHT CARD -->
 
-        <div class="skill-inline">
+<div class="skill-card">
 
-            <span class="skill-pill">
-                Time Management
-            </span>
+<h3>
 
-            <span class="skill-pill">
-                Problem Solving
-            </span>
+Tools &amp; Platforms
 
-            <span class="skill-pill">
-                Leadership
-            </span>
+</h3>
 
-            <span class="skill-pill">
-                Decision Making
-            </span>
+<div class="skill-inline">
 
-        </div>
+<span class="skill-pill">
+MS Excel
+</span>
 
-    </div>
+<span class="skill-pill">
+Power BI
+</span>
+
+<span class="skill-pill">
+Tableau
+</span>
+
+<span class="skill-pill">
+PowerPoint
+</span>
+
+<span class="skill-pill">
+Canva
+</span>
+
+<span class="skill-pill">
+Tally
+</span>
+
+</div>
+
+<h3 class="power-title">
+
+Power Skills
+
+</h3>
+
+<div class="skill-inline">
+
+<span class="skill-pill">
+
+Time Management
+
+</span>
+
+<span class="skill-pill">
+
+Problem Solving
+
+</span>
+
+<span class="skill-pill">
+
+Leadership
+
+</span>
+
+<span class="skill-pill">
+
+Decision Making
+
+</span>
+
+</div>
+
+</div>
 
 </div>
 
 </div>
 
 </section>
+
+
 <!-- EDUCATION -->
 
 <section id="education">
@@ -1739,14 +3193,21 @@ Solve problems.
 <div class="container">
 
 <div class="section-number">
+
 05 / EDUCATION
+
 </div>
 
 <h2 class="section-title">
+
 Academic foundation.<br>
+
 <span class="gradient">
+
 Professional credentials.
+
 </span>
+
 </h2>
 
 <div class="education-grid">
@@ -1754,52 +3215,74 @@ Professional credentials.
 <div class="timeline">
 
 <div class="education-item">
+
 <div class="dot"></div>
 
 <div class="education-date">
+
 AUG 2025 — PRESENT
+
 </div>
 
 <h3>
+
 Master of Business Administration — Finance
+
 </h3>
 
 <p>
-Lovely Professional University · Phagwara, Punjab
+
+Lovely Professional University ·
+Phagwara, Punjab
+
 </p>
 
 </div>
 
 <div class="education-item">
+
 <div class="dot"></div>
 
 <div class="education-date">
+
 AUG 2022 — MAY 2025
+
 </div>
 
 <h3>
-Bachelor of Commerce — Accounting & Finance
+
+Bachelor of Commerce — Accounting &amp; Finance
+
 </h3>
 
 <p>
+
 Shree Atam Vallabh Jain College · Ludhiana
+
 </p>
 
 </div>
 
 <div class="education-item">
+
 <div class="dot"></div>
 
 <div class="education-date">
+
 APR 2021 — MAR 2022
+
 </div>
 
 <h3>
+
 Intermediate
+
 </h3>
 
 <p>
+
 Bhartiya Vidya Mandir Sr. Sec. School · Ludhiana
+
 </p>
 
 </div>
@@ -1808,116 +3291,196 @@ Bhartiya Vidya Mandir Sr. Sec. School · Ludhiana
 
 <div class="certifications">
 
-<h3>Certifications</h3>
+<h3>
+
+Certifications
+
+</h3>
 
 <div class="cert-note">
+
 Add your certificate images using the upload buttons.
+
 </div>
 
 <div class="cert">
 
 <strong>
+
 NISM VA Mutual Fund Distributor Certificate
+
 </strong>
 
 <span>
+
 NISM · Mar 2026
+
 </span>
 
-<label class="upload-btn" for="cert1">
+<label
+class="upload-btn"
+for="cert1">
+
 + Add Certificate
+
 </label>
 
-<input id="cert1" type="file" accept="image/*" hidden>
+<input
+id="cert1"
+type="file"
+accept="image/*"
+hidden>
 
-<img id="certPreview1" class="cert-preview">
+<img
+id="certPreview1"
+class="cert-preview">
 
 </div>
 
 <div class="cert">
 
 <strong>
+
 SEBI Investor Awareness Test
+
 </strong>
 
 <span>
+
 NISM · Sep 2025
+
 </span>
 
-<label class="upload-btn" for="cert2">
+<label
+class="upload-btn"
+for="cert2">
+
 + Add Certificate
+
 </label>
 
-<input id="cert2" type="file" accept="image/*" hidden>
+<input
+id="cert2"
+type="file"
+accept="image/*"
+hidden>
 
-<img id="certPreview2" class="cert-preview">
+<img
+id="certPreview2"
+class="cert-preview">
 
 </div>
 
 <div class="cert">
 
 <strong>
+
 Investment Banking Workshop
+
 </strong>
 
 <span>
+
 Bank of New York · Aug 2025
+
 </span>
 
-<label class="upload-btn" for="cert3">
+<label
+class="upload-btn"
+for="cert3">
+
 + Add Certificate
+
 </label>
 
-<input id="cert3" type="file" accept="image/*" hidden>
+<input
+id="cert3"
+type="file"
+accept="image/*"
+hidden>
 
-<img id="certPreview3" class="cert-preview">
+<img
+id="certPreview3"
+class="cert-preview">
 
 </div>
 
 <div class="cert">
 
 <strong>
-MS Excel, Tableau & Power BI
+
+MS Excel, Tableau &amp; Power BI
+
 </strong>
 
 <span>
+
 LPU · Aug 2025
+
 </span>
 
-<label class="upload-btn" for="cert4">
+<label
+class="upload-btn"
+for="cert4">
+
 + Add Certificate
+
 </label>
 
-<input id="cert4" type="file" accept="image/*" hidden>
+<input
+id="cert4"
+type="file"
+accept="image/*"
+hidden>
 
-<img id="certPreview4" class="cert-preview">
+<img
+id="certPreview4"
+class="cert-preview">
 
 </div>
 
 <div class="cert">
 
 <strong>
+
 The Practical Marketer
+
 </strong>
 
 <span>
+
 LPU · Sep 2025
+
 </span>
 
-<label class="upload-btn" for="cert5">
+<label
+class="upload-btn"
+for="cert5">
+
 + Add Certificate
+
 </label>
 
-<input id="cert5" type="file" accept="image/*" hidden>
+<input
+id="cert5"
+type="file"
+accept="image/*"
+hidden>
 
-<img id="certPreview5" class="cert-preview">
+<img
+id="certPreview5"
+class="cert-preview">
 
 </div>
 
 </div>
+
 </div>
+
 </div>
+
 </section>
+
 
 <!-- ACHIEVEMENT -->
 
@@ -1926,85 +3489,129 @@ LPU · Sep 2025
 <div class="container">
 
 <div class="section-number">
+
 06 / ACHIEVEMENT
+
 </div>
 
 <h2 class="section-title">
+
 A milestone in<br>
+
 <span class="gradient">
+
 my professional journey.
+
 </span>
+
 </h2>
 
 <div class="achievement">
 
 <div class="achievement-icon">
+
 ★
+
 </div>
 
 <div>
 
 <div class="achievement-label">
+
 PROFESSIONAL ACHIEVEMENT
+
 </div>
 
 <h3>
-CS Executive Examination — Both Groups Cleared
+
+CS Executive Examination —
+Both Groups Cleared
+
 </h3>
 
 <p>
-Cleared the Company Secretary Executive level through
-ICSI, strengthening knowledge of corporate laws,
-finance and governance.
+
+Cleared the Company Secretary Executive level
+through ICSI, strengthening knowledge of corporate
+laws, finance and governance.
+
 </p>
 
 <div class="cs-photo">
 
 <img id="csImage">
 
-<div id="csPlaceholder" class="cs-placeholder">
+<div
+id="csPlaceholder"
+class="cs-placeholder">
+
 📷
-</div>
 
 </div>
 
-<label class="upload-btn" for="csInput">
+</div>
+
+<label
+class="upload-btn"
+for="csInput">
+
 Add Your Photo
+
 </label>
 
-<input id="csInput" type="file" accept="image/*" hidden>
+<input
+id="csInput"
+type="file"
+accept="image/*"
+hidden>
 
 </div>
 
 <div class="year">
+
 2025
+
 </div>
 
 </div>
+
 </div>
+
 </section>
+
 
 <!-- CONTACT -->
 
-<section class="contact" id="contact">
+<section
+class="contact"
+id="contact">
 
 <div class="container">
 
 <div class="section-number">
+
 07 / CONTACT
+
 </div>
 
 <h2>
+
 Let's build<br>
+
 <span class="gradient">
+
 something valuable.
+
 </span>
+
 </h2>
 
 <p>
-I'm interested in opportunities where financial analysis,
-valuation and strategic thinking can create measurable
-business impact.
+
+I'm interested in opportunities where financial
+analysis, valuation and strategic thinking can
+create measurable business impact.
+
 </p>
 
 <div class="contact-buttons">
@@ -2012,24 +3619,32 @@ business impact.
 <a
 class="btn btn-primary"
 href="mailto:tanishajain315@gmail.com">
+
 ✉ Email Me
+
 </a>
 
 <a
 class="btn btn-secondary"
 href="https://www.linkedin.com/in/tanisha-jain207"
 target="_blank">
+
 in LinkedIn
+
 </a>
 
 </div>
 
 <div class="contact-details">
+
 tanishajain315@gmail.com · India
+
 </div>
 
 </div>
+
 </section>
+
 
 <!-- FOOTER -->
 
@@ -2038,61 +3653,92 @@ tanishajain315@gmail.com · India
 <div class="container footer">
 
 <div>
+
 <strong>
+
 TJ<span style="color:var(--green)">.</span>
+
 </strong>
 
 <small>
+
 Finance · Valuation · Corporate Finance
+
 </small>
+
 </div>
 
 <small>
+
 © 2026 Tanisha Jain
+
 </small>
 
 <a
 href="https://www.linkedin.com/in/tanisha-jain207"
 target="_blank">
+
 LinkedIn ↗
+
 </a>
 
 </div>
+
 </footer>
+
 
 <!-- PROJECT MODAL -->
 
-<div class="modal" id="modal">
+<div
+class="modal"
+id="modal">
 
 <div class="modal-box">
 
-<button class="close" onclick="closeModal()">
+<button
+class="close"
+onclick="closeModal()">
+
 ×
+
 </button>
 
-<div class="modal-category" id="modalCategory"></div>
+<div
+class="modal-category"
+id="modalCategory">
+</div>
 
-<h2 id="modalTitle"></h2>
+<h2 id="modalTitle">
+</h2>
 
 <p class="modal-description">
+
 Key work and outcomes from this project.
+
 </p>
 
 <div class="modal-image">
 
 <img id="modalImage">
 
-<div class="modal-image-text" id="modalImageText">
+<div
+class="modal-image-text"
+id="modalImageText">
 
 🖼️
+
 <br><br>
 
 Add an image related to this project
 
 <br><br>
 
-<label class="upload-btn" for="projectImageInput">
+<label
+class="upload-btn"
+for="projectImageInput">
+
 Upload Project Image
+
 </label>
 
 <input
@@ -2102,52 +3748,70 @@ accept="image/*"
 hidden>
 
 </div>
-</div>
-
-<div class="modal-list" id="modalList"></div>
 
 </div>
+
+<div
+class="modal-list"
+id="modalList">
 </div>
+
+</div>
+
+</div>
+
 
 <script>
-
-/* DARK / LIGHT MODE */
 
 function toggleTheme(){
 
 document.body.classList.toggle("dark");
 
-const button=document.querySelector(".theme");
+const button=
+document.querySelector(".theme");
 
-if(document.body.classList.contains("dark")){
+if(
+document.body.classList.contains("dark")
+){
 
 button.innerHTML="☀️";
 
-localStorage.setItem("theme","dark");
+localStorage.setItem(
+"theme",
+"dark"
+);
 
 }else{
 
 button.innerHTML="🌙";
 
-localStorage.setItem("theme","light");
+localStorage.setItem(
+"theme",
+"light"
+);
 
 }
 
 }
 
-if(localStorage.getItem("theme")==="dark"){
+if(
+localStorage.getItem("theme")==="dark"
+){
 
 document.body.classList.add("dark");
 
-document.querySelector(".theme").innerHTML="☀️";
+document
+.querySelector(".theme")
+.innerHTML="☀️";
 
 }else{
 
-document.querySelector(".theme").innerHTML="🌙";
+document
+.querySelector(".theme")
+.innerHTML="🌙";
 
 }
 
-/* MOBILE MENU */
 
 function toggleMenu(){
 
@@ -2158,28 +3822,37 @@ document
 
 }
 
-/* COVER PHOTO UPLOAD */
 
 const heroPhotoInput=
-document.getElementById("heroPhotoInput");
+document.getElementById(
+"heroPhotoInput"
+);
 
 function loadHeroPhoto(){
 
 const saved=
-localStorage.getItem("heroPhoto");
+localStorage.getItem(
+"heroPhoto"
+);
 
 if(!saved)return;
 
 const image=
-document.getElementById("heroPhotoImage");
+document.getElementById(
+"heroPhotoImage"
+);
 
 const placeholder=
-document.getElementById("heroPhotoPlaceholder");
+document.getElementById(
+"heroPhotoPlaceholder"
+);
 
 if(image && placeholder){
 
 image.src=saved;
+
 image.style.display="block";
+
 placeholder.style.display="none";
 
 }
@@ -2196,25 +3869,36 @@ const file=e.target.files[0];
 
 if(!file)return;
 
-if(!file.type.startsWith("image/")){
+if(
+!file.type.startsWith("image/")
+){
 
-alert("Please select an image file.");
+alert(
+"Please select an image file."
+);
 
 return;
 
 }
 
-const reader=new FileReader();
+const reader=
+new FileReader();
 
-reader.onload=function(event){
+reader.onload=
+function(event){
 
 const image=
-document.getElementById("heroPhotoImage");
+document.getElementById(
+"heroPhotoImage"
+);
 
 const placeholder=
-document.getElementById("heroPhotoPlaceholder");
+document.getElementById(
+"heroPhotoPlaceholder"
+);
 
-image.src=event.target.result;
+image.src=
+event.target.result;
 
 image.style.display="block";
 
@@ -2246,7 +3930,6 @@ loadHeroPhoto();
 
 }
 
-/* INTERNSHIP IMAGE */
 
 document
 .getElementById("internshipInput")
@@ -2258,19 +3941,27 @@ const file=e.target.files[0];
 
 if(!file)return;
 
-const reader=new FileReader();
+const reader=
+new FileReader();
 
-reader.onload=function(event){
+reader.onload=
+function(event){
 
 const image=
-document.getElementById("internshipImage");
+document.getElementById(
+"internshipImage"
+);
 
-image.src=event.target.result;
+image.src=
+event.target.result;
 
-image.style.display="block";
+image.style.display=
+"block";
 
 document
-.getElementById("internshipPlaceholder")
+.getElementById(
+"internshipPlaceholder"
+)
 .style.display="none";
 
 };
@@ -2279,17 +3970,25 @@ reader.readAsDataURL(file);
 
 });
 
-/* PROJECT FILTER */
 
-function filterProjects(category,button){
+function filterProjects(
+category,
+button
+){
 
 document
 .querySelectorAll(".filter")
 .forEach(btn=>{
-btn.classList.remove("active");
+
+btn.classList.remove(
+"active"
+);
+
 });
 
-button.classList.add("active");
+button.classList.add(
+"active"
+);
 
 document
 .querySelectorAll(".project")
@@ -2312,24 +4011,32 @@ project.style.display="none";
 
 }
 
-/* PROJECT MODAL */
 
-function openProject(title,category,details){
+function openProject(
+title,
+category,
+details
+){
 
 document
 .getElementById("modal")
-.classList.add("show");
+.classList
+.add("show");
 
 document
 .getElementById("modalTitle")
-.innerText=title;
+.innerText=
+title;
 
 document
 .getElementById("modalCategory")
-.innerText=category;
+.innerText=
+category;
 
 const list=
-document.getElementById("modalList");
+document.getElementById(
+"modalList"
+);
 
 list.innerHTML="";
 
@@ -2339,7 +4046,9 @@ const row=
 document.createElement("div");
 
 row.innerHTML=
-"<span>✓</span><p>"+item+"</p>";
+"<span>✓</span><p>"+
+item+
+"</p>";
 
 list.appendChild(row);
 
@@ -2359,48 +4068,16 @@ document
 
 }
 
-/* PROJECT IMAGE */
-
-document
-.getElementById("projectImageInput")
-.addEventListener(
-"change",
-function(e){
-
-const file=e.target.files[0];
-
-if(!file)return;
-
-const reader=new FileReader();
-
-reader.onload=function(event){
-
-const image=
-document.getElementById("modalImage");
-
-image.src=event.target.result;
-
-image.style.display="block";
-
-document
-.getElementById("modalImageText")
-.style.display="none";
-
-};
-
-reader.readAsDataURL(file);
-
-});
-
-/* CLOSE MODAL */
 
 function closeModal(){
 
 document
 .getElementById("modal")
-.classList.remove("show");
+.classList
+.remove("show");
 
 }
+
 
 document
 .getElementById("modal")
@@ -2416,7 +4093,46 @@ closeModal();
 
 });
 
-/* CS PHOTO */
+
+document
+.getElementById("projectImageInput")
+.addEventListener(
+"change",
+function(e){
+
+const file=e.target.files[0];
+
+if(!file)return;
+
+const reader=
+new FileReader();
+
+reader.onload=
+function(event){
+
+const image=
+document.getElementById(
+"modalImage"
+);
+
+image.src=
+event.target.result;
+
+image.style.display=
+"block";
+
+document
+.getElementById(
+"modalImageText"
+)
+.style.display="none";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
 
 document
 .getElementById("csInput")
@@ -2428,19 +4144,27 @@ const file=e.target.files[0];
 
 if(!file)return;
 
-const reader=new FileReader();
+const reader=
+new FileReader();
 
-reader.onload=function(event){
+reader.onload=
+function(event){
 
 const image=
-document.getElementById("csImage");
+document.getElementById(
+"csImage"
+);
 
-image.src=event.target.result;
+image.src=
+event.target.result;
 
-image.style.display="block";
+image.style.display=
+"block";
 
 document
-.getElementById("csPlaceholder")
+.getElementById(
+"csPlaceholder"
+)
 .style.display="none";
 
 };
@@ -2449,9 +4173,11 @@ reader.readAsDataURL(file);
 
 });
 
-/* CERTIFICATE UPLOADS */
 
-function setupCertificate(inputID,previewID){
+function setupCertificate(
+inputID,
+previewID
+){
 
 document
 .getElementById(inputID)
@@ -2463,16 +4189,22 @@ const file=e.target.files[0];
 
 if(!file)return;
 
-const reader=new FileReader();
+const reader=
+new FileReader();
 
-reader.onload=function(event){
+reader.onload=
+function(event){
 
 const image=
-document.getElementById(previewID);
+document.getElementById(
+previewID
+);
 
-image.src=event.target.result;
+image.src=
+event.target.result;
 
-image.style.display="block";
+image.style.display=
+"block";
 
 };
 
@@ -2482,13 +4214,1225 @@ reader.readAsDataURL(file);
 
 }
 
-setupCertificate("cert1","certPreview1");
-setupCertificate("cert2","certPreview2");
-setupCertificate("cert3","certPreview3");
-setupCertificate("cert4","certPreview4");
-setupCertificate("cert5","certPreview5");
+
+setupCertificate(
+"cert1",
+"certPreview1"
+);
+
+setupCertificate(
+"cert2",
+"certPreview2"
+);
+
+setupCertificate(
+"cert3",
+"certPreview3"
+);
+
+setupCertificate(
+"cert4",
+"certPreview4"
+);
+
+setupCertificate(
+"cert5",
+"certPreview5"
+);
+document.addEventListener(
+"keydown",
+function(e){
+
+if(e.key==="Escape"){
+
+closeModal();
+
+}
+
+});
+
+
+window.addEventListener(
+"scroll",
+function(){
+
+const nav=
+document.querySelector("nav");
+
+if(window.scrollY>30){
+
+nav.style.boxShadow=
+"0 8px 30px rgba(0,0,0,.06)";
+
+}else{
+
+nav.style.boxShadow=
+"none";
+
+}
+
+});
+
+
+/* SMOOTH MOBILE MENU */
+
+document
+.querySelectorAll(".links a")
+.forEach(link=>{
+
+link.addEventListener(
+"click",
+function(){
+
+document
+.getElementById("links")
+.classList
+.remove("open");
+
+});
+
+});
+
+
+/* INTERNSHIP IMAGE */
+
+const internshipInput=
+document.getElementById(
+"internshipInput"
+);
+
+if(internshipInput){
+
+internshipInput.addEventListener(
+"change",
+function(e){
+
+const file=e.target.files[0];
+
+if(!file)return;
+
+if(
+!file.type.startsWith("image/")
+){
+
+alert(
+"Please select an image file."
+);
+
+return;
+
+}
+
+const reader=
+new FileReader();
+
+reader.onload=
+function(event){
+
+const image=
+document.getElementById(
+"internshipImage"
+);
+
+const placeholder=
+document.getElementById(
+"internshipPlaceholder"
+);
+
+if(image){
+
+image.src=
+event.target.result;
+
+image.style.display=
+"block";
+
+}
+
+if(placeholder){
+
+placeholder.style.display=
+"none";
+
+}
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+}
+
+
+/* CERTIFICATE IMAGE UPLOAD */
+
+function certificateUpload(
+inputId,
+imageId
+){
+
+const input=
+document.getElementById(
+inputId
+);
+
+if(!input)return;
+
+input.addEventListener(
+"change",
+function(e){
+
+const file=
+e.target.files[0];
+
+if(!file)return;
+
+if(
+!file.type.startsWith("image/")
+){
+
+alert(
+"Please select an image file."
+);
+
+return;
+
+}
+
+const reader=
+new FileReader();
+
+reader.onload=
+function(event){
+
+const image=
+document.getElementById(
+imageId
+);
+
+if(image){
+
+image.src=
+event.target.result;
+
+image.style.display=
+"block";
+
+}
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+}
+
+
+certificateUpload(
+"cert1",
+"certPreview1"
+);
+
+certificateUpload(
+"cert2",
+"certPreview2"
+);
+
+certificateUpload(
+"cert3",
+"certPreview3"
+);
+
+certificateUpload(
+"cert4",
+"certPreview4"
+);
+
+certificateUpload(
+"cert5",
+"certPreview5"
+);
+
+
+/* ACHIEVEMENT PHOTO */
+
+const csInput=
+document.getElementById(
+"csInput"
+);
+
+if(csInput){
+
+csInput.addEventListener(
+"change",
+function(e){
+
+const file=
+e.target.files[0];
+
+if(!file)return;
+
+if(
+!file.type.startsWith("image/")
+){
+
+alert(
+"Please select an image file."
+);
+
+return;
+
+}
+
+const reader=
+new FileReader();
+
+reader.onload=
+function(event){
+
+const image=
+document.getElementById(
+"csImage"
+);
+
+const placeholder=
+document.getElementById(
+"csPlaceholder"
+);
+
+if(image){
+
+image.src=
+event.target.result;
+
+image.style.display=
+"block";
+
+}
+
+if(placeholder){
+
+placeholder.style.display=
+"none";
+
+}
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+}
+
+
+/* PROJECT IMAGE */
+
+const projectImageInput=
+document.getElementById(
+"projectImageInput"
+);
+
+if(projectImageInput){
+
+projectImageInput.addEventListener(
+"change",
+function(e){
+
+const file=
+e.target.files[0];
+
+if(!file)return;
+
+if(
+!file.type.startsWith("image/")
+){
+
+alert(
+"Please select an image file."
+);
+
+return;
+
+}
+
+const reader=
+new FileReader();
+
+reader.onload=
+function(event){
+
+const image=
+document.getElementById(
+"modalImage"
+);
+
+const imageText=
+document.getElementById(
+"modalImageText"
+);
+
+if(image){
+
+image.src=
+event.target.result;
+
+image.style.display=
+"block";
+
+}
+
+if(imageText){
+
+imageText.style.display=
+"none";
+
+}
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+}
+
+
+/* PROJECT MODAL */
+
+function openProject(
+title,
+category,
+details
+){
+
+const modal=
+document.getElementById(
+"modal"
+);
+
+const modalTitle=
+document.getElementById(
+"modalTitle"
+);
+
+const modalCategory=
+document.getElementById(
+"modalCategory"
+);
+
+const modalList=
+document.getElementById(
+"modalList"
+);
+
+const modalImage=
+document.getElementById(
+"modalImage"
+);
+
+const modalImageText=
+document.getElementById(
+"modalImageText"
+);
+
+if(modalTitle){
+
+modalTitle.textContent=
+title;
+
+}
+
+if(modalCategory){
+
+modalCategory.textContent=
+category;
+
+}
+
+if(modalList){
+
+modalList.innerHTML="";
+
+details.forEach(
+function(detail){
+
+const item=
+document.createElement(
+"div"
+);
+
+item.innerHTML=
+`
+<span>✓</span>
+<p>${detail}</p>
+`;
+
+modalList.appendChild(item);
+
+});
+
+}
+
+if(modalImage){
+
+modalImage.src="";
+
+modalImage.style.display=
+"none";
+
+}
+
+if(modalImageText){
+
+modalImageText.style.display=
+"block";
+
+}
+
+if(modal){
+
+modal.classList.add(
+"show"
+);
+
+}
+
+}
+
+
+function closeModal(){
+
+const modal=
+document.getElementById(
+"modal"
+);
+
+if(modal){
+
+modal.classList.remove(
+"show"
+);
+
+}
+
+}
+
+
+/* PROJECT FILTER */
+
+function filterProjects(
+category,
+button
+){
+
+document
+.querySelectorAll(".filter")
+.forEach(
+function(btn){
+
+btn.classList.remove(
+"active"
+);
+
+});
+
+if(button){
+
+button.classList.add(
+"active"
+);
+
+}
+
+document
+.querySelectorAll(".project")
+.forEach(
+function(project){
+
+const projectCategory=
+project.getAttribute(
+"data-category"
+);
+
+if(
+category==="all" ||
+projectCategory===category
+){
+
+project.style.display=
+"block";
+
+}else{
+
+project.style.display=
+"none";
+
+}
+
+});
+
+}
+
+
+/* NAVIGATION */
+
+function toggleMenu(){
+
+const links=
+document.getElementById(
+"links"
+);
+
+if(links){
+
+links.classList.toggle(
+"open"
+);
+
+}
+
+}
+
+
+/* THEME */
+
+function toggleTheme(){
+
+const body=
+document.body;
+
+const themeButton=
+document.querySelector(
+".theme"
+);
+
+body.classList.toggle(
+"dark"
+);
+
+if(
+body.classList.contains(
+"dark"
+)
+){
+
+if(themeButton){
+
+themeButton.innerHTML=
+"☀️";
+
+}
+
+localStorage.setItem(
+"theme",
+"dark"
+);
+
+}else{
+
+if(themeButton){
+
+themeButton.innerHTML=
+"🌙";
+
+}
+
+localStorage.setItem(
+"theme",
+"light"
+);
+
+}
+
+}
+
+
+/* LOAD SAVED THEME */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+const savedTheme=
+localStorage.getItem(
+"theme"
+);
+
+const themeButton=
+document.querySelector(
+".theme"
+);
+
+if(
+savedTheme==="dark"
+){
+
+document.body.classList.add(
+"dark"
+);
+
+if(themeButton){
+
+themeButton.innerHTML=
+"☀️";
+
+}
+
+}else{
+
+document.body.classList.remove(
+"dark"
+);
+
+if(themeButton){
+
+themeButton.innerHTML=
+"🌙";
+
+}
+
+}
+
+});
+
+
+/* HERO PHOTO */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+const input=
+document.getElementById(
+"heroPhotoInput"
+);
+
+const image=
+document.getElementById(
+"heroPhotoImage"
+);
+
+const placeholder=
+document.getElementById(
+"heroPhotoPlaceholder"
+);
+
+if(!input)return;
+
+input.addEventListener(
+"change",
+function(e){
+
+const file=
+e.target.files[0];
+
+if(!file)return;
+
+if(
+!file.type.startsWith("image/")
+){
+
+alert(
+"Please upload an image file."
+);
+
+return;
+
+}
+
+const reader=
+new FileReader();
+
+reader.onload=
+function(event){
+
+if(image){
+
+image.src=
+event.target.result;
+
+image.style.display=
+"block";
+
+}
+
+if(placeholder){
+
+placeholder.style.display=
+"none";
+
+}
+
+try{
+
+localStorage.setItem(
+"tanishaHeroPhoto",
+event.target.result
+);
+
+}catch(error){
+
+console.log(
+"Photo preview loaded."
+);
+
+}
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+
+const savedPhoto=
+localStorage.getItem(
+"tanishaHeroPhoto"
+);
+
+if(savedPhoto){
+
+if(image){
+
+image.src=
+savedPhoto;
+
+image.style.display=
+"block";
+
+}
+
+if(placeholder){
+
+placeholder.style.display=
+"none";
+
+}
+
+}
+
+});
+
+
+/* CLOSE MODAL WHEN CLICKING OUTSIDE */
+
+document.addEventListener(
+"click",
+function(e){
+
+const modal=
+document.getElementById(
+"modal"
+);
+
+if(
+e.target===modal
+){
+
+closeModal();
+
+}
+
+});
+
+
+/* ESCAPE KEY */
+
+document.addEventListener(
+"keydown",
+function(e){
+
+if(
+e.key==="Escape"
+){
+
+closeModal();
+
+}
+
+});
+
+
+/* INTERNSHIP IMAGE */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+const input=
+document.getElementById(
+"internshipInput"
+);
+
+if(!input)return;
+
+input.addEventListener(
+"change",
+function(e){
+
+const file=
+e.target.files[0];
+
+if(!file)return;
+
+const reader=
+new FileReader();
+
+reader.onload=
+function(event){
+
+const image=
+document.getElementById(
+"internshipImage"
+);
+
+const placeholder=
+document.getElementById(
+"internshipPlaceholder"
+);
+
+image.src=
+event.target.result;
+
+image.style.display=
+"block";
+
+placeholder.style.display=
+"none";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+});
+
+
+/* CERTIFICATION UPLOAD */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+const certificates=[
+["cert1","certPreview1"],
+["cert2","certPreview2"],
+["cert3","certPreview3"],
+["cert4","certPreview4"],
+["cert5","certPreview5"]
+];
+
+certificates.forEach(
+function(item){
+
+const input=
+document.getElementById(
+item[0]
+);
+
+const preview=
+document.getElementById(
+item[1]
+);
+
+if(!input)return;
+
+input.addEventListener(
+"change",
+function(e){
+
+const file=
+e.target.files[0];
+
+if(!file)return;
+
+const reader=
+new FileReader();
+
+reader.onload=
+function(event){
+
+preview.src=
+event.target.result;
+
+preview.style.display=
+"block";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+});
+
+});
+
+
+/* ACHIEVEMENT PHOTO */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+const input=
+document.getElementById(
+"csInput"
+);
+
+if(!input)return;
+
+input.addEventListener(
+"change",
+function(e){
+
+const file=
+e.target.files[0];
+
+if(!file)return;
+
+const reader=
+new FileReader();
+
+reader.onload=
+function(event){
+
+const image=
+document.getElementById(
+"csImage"
+);
+
+const placeholder=
+document.getElementById(
+"csPlaceholder"
+);
+
+image.src=
+event.target.result;
+
+image.style.display=
+"block";
+
+placeholder.style.display=
+"none";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+});
+
+
+/* PROJECT IMAGE */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+const input=
+document.getElementById(
+"projectImageInput"
+);
+
+if(!input)return;
+
+input.addEventListener(
+"change",
+function(e){
+
+const file=
+e.target.files[0];
+
+if(!file)return;
+
+const reader=
+new FileReader();
+
+reader.onload=
+function(event){
+
+const image=
+document.getElementById(
+"modalImage"
+);
+
+const text=
+document.getElementById(
+"modalImageText"
+);
+
+image.src=
+event.target.result;
+
+image.style.display=
+"block";
+
+text.style.display=
+"none";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+});
+
+
+/* ACTIVE NAVIGATION */
+
+window.addEventListener(
+"scroll",
+function(){
+
+const sections=
+document.querySelectorAll(
+"section, header"
+);
+
+const navLinks=
+document.querySelectorAll(
+".links a"
+);
+
+let current="home";
+
+sections.forEach(
+function(section){
+
+const top=
+section.offsetTop-120;
+
+if(
+window.scrollY>=top
+){
+
+current=
+section.getAttribute(
+"id"
+) || current;
+
+}
+
+});
+
+navLinks.forEach(
+function(link){
+
+link.classList.remove(
+"active"
+);
+
+if(
+link.getAttribute("href")===
+"#"+current
+){
+
+link.classList.add(
+"active"
+);
+
+}
+
+});
+
+});
+
+
+/* IMAGE DRAG EFFECT */
+
+document
+.querySelectorAll(
+".project, .about-card, .skill-card"
+)
+.forEach(
+function(card){
+
+card.addEventListener(
+"mousemove",
+function(e){
+
+const rect=
+card.getBoundingClientRect();
+
+const x=
+e.clientX-
+rect.left;
+
+const y=
+e.clientY-
+rect.top;
+
+const rotateX=
+(y-
+rect.height/2)/
+35;
+
+const rotateY=
+(rect.width/2-x)/
+35;
+
+card.style.transform=
+`perspective(800px)
+rotateX(${rotateX}deg)
+rotateY(${rotateY}deg)
+translateY(-5px)`;
+
+});
+
+card.addEventListener(
+"mouseleave",
+function(){
+
+card.style.transform="";
+
+});
+
+});
+
+
+/* INITIALIZE */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+const savedTheme=
+localStorage.getItem(
+"theme"
+);
+
+if(
+savedTheme==="dark"
+){
+
+document.body.classList.add(
+"dark"
+);
+
+const button=
+document.querySelector(
+".theme"
+);
+
+if(button){
+
+button.innerHTML=
+"☀️";
+
+}
+
+}
+
+});
+
 
 </script>
-
 </body>
 </html>
