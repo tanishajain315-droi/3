@@ -3547,32 +3547,7 @@
 
             </p>
 
-            <div class="modal-image">
-
-                <img id="modalImage">
-
-                <div class="modal-image-text" id="modalImageText">
-
-                    🖼️
-
-                    <br><br>
-
-                    Add an image related to this project
-
-                    <br><br>
-
-                    <label class="upload-btn" for="projectImageInput">
-
-                        Upload Project Image
-
-                    </label>
-
-                    <input id="projectImageInput" type="file" accept="image/*" hidden>
-
-                </div>
-
-            </div>
-
+            
             <div class="modal-list" id="modalList">
             </div>
 
@@ -3882,10 +3857,6 @@
                 .getElementById("modalImageText")
                 .style.display = "block";
 
-            document
-                .getElementById("projectImageInput")
-                .value = "";
-
         }
 
 
@@ -3912,42 +3883,6 @@
                     }
 
                 });
-
-
-        document
-            .getElementById("projectImageInput")
-            .addEventListener(
-                "change",
-                function (e) {
-
-                    const file = e.target.files[0];
-
-                    if (!file) return;
-
-                    const reader =
-                        new FileReader();
-
-                    reader.onload =
-                        function (event) {
-
-                            const image =
-                                document.getElementById(
-                                    "modalImage"
-                                );
-
-                            image.src =
-                                event.target.result;
-
-                            image.style.display =
-                                "block";
-
-                            document
-                                .getElementById(
-                                    "modalImageText"
-                                )
-                                .style.display = "none";
-
-                        };
 
                     reader.readAsDataURL(file);
 
@@ -4350,73 +4285,7 @@
 
         /* PROJECT IMAGE */
 
-        const projectImageInput =
-            document.getElementById(
-                "projectImageInput"
-            );
-
-        if (projectImageInput) {
-
-            projectImageInput.addEventListener(
-                "change",
-                function (e) {
-
-                    const file =
-                        e.target.files[0];
-
-                    if (!file) return;
-
-                    if (
-                        !file.type.startsWith("image/")
-                    ) {
-
-                        alert(
-                            "Please select an image file."
-                        );
-
-                        return;
-
-                    }
-
-                    const reader =
-                        new FileReader();
-
-                    reader.onload =
-                        function (event) {
-
-                            const image =
-                                document.getElementById(
-                                    "modalImage"
-                                );
-
-                            const imageText =
-                                document.getElementById(
-                                    "modalImageText"
-                                );
-
-                            if (image) {
-
-                                image.src =
-                                    event.target.result;
-
-                                image.style.display =
-                                    "block";
-
-                            }
-
-                            if (imageText) {
-
-                                imageText.style.display =
-                                    "none";
-
-                            }
-
-                        };
-
-                    reader.readAsDataURL(file);
-
-                });
-            if (image) {
+                   if (image) {
     image.src = "ma-valuation.jpg";
     image.style.display = "block";
 }
