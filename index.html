@@ -3,419 +3,2291 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Tanisha Jain | Finance Portfolio</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================================================
+   DAY THEME
+   Pastel mint + cream + yellow + white
+========================================================= */
+
 :root{
---bg:#050b16;--card:#0b1424;--card2:#111d30;
---text:#f4f7fb;--muted:#9aa8ba;--line:#1d2a3c;
---green:#8cff72;--blue:#237cff;
+
+    --bg:#F7FBF8;
+    --bg2:#EEF8F1;
+
+    --card:#FFFFFF;
+    --card-solid:#FFFFFF;
+
+    --text:#172018;
+    --muted:#657268;
+
+    --line:rgba(49,92,58,.13);
+
+    --green:#69A84F;
+    --green-dark:#315C3A;
+
+    --green-light:#DDF2E3;
+
+    --mint:#D8F1E3;
+    --mint-light:#EEF9F2;
+
+    --cream:#FFF8E7;
+    --yellow:#F4E7A8;
+
+    --blue:#A7D7C0;
+    --blue-soft:#DDEFE7;
+
+    --shadow:
+        0 18px 50px rgba(49,92,58,.08);
+
+    --shadow-hover:
+        0 25px 60px rgba(49,92,58,.14);
 }
-body.light{
---bg:#f3f6fa;--card:#fff;--card2:#edf2f7;
---text:#111827;--muted:#5f6b7a;--line:#dce3eb;
---green:#26851b;--blue:#1266d4;
+
+
+/* =========================================================
+   NIGHT THEME
+   KEEP DARK PROFESSIONAL DESIGN
+========================================================= */
+
+body.dark{
+
+    --bg:#050B14;
+    --bg2:#08111F;
+
+    --card:#0D1828;
+    --card-solid:#0D1828;
+
+    --text:#F5F7FA;
+    --muted:#8D9CAF;
+
+    --line:rgba(255,255,255,.09);
+
+    --green:#8CFF70;
+    --green-dark:#8CFF70;
+
+    --green-light:rgba(140,255,112,.10);
+
+    --mint:#08111F;
+    --mint-light:#0D1828;
+
+    --cream:#111D30;
+    --yellow:#17263A;
+
+    --blue:#237CFF;
+    --blue-soft:#102A4C;
+
+    --shadow:
+        0 18px 50px rgba(0,0,0,.35);
+
+    --shadow-hover:
+        0 25px 70px rgba(0,0,0,.5);
 }
-html{scroll-behavior:smooth}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:var(--bg);color:var(--text);
-line-height:1.6;transition:.3s
-}
-a{text-decoration:none;color:inherit}
-button{font-family:inherit;cursor:pointer}
-.container{width:min(1150px,92%);margin:auto}
 
-/* NAV */
+    font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 5%,
+            rgba(216,241,227,.95),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 92% 8%,
+            rgba(244,231,168,.55),
+            transparent 23%
+        ),
+
+        radial-gradient(
+            circle at 50% 95%,
+            rgba(238,249,242,.95),
+            transparent 30%
+        ),
+
+        var(--bg);
+
+    color:var(--text);
+
+    line-height:1.6;
+
+    transition:
+        background .35s,
+        color .35s;
+
+    overflow-x:hidden;
+}
+
+
+/* Dark background stays dark */
+
+body.dark{
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(35,124,255,.08),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(140,255,112,.05),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #050B14,
+            #08111F
+        );
+}
+
+
+.container{
+
+    width:min(1160px,92%);
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
 nav{
-position:fixed;top:0;width:100%;z-index:1000;
-background:rgba(5,11,22,.82);backdrop-filter:blur(15px);
-border-bottom:1px solid var(--line)
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:72px;
+
+    z-index:1000;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+        1px solid var(--line);
+
+    transition:.35s;
 }
-body.light nav{background:rgba(243,246,250,.88)}
+
+
+body.dark nav{
+
+    background:
+        rgba(5,11,20,.88);
+}
+
+
 .nav{
-height:70px;display:flex;align-items:center;
-justify-content:space-between
-}
-.logo{font-size:24px;font-weight:800}
-.logo span{color:var(--green)}
-.links{display:flex;gap:25px}
-.links a{font-size:12px;color:var(--muted)}
-.links a:hover{color:var(--green)}
-.nav-buttons{display:flex;gap:8px}
-.theme,.menu{
-width:40px;height:40px;border-radius:50%;
-border:1px solid var(--line);
-background:var(--card);color:var(--text)
-}
-.menu{display:none;border-radius:8px}
 
-/* TOP MARKET IMAGE */
-.market{
-margin-top:70px;height:390px;position:relative;overflow:hidden
-}
-.market>img{
-width:100%;height:100%;object-fit:cover;
-filter:brightness(.43) saturate(1.25)
-}
-.market-overlay{
-position:absolute;inset:0;display:flex;
-align-items:center;justify-content:center;text-align:center;
-background:linear-gradient(90deg,rgba(0,0,20,.75),rgba(0,20,60,.2),rgba(0,0,0,.7))
-}
-.market-text{width:min(850px,90%)}
-.small{
-font-family:monospace;color:var(--green);
-font-size:10px;letter-spacing:3px
-}
-.market h2{
-font-size:clamp(38px,6vw,68px);
-line-height:1;letter-spacing:-4px;margin:15px 0
-}
-.market p{color:#dce4ef;font-size:14px}
+    height:72px;
 
-/* HERO */
-.hero{
-min-height:calc(100vh - 460px);
-display:grid;grid-template-columns:1.15fr .85fr;
-gap:70px;align-items:center;padding:90px 0
-}
-.hero h1{
-font-size:clamp(48px,7vw,90px);
-letter-spacing:-5px;line-height:1;
-margin:18px 0 25px;
-white-space:nowrap
-}
-.gradient{
-background:linear-gradient(100deg,var(--green),var(--blue));
--webkit-background-clip:text;color:transparent
-}
-.hero p{color:var(--muted);max-width:600px;font-size:15px}
-.buttons{display:flex;gap:10px;margin-top:30px}
-.btn{
-padding:13px 20px;border-radius:8px;font-size:12px;
-font-weight:bold;display:inline-block;transition:.25s
-}
-.primary{background:var(--green);color:#071007}
-.secondary{border:1px solid var(--line);background:var(--card)}
-.btn:hover{transform:translateY(-3px)}
+    display:flex;
 
-/* PROFILE */
-.photo{
-height:400px;width:320px;margin:auto;
-border:1px dashed rgba(140,255,114,.5);
-border-radius:22px;background:var(--card);
-display:flex;align-items:center;justify-content:center;
-overflow:hidden;text-align:center
-}
-.photo img{display:none;width:100%;height:100%;object-fit:cover}
-.placeholder{padding:30px}
-.placeholder-icon{font-size:45px}
-.placeholder p{color:var(--muted);font-size:11px;margin:10px 0 18px}
-.upload{
-display:inline-block;background:var(--green);
-color:#071007;padding:9px 14px;
-border-radius:7px;font-size:10px;font-weight:bold;cursor:pointer
-}
-input[type=file]{display:none}
+    align-items:center;
 
-/* SECTIONS */
-section{padding:105px 0;border-top:1px solid var(--line)}
-.label{
-font-family:monospace;color:var(--green);
-font-size:10px;letter-spacing:2px
-}
-.title{
-font-size:clamp(38px,5vw,64px);
-line-height:1;letter-spacing:-4px;margin:14px 0 55px
+    justify-content:space-between;
 }
 
-/* ABOUT */
-.about{
-display:grid;grid-template-columns:1fr 1fr;gap:80px
-}
-.about-text{color:var(--muted);font-size:13px;line-height:1.9}
-.about-text .intro{font-size:20px;color:var(--text);line-height:1.55;margin-bottom:25px}
-.about-text p{margin-bottom:20px}
-.highlight{
-padding:20px;background:var(--card);
-border:1px solid var(--line);border-radius:12px
-}
-.highlight strong{display:block;margin-bottom:5px}
-.highlight span{font-size:11px;color:var(--muted)}
-.about-cards{
-display:grid;grid-template-columns:1fr 1fr;gap:12px
-}
-.info{
-min-height:180px;padding:24px;
-background:var(--card);border:1px solid var(--line);
-border-radius:14px;display:flex;flex-direction:column;
-justify-content:flex-end;transition:.3s
-}
-.info:hover{transform:translateY(-5px);border-color:var(--green)}
-.info-icon{font-size:25px;color:var(--green);margin-bottom:auto}
-.info h3{font-size:15px;margin-bottom:7px}
-.info p{font-size:10px;color:var(--muted)}
 
-/* INTERNSHIP */
-.internship-card{
-background:var(--card);border:1px solid var(--line);
-border-radius:18px;overflow:hidden
-}
-.internship-photo{
-height:340px;background:var(--card2);
-display:flex;align-items:center;justify-content:center;
-position:relative;overflow:hidden;text-align:center
-}
-.internship-photo img{
-display:none;width:100%;height:100%;object-fit:cover
-}
-.internship-placeholder{color:var(--muted);font-size:11px}
-.internship-placeholder div{font-size:45px;margin-bottom:10px}
-.internship-info{padding:35px}
-.company{
-font-family:monospace;font-size:10px;
-letter-spacing:1.5px;color:var(--green)
-}
-.internship-info h3{font-size:32px;margin:8px 0}
-.date{font-size:11px;color:var(--muted);margin-bottom:25px}
-.internship-info p{font-size:13px;color:var(--muted);margin-bottom:17px}
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
-.tag{
-padding:7px 10px;background:var(--card2);
-border-radius:5px;color:var(--muted);font-size:9px
+.logo{
+
+    font-size:25px;
+
+    font-weight:900;
+
+    letter-spacing:-1px;
+
+    color:var(--green-dark);
 }
 
-/* PROJECTS */
-.project-head{
-display:flex;justify-content:space-between;
-align-items:end;gap:30px
-}
-.project-intro{max-width:400px;color:var(--muted);font-size:12px}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin:35px 0}
-.filter{
-padding:9px 15px;border-radius:20px;
-background:var(--card);color:var(--muted);
-border:1px solid var(--line);font-size:10px
-}
-.filter.active,.filter:hover{
-background:var(--green);color:#071007;border-color:var(--green)
-}
-.projects{
-display:grid;grid-template-columns:1fr 1fr;gap:15px
-}
-.project{
-min-height:370px;padding:28px;background:var(--card);
-border:1px solid var(--line);border-radius:16px;
-position:relative;cursor:pointer;transition:.3s
-}
-.project:hover{transform:translateY(-5px);border-color:var(--green)}
-.project-icon{
-width:50px;height:50px;border-radius:12px;
-background:rgba(140,255,114,.08);
-display:grid;place-items:center;color:var(--green);
-font-family:monospace;font-size:10px
-}
-.category{
-display:block;color:var(--green);
-font-family:monospace;font-size:9px;
-letter-spacing:1.5px;margin-top:38px
-}
-.project h3{font-size:23px;margin:9px 0}
-.project p{color:var(--muted);font-size:12px}
-.project-bottom{
-position:absolute;left:28px;right:28px;bottom:20px;
-padding-top:13px;border-top:1px solid var(--line);
-display:flex;justify-content:space-between;
-font-size:9px;color:var(--muted)
+
+.logo span{
+
+    color:var(--green);
 }
 
-/* SKILLS */
-.skills{
-display:grid;grid-template-columns:1fr 1fr;gap:15px
-}
-.skill-card{
-background:var(--card);border:1px solid var(--line);
-border-radius:15px;padding:32px
-}
-.skill-card h3{margin-bottom:25px}
-.skill-list{
-display:grid;grid-template-columns:1fr 1fr;gap:10px
-}
-.skill{
-padding:14px;background:var(--card2);
-border:1px solid var(--line);border-radius:8px;
-font-size:11px;color:var(--muted)
-}
-.tools{display:flex;flex-wrap:wrap;gap:8px}
-.tool{
-padding:10px 13px;border:1px solid var(--line);
-border-radius:7px;color:var(--muted);font-size:10px
-}
 
-/* EDUCATION */
-.education{
-display:grid;grid-template-columns:1fr 1fr;gap:80px
-}
-.timeline{border-left:1px solid var(--line)}
-.edu{
-position:relative;padding:0 0 42px 35px
-}
-.dot{
-position:absolute;left:-5px;top:3px;width:9px;height:9px;
-border-radius:50%;background:var(--green);
-box-shadow:0 0 14px var(--green)
-}
-.edu-date{
-font-family:monospace;font-size:9px;color:var(--green)
-}
-.edu h3{font-size:17px;margin:8px 0}
-.edu p{font-size:11px;color:var(--muted)}
-
-/* CERTIFICATIONS */
-.certs{
-background:var(--card);border:1px solid var(--line);
-border-radius:15px;padding:30px
-}
-.certs>h3{font-size:21px}
-.note{font-size:10px;color:var(--muted);margin:5px 0 18px}
-.cert{
-padding:16px 0;border-bottom:1px solid var(--line)
-}
-.cert strong{display:block;font-size:12px}
-.cert span{font-size:9px;color:var(--muted)}
-.cert-preview{
-display:none;width:100%;max-height:180px;
-object-fit:contain;margin-top:10px;border-radius:7px
-}
-
-/* ACHIEVEMENT */
-.achievement{
-display:grid;grid-template-columns:70px 1fr auto;
-gap:25px;align-items:center;padding:32px;
-background:linear-gradient(110deg,rgba(140,255,114,.08),var(--card));
-border:1px solid rgba(140,255,114,.2);border-radius:16px
-}
-.achievement-icon{
-width:60px;height:60px;border-radius:12px;
-display:grid;place-items:center;color:var(--green);
-background:rgba(140,255,114,.08);font-size:25px
-}
-.achievement-label{
-font-family:monospace;color:var(--green);
-font-size:9px
-}
-.achievement h3{font-size:20px;margin:8px 0}
-.achievement p{font-size:11px;color:var(--muted)}
-.cs-photo{
-width:90px;height:90px;margin-top:15px;
-background:var(--card2);border:1px dashed var(--green);
-border-radius:9px;display:grid;place-items:center;overflow:hidden
-}
-.cs-photo img{display:none;width:100%;height:100%;object-fit:cover}
-.cs-placeholder{font-size:22px}
-.year{font-family:monospace;color:var(--green);font-size:10px}
-
-/* CONTACT */
-.contact{text-align:center;min-height:65vh;display:grid;place-items:center}
-.contact h2{
-font-size:clamp(43px,7vw,85px);
-line-height:.95;letter-spacing:-5px;margin:18px 0
-}
-.contact p{max-width:600px;margin:auto;color:var(--muted);font-size:13px}
-.contact-buttons{display:flex;justify-content:center;gap:10px;margin-top:28px}
-.contact-info{font-family:monospace;font-size:9px;color:var(--muted);margin-top:25px}
-
-/* FOOTER */
-footer{padding:30px 0;border-top:1px solid var(--line)}
-.footer{
-display:flex;justify-content:space-between;align-items:center
-}
-.footer-logo{font-size:22px;font-weight:bold}
-.footer-logo span{color:var(--green)}
-.footer small{color:var(--muted);font-size:9px}
-
-/* MODAL */
-.modal{
-display:none;position:fixed;inset:0;z-index:2000;
-background:rgba(0,0,0,.8);backdrop-filter:blur(10px);
-align-items:center;justify-content:center;padding:20px
-}
-.modal.show{display:flex}
-.modal-box{
-width:min(680px,100%);max-height:90vh;overflow:auto;
-background:var(--card);border:1px solid var(--line);
-border-radius:18px;padding:38px;position:relative
-}
-.close{
-position:absolute;right:15px;top:15px;
-width:35px;height:35px;border-radius:50%;
-background:var(--card2);color:var(--text);
-border:1px solid var(--line);font-size:20px
-}
-.modal h2{font-size:30px;margin:10px 0}
-.modal-desc{font-size:12px;color:var(--muted)}
-.modal-list{margin-top:20px}
-.modal-list div{
-display:flex;gap:10px;padding:11px 0;
-border-bottom:1px solid var(--line);
-font-size:12px;color:var(--muted)
-}
-.modal-list span{color:var(--green)}
-.modal-image{
-height:230px;margin-top:22px;border-radius:10px;
-background:var(--card2);border:1px dashed var(--green);
-display:flex;align-items:center;justify-content:center;
-overflow:hidden;text-align:center
-}
-.modal-image img{display:none;width:100%;height:100%;object-fit:cover}
-.modal-image-text{font-size:11px;color:var(--muted)}
-.modal-image-text label{
-display:inline-block;margin-top:10px;
-background:var(--green);color:#071007;
-padding:8px 12px;border-radius:6px;font-size:9px;
-font-weight:bold;cursor:pointer
-
-/* MOBILE */
-@media(max-width:900px){
 .links{
-display:none;position:absolute;top:70px;left:0;width:100%;
-background:var(--card);padding:25px;flex-direction:column
+
+    display:flex;
+
+    gap:28px;
 }
-.links.open{display:flex}
-.menu{display:block}
-.hero{grid-template-columns:1fr}
-.photo{order:-1}
-.about,.skills,.education{grid-template-columns:1fr}
-.projects{grid-template-columns:1fr}
-.project-head{display:block}
-.project-intro{margin-top:18px}
-.achievement{grid-template-columns:1fr}
-.year{display:none}
+
+
+.links a{
+
+    font-size:11px;
+
+    color:var(--muted);
+
+    position:relative;
+
+    transition:.3s;
 }
+
+
+.links a:hover{
+
+    color:var(--green-dark);
+}
+
+
+.links a:after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-7px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--green);
+
+    transition:.3s;
+}
+
+
+.links a:hover:after{
+
+    width:100%;
+}
+
+
+.nav-right{
+
+    display:flex;
+
+    gap:9px;
+}
+
+
+.theme,
+.menu{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    border:
+        1px solid var(--line);
+
+    background:var(--card);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    box-shadow:
+        0 5px 18px rgba(49,92,58,.07);
+
+    transition:.3s;
+}
+
+
+.theme:hover{
+
+    transform:rotate(20deg);
+
+}
+
+
+.menu{
+
+    display:none;
+
+    border-radius:9px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    padding-top:120px;
+
+    display:grid;
+
+    grid-template-columns:1.05fr .95fr;
+
+    align-items:center;
+
+    gap:65px;
+
+    position:relative;
+}
+
+
+.hero:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    left:-250px;
+    top:150px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(216,241,227,.85),
+            transparent 70%
+        );
+
+    z-index:-1;
+}
+
+
+.hero:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    right:-200px;
+    top:110px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(244,231,168,.55),
+            transparent 70%
+        );
+
+    z-index:-1;
+}
+
+
+body.dark .hero:before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(35,124,255,.08),
+            transparent 70%
+        );
+}
+
+
+body.dark .hero:after{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(140,255,112,.05),
+            transparent 70%
+        );
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+.eyebrow{
+
+    font-family:monospace;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    color:var(--green-dark);
+}
+
+
+.hero h1{
+
+    font-size:
+        clamp(55px,8vw,100px);
+
+    line-height:.92;
+
+    letter-spacing:-7px;
+
+    margin:24px 0;
+
+    white-space:nowrap;
+}
+
+
+.gradient{
+
+    background:
+        linear-gradient(
+            90deg,
+            #315C3A,
+            #69A84F
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+}
+
+
+body.dark .gradient{
+
+    background:
+        linear-gradient(
+            90deg,
+            #8CFF70,
+            #237CFF
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+}
+
+
+.hero-description{
+
+    max-width:630px;
+
+    font-size:15px;
+
+    color:var(--muted);
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:32px;
+}
+
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:13px 19px;
+
+    border-radius:9px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    border:
+        1px solid var(--line);
+
+    transition:.3s;
+}
+
+
+.btn-primary{
+
+    background:var(--green);
+
+    color:white;
+
+    border-color:var(--green);
+
+    box-shadow:
+        0 8px 22px rgba(111,174,85,.22);
+}
+
+
+body.dark .btn-primary{
+
+    box-shadow:
+        0 8px 22px rgba(140,255,112,.10);
+}
+
+
+.btn-secondary{
+
+    background:var(--card);
+
+    color:var(--green-dark);
+}
+
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 14px 30px rgba(49,92,58,.13);
+}
+
+
+/* =========================================================
+   HERO FINANCIAL CHART
+========================================================= */
+
+.hero-visual{
+
+    position:relative;
+
+    height:520px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+.chart-card{
+
+    width:100%;
+
+    height:430px;
+
+    border:
+        1px solid rgba(49,92,58,.12);
+
+    border-radius:28px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.98),
+            rgba(238,249,242,.94)
+        );
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+}
+
+
+body.dark .chart-card{
+
+    background:
+        linear-gradient(
+            145deg,
+            #0D1828,
+            #08111F
+        );
+
+    border:
+        1px solid rgba(255,255,255,.09);
+}
+
+
+.chart-card:hover{
+
+    box-shadow:var(--shadow-hover);
+}
+
+
+.chart-card:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    right:-100px;
+    top:-100px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(244,231,168,.6),
+            transparent 70%
+        );
+
+    border-radius:50%;
+}
+
+
+body.dark .chart-card:before{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(35,124,255,.08),
+            transparent 70%
+        );
+}
+
+
+.chart-top{
+
+    padding:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+.chart-title{
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    color:var(--muted);
+}
+
+
+.chart-number{
+
+    font-size:25px;
+
+    font-weight:800;
+
+    margin-top:2px;
+}
+
+
+.chart-up{
+
+    font-size:10px;
+
+    color:var(--green-dark);
+
+    padding:7px 10px;
+
+    background:var(--green-light);
+
+    border-radius:20px;
+}
+
+
+.chart{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:30px;
+
+    height:250px;
+}
+
+
+.chart svg{
+
+    width:100%;
+
+    height:100%;
+}
+
+
+.chart-grid{
+
+    stroke:rgba(49,92,58,.10);
+
+    stroke-width:1;
+}
+
+
+body.dark .chart-grid{
+
+    stroke:rgba(255,255,255,.08);
+}
+
+
+.chart-line{
+
+    fill:none;
+
+    stroke:
+        url(#lineGradient);
+
+    stroke-width:4;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    filter:
+        drop-shadow(
+            0 4px 6px rgba(111,174,85,.20)
+        );
+}
+
+
+.floating-card{
+
+    position:absolute;
+
+    background:var(--card);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:13px;
+
+    padding:15px;
+
+    box-shadow:
+        0 15px 40px rgba(49,92,58,.12);
+}
+
+
+.float-one{
+
+    top:70px;
+
+    right:-18px;
+}
+
+
+.float-two{
+
+    bottom:55px;
+
+    left:-25px;
+}
+
+
+.float-label{
+
+    font-size:8px;
+
+    color:var(--muted);
+}
+
+
+.float-value{
+
+    font-size:17px;
+
+    font-weight:800;
+
+    color:var(--green-dark);
+
+    margin-top:3px;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+
+    padding:110px 0;
+
+    border-top:
+        1px solid var(--line);
+
+    position:relative;
+}
+
+
+.section-number{
+
+    font-family:monospace;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    color:var(--green-dark);
+}
+
+
+.section-title{
+
+    font-size:
+        clamp(40px,5vw,65px);
+
+    line-height:1;
+
+    letter-spacing:-4px;
+
+    margin:15px 0 55px;
+}
+
+
+.section-intro{
+
+    max-width:500px;
+
+    font-size:13px;
+
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+}
+
+
+.about-main{
+
+    font-size:14px;
+
+    color:var(--muted);
+}
+
+
+.about-main .lead{
+
+    font-size:21px;
+
+    line-height:1.5;
+
+    color:var(--text);
+
+    margin-bottom:25px;
+}
+
+
+.about-main p{
+
+    margin-bottom:20px;
+}
+
+
+.about-highlight{
+
+    padding:20px;
+
+    border-left:
+        3px solid var(--green);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--green-light),
+            rgba(255,255,255,.4)
+        );
+
+    border-radius:
+        0 12px 12px 0;
+}
+
+
+body.dark .about-highlight{
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(140,255,112,.08),
+            rgba(8,17,31,.2)
+        );
+}
+
+
+.about-highlight strong{
+
+    display:block;
+
+    margin-bottom:5px;
+
+    color:var(--green-dark);
+}
+
+
+.about-highlight span{
+
+    font-size:11px;
+
+    color:var(--muted);
+}
+
+
+.about-cards{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:14px;
+}
+
+
+.about-card{
+
+    padding:25px;
+
+    min-height:190px;
+
+    background:var(--card);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:17px;
+
+    transition:.35s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    box-shadow:
+        0 8px 28px rgba(49,92,58,.045);
+}
+
+
+.about-card:hover{
+
+    transform:translateY(-7px);
+
+    border-color:
+        rgba(111,174,85,.45);
+
+    box-shadow:var(--shadow);
+}
+
+
+.about-icon{
+
+    font-size:26px;
+
+    color:var(--green);
+
+    margin-bottom:auto;
+}
+
+
+.about-card h3{
+
+    font-size:16px;
+
+    margin-bottom:7px;
+
+    color:var(--green-dark);
+}
+
+
+.about-card p{
+
+    font-size:10px;
+
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   INTERNSHIP
+========================================================= */
+
+.internship{
+
+    display:grid;
+
+    grid-template-columns:.9fr 1.1fr;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background:var(--card);
+
+    box-shadow:var(--shadow);
+}
+
+
+.internship-image{
+
+    min-height:470px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #DDF2E3,
+            #FFF8E7
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+body.dark .internship-image{
+
+    background:
+        linear-gradient(
+            135deg,
+            #08111F,
+            #0D1828
+        );
+}
+
+
+.internship-image:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+        rgba(111,174,85,.16);
+
+    filter:blur(60px);
+}
+
+
+.internship-image img{
+
+    display:none;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    position:absolute;
+
+    z-index:2;
+}
+
+
+.image-placeholder{
+
+    position:relative;
+
+    z-index:3;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    padding:25px;
+}
+
+
+.image-placeholder .big{
+
+    font-size:50px;
+
+    margin-bottom:10px;
+
+    color:var(--green);
+}
+
+
+.image-placeholder p{
+
+    font-size:10px;
+
+    margin-bottom:15px;
+}
+
+
+.upload-btn{
+
+    display:inline-block;
+
+    padding:9px 13px;
+
+    background:var(--green);
+
+    color:white;
+
+    border-radius:7px;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+.upload-btn:hover{
+
+    background:var(--green-dark);
+
+    transform:translateY(-2px);
+}
+
+
+.internship-content{
+
+    padding:48px;
+}
+
+
+.company-name{
+
+    font-family:monospace;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    color:var(--green-dark);
+}
+
+
+.internship-content h3{
+
+    font-size:35px;
+
+    margin:8px 0;
+}
+
+
+.internship-date{
+
+    font-size:10px;
+
+    color:var(--muted);
+
+    margin-bottom:30px;
+}
+
+
+.internship-content p{
+
+    font-size:12px;
+
+    color:var(--muted);
+
+    margin-bottom:18px;
+}
+
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-top:25px;
+}
+
+
+.tag{
+
+    padding:7px 10px;
+
+    border:
+        1px solid var(--line);
+
+    background:var(--green-light);
+
+    border-radius:6px;
+
+    font-size:9px;
+
+    color:var(--green-dark);
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    gap:30px;
+}
+
+
+.filters{
+
+    display:flex;
+
+    gap:8px;
+
+    margin:35px 0;
+
+    flex-wrap:wrap;
+}
+
+
+.filter{
+
+    padding:9px 16px;
+
+    border-radius:20px;
+
+    border:
+        1px solid var(--line);
+
+    background:var(--card);
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+.filter.active,
+.filter:hover{
+
+    background:var(--green);
+
+    color:white;
+
+    border-color:var(--green);
+}
+
+
+.projects{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:17px;
+}
+
+
+.project{
+
+    min-height:360px;
+
+    padding:30px;
+
+    background:var(--card);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:18px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+        0 8px 28px rgba(49,92,58,.045);
+}
+
+
+.project:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:190px;
+    height:190px;
+
+    right:-90px;
+
+    top:-90px;
+
+    border-radius:50%;
+
+    background:
+        var(--cream);
+}
+
+
+.project:hover{
+
+    transform:translateY(-8px);
+
+    border-color:
+        rgba(111,174,85,.45);
+
+    box-shadow:var(--shadow-hover);
+}
+
+
+.project-number{
+
+    font-family:monospace;
+
+    font-size:10px;
+
+    color:var(--green-dark);
+}
+
+
+.project h3{
+
+    font-size:24px;
+
+    margin:40px 0 10px;
+}
+
+
+.project p{
+
+    font-size:11px;
+
+    color:var(--muted);
+
+    max-width:500px;
+}
+
+
+.project-footer{
+
+    position:absolute;
+
+    left:30px;
+
+    right:30px;
+
+    bottom:22px;
+
+    padding-top:14px;
+
+    border-top:
+        1px solid var(--line);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:9px;
+
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+}
+
+
+.skill-box{
+
+    padding:32px;
+
+    background:var(--card);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:18px;
+
+    box-shadow:
+        0 8px 28px rgba(49,92,58,.045);
+}
+
+
+.skill-box h3{
+
+    font-size:19px;
+
+    margin-bottom:25px;
+
+    color:var(--green-dark);
+}
+
+
+.skill-items{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+}
+
+
+.skill-item{
+
+    padding:11px 13px;
+
+    background:var(--mint-light);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:8px;
+
+    font-size:10px;
+
+    color:var(--green-dark);
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+}
+
+
+.timeline{
+
+    border-left:
+        1px solid var(--line);
+}
+
+
+.education-item{
+
+    padding:
+        0 0 45px 35px;
+
+    position:relative;
+}
+
+
+.dot{
+
+    position:absolute;
+
+    left:-5px;
+
+    top:5px;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    box-shadow:
+        0 0 15px rgba(111,174,85,.45);
+}
+
+
+.education-date{
+
+    font-family:monospace;
+
+    font-size:9px;
+
+    color:var(--green-dark);
+}
+
+
+.education-item h3{
+
+    font-size:17px;
+
+    margin:8px 0;
+}
+
+
+.education-item p{
+
+    font-size:10px;
+
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.certifications{
+
+    padding:30px;
+
+    border:
+        1px solid var(--line);
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+}
+
+
+.certifications h3{
+
+    font-size:22px;
+
+    color:var(--green-dark);
+}
+
+
+.cert-note{
+
+    font-size:10px;
+
+    color:var(--muted);
+
+    margin:
+        5px 0 20px;
+}
+
+
+.cert{
+
+    padding:16px 0;
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+
+.cert strong{
+
+    font-size:11px;
+
+    display:block;
+
+    margin-bottom:4px;
+}
+
+
+.cert span{
+
+    font-size:9px;
+
+    color:var(--muted);
+
+    display:block;
+
+    margin-bottom:9px;
+}
+
+
+.cert-preview{
+
+    display:none;
+
+    width:100%;
+
+    max-height:170px;
+
+    object-fit:contain;
+
+    margin-top:12px;
+
+    border-radius:8px;
+
+    background:var(--mint-light);
+}
+
+
+/* =========================================================
+   ACHIEVEMENT
+========================================================= */
+
+.achievement{
+
+    display:grid;
+
+    grid-template-columns:70px 1fr auto;
+
+    gap:25px;
+
+    align-items:start;
+
+    padding:35px;
+
+    border:
+        1px solid rgba(111,174,85,.28);
+
+    border-radius:20px;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            rgba(216,241,227,.65),
+            rgba(255,248,231,.65)
+        );
+
+    box-shadow:var(--shadow);
+}
+
+
+body.dark .achievement{
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(8,17,31,.95),
+            rgba(13,24,40,.95)
+        );
+}
+
+
+.achievement-icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:14px;
+
+    background:var(--green-light);
+
+    color:var(--green-dark);
+
+    font-size:25px;
+}
+
+
+.achievement-label{
+
+    font-family:monospace;
+
+    font-size:9px;
+
+    color:var(--green-dark);
+}
+
+
+.achievement h3{
+
+    font-size:22px;
+
+    margin:7px 0;
+}
+
+
+.achievement p{
+
+    font-size:11px;
+
+    color:var(--muted);
+}
+
+
+.cs-photo{
+
+    width:100px;
+
+    height:100px;
+
+    margin-top:18px;
+
+    border:
+        1px dashed var(--green);
+
+    border-radius:10px;
+
+    background:var(--card);
+
+    display:grid;
+
+    place-items:center;
+
+    overflow:hidden;
+}
+
+
+.cs-photo img{
+
+    display:none;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+.cs-placeholder{
+
+    font-size:24px;
+}
+
+
+.year{
+
+    font-family:monospace;
+
+    font-size:10px;
+
+    color:var(--green-dark);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+
+    text-align:center;
+
+    padding:150px 0;
+}
+
+
+.contact h2{
+
+    font-size:
+        clamp(45px,7vw,88px);
+
+    letter-spacing:-6px;
+
+    line-height:.95;
+
+    margin:20px 0;
+}
+
+
+.contact p{
+
+    max-width:570px;
+
+    margin:auto;
+
+    font-size:13px;
+
+    color:var(--muted);
+}
+
+
+.contact-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:30px;
+}
+
+
+.contact-details{
+
+    margin-top:25px;
+
+    font-family:monospace;
+
+    font-size:9px;
+
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:30px 0;
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+
+.footer small{
+
+    font-size:9px;
+
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   PROJECT MODAL
+========================================================= */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:2000;
+
+    background:
+        rgba(25,40,30,.55);
+
+    backdrop-filter:blur(12px);
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+
+body.dark .modal{
+
+    background:
+        rgba(0,0,0,.72);
+}
+
+
+.modal.show{
+
+    display:flex;
+}
+
+
+.modal-box{
+
+    width:min(700px,100%);
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    padding:40px;
+
+    background:var(--card-solid);
+
+    border:
+        1px solid var(--line);
+
+    border-radius:20px;
+
+    position:relative;
+
+    box-shadow:
+        0 30px 90px rgba(49,92,58,.22);
+}
+
+
+.close{
+
+    position:absolute;
+
+    right:15px;
+
+    top:15px;
+
+    width:36px;
+
+    height:36px;
+
+    border-radius:50%;
+
+    border:
+        1px solid var(--line);
+
+    background:var(--card);
+
+    color:var(--text);
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+
+.modal-category{
+
+    font-family:monospace;
+
+    font-size:9px;
+
+    color:var(--green-dark);
+
+    letter-spacing:2px;
+}
+
+
+.modal-box h2{
+
+    font-size:32px;
+
+    margin:8px 0;
+}
+
+
+.modal-description{
+
+    font-size:11px;
+
+    color:var(--muted);
+}
+
+
+.modal-image{
+
+    height:240px;
+
+    margin-top:22px;
+
+    border-radius:12px;
+
+    border:
+        1px dashed var(--green);
+
+    background:var(--mint-light);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    text-align:center;
+}
+
+
+.modal-image img{
+
+    display:none;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+.modal-image-text{
+
+    font-size:10px;
+
+    color:var(--muted);
+}
+
+
+.modal-list{
+
+    margin-top:20px;
+}
+
+
+.modal-list div{
+
+    display:flex;
+
+    gap:12px;
+
+    padding:12px 0;
+
+    border-bottom:
+        1px solid var(--line);
+
+    font-size:11px;
+
+    color:var(--muted);
+}
+
+
+.modal-list span{
+
+    color:var(--green);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .links{
+
+        display:none;
+
+        position:absolute;
+
+        top:72px;
+
+        left:0;
+
+        width:100%;
+
+        padding:25px;
+
+        background:var(--card-solid);
+
+        flex-direction:column;
+    }
+
+    .links.open{
+
+        display:flex;
+    }
+
+    .menu{
+
+        display:block;
+    }
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        padding-top:120px;
+    }
+
+    .hero-visual{
+
+        order:-1;
+
+        height:400px;
+    }
+
+    .hero h1{
+
+        font-size:58px;
+    }
+
+    .chart-card{
+
+        height:340px;
+    }
+
+    .about-grid,
+    .education-grid,
+    .skills-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .internship{
+
+        grid-template-columns:1fr;
+    }
+
+    .internship-image{
+
+        min-height:300px;
+    }
+
+    .projects{
+
+        grid-template-columns:1fr;
+    }
+}
+
+
 @media(max-width:600px){
-.market{height:280px}
-.hero h1{font-size:45px;letter-spacing:-3px}
-.photo{width:270px;height:340px}
-.about-cards{grid-template-columns:1fr}
-.skill-list{grid-template-columns:1fr}
-.hero .buttons,.contact-buttons{flex-direction:column}
-.internship-photo{height:230px}
-.footer{flex-direction:column;gap:12px;text-align:center}
+
+    .hero h1{
+
+        font-size:45px;
+
+        letter-spacing:-4px;
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+    }
+
+    .about-cards{
+
+        grid-template-columns:1fr;
+    }
+
+    .project-header{
+
+        display:block;
+    }
+
+    .achievement{
+
+        grid-template-columns:1fr;
+    }
+
+    .year{
+
+        display:none;
+    }
+
+    .contact-buttons{
+
+        flex-direction:column;
+    }
+
+    .footer{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        text-align:center;
+    }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
 <nav>
+
 <div class="container nav">
 
-<a class="logo" href="#home">TJ<span>.</span></a>
+<a href="#home" class="logo">
+TJ<span>.</span>
+</a>
+
 
 <div class="links" id="links">
+
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#internship">Internship</a>
@@ -423,73 +2295,89 @@ background:var(--card);padding:25px;flex-direction:column
 <a href="#skills">Skills</a>
 <a href="#education">Education</a>
 <a href="#contact">Contact</a>
-</div>
-
-<div class="nav-buttons">
-<button class="theme" onclick="theme()">☀</button>
-<button class="menu" onclick="menu()">☰</button>
-</div>
 
 </div>
+
+
+<div class="nav-right">
+
+<button
+class="theme"
+onclick="toggleTheme()"
+title="Change theme">
+
+☀️
+
+</button>
+
+
+<button
+class="menu"
+onclick="toggleMenu()">
+
+☰
+
+</button>
+
+</div>
+
+</div>
+
 </nav>
 
 
-<!-- OPENING IMAGE -->
-<div class="market">
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-<img src="stock-market.jpg"
-alt="Stock market">
+<header
+class="container hero"
+id="home">
 
-<div class="market-overlay">
 
-<div class="market-text">
+<div class="hero-content">
 
-<div class="small">
-FINANCE • ANALYSIS • VALUATION
-</div>
+<div class="eyebrow">
 
-<h2>
-Understanding Markets.<br>
-Creating Financial Insight.
-</h2>
-
-<p>
-A finance portfolio built around analysis,
-valuation and strategic thinking.
-</p>
+MBA FINANCE · FINANCIAL ANALYSIS · VALUATION
 
 </div>
-</div>
-</div>
 
-
-<!-- HERO -->
-<header class="container hero" id="home">
-
-<div>
-
-<div class="small">
-MBA FINANCE • FINANCIAL ANALYSIS • VALUATION
-</div>
 
 <h1>
+
 Tanisha <span class="gradient">Jain</span>
+
 </h1>
 
-<p>
+
+<p class="hero-description">
+
 MBA Finance student with a strong foundation in Accounting
 and Finance and a passion for understanding the financial
 drivers behind successful business.
+
 </p>
 
-<div class="buttons">
 
-<a class="btn primary" href="#about">
+<div class="hero-buttons">
+
+<a
+href="#about"
+class="btn btn-primary">
+
 Explore My Profile →
+
 </a>
 
-<a class="btn secondary" href="resume.pdf" target="_blank">
+
+<a
+href="resume.pdf"
+target="_blank"
+class="btn btn-secondary">
+
 ↓ View Resume
+
 </a>
 
 </div>
@@ -497,255 +2385,603 @@ Explore My Profile →
 </div>
 
 
-<!-- PROFILE PHOTO -->
+<!-- FINANCIAL VISUAL -->
+
+<div class="hero-visual">
+
+
+<div class="chart-card">
+
+
+<div class="chart-top">
+
 <div>
 
-<div class="photo">
+<div class="chart-title">
 
-<img id="profileImage">
-
-<div class="placeholder" id="profilePlaceholder">
-
-<div class="placeholder-icon">👤</div>
-
-<h3>Insert Your Photo</h3>
-
-<p>
-Add your professional photograph here.
-</p>
-
-<label class="upload" for="profileInput">
-Upload Photo
-</label>
-
-<input id="profileInput" type="file" accept="image/*">
+FINANCIAL ANALYSIS
 
 </div>
+
+
+<div class="chart-number">
+
+Market Insights
+
 </div>
+
+</div>
+
+
+<div class="chart-up">
+
+▲ Analytical Mindset
+
+</div>
+
+</div>
+
+
+<div class="chart">
+
+<svg
+viewBox="0 0 700 280"
+preserveAspectRatio="none">
+
+
+<defs>
+
+<linearGradient
+id="lineGradient"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="0%">
+
+<stop
+offset="0%"
+style="stop-color:#69A84F"/>
+
+<stop
+offset="50%"
+style="stop-color:#8BC89D"/>
+
+<stop
+offset="100%"
+style="stop-color:#315C3A"/>
+
+</linearGradient>
+
+</defs>
+
+
+<line
+x1="0"
+y1="40"
+x2="700"
+y2="40"
+class="chart-grid"/>
+
+
+<line
+x1="0"
+y1="100"
+x2="700"
+y2="100"
+class="chart-grid"/>
+
+
+<line
+x1="0"
+y1="160"
+x2="700"
+y2="160"
+class="chart-grid"/>
+
+
+<line
+x1="0"
+y1="220"
+x2="700"
+y2="220"
+class="chart-grid"/>
+
+
+<polyline
+class="chart-line"
+points="
+0,210
+55,180
+95,195
+140,125
+185,145
+225,80
+270,115
+315,70
+355,110
+400,55
+450,90
+500,45
+550,75
+600,30
+650,55
+700,20
+"/>
+
+</svg>
+
+</div>
+
+</div>
+
+
+<div class="floating-card float-one">
+
+<div class="float-label">
+
+FOCUS
+
+</div>
+
+<div class="float-value">
+
+Finance
+
+</div>
+
+</div>
+
+
+<div class="floating-card float-two">
+
+<div class="float-label">
+
+APPROACH
+
+</div>
+
+<div class="float-value">
+
+Data → Insight
+
+</div>
+
+</div>
+
 
 </div>
 
 </header>
 
 
-<!-- ABOUT -->
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
 <section id="about">
 
 <div class="container">
 
-<div class="label">01 / ABOUT ME</div>
 
-<h2 class="title">
-Understanding Numbers.<br>
-<span class="gradient">Understanding Business.</span>
+<div class="section-number">
+
+01 / ABOUT ME
+
+</div>
+
+
+<h2 class="section-title">
+
+Analytical thinking.<br>
+
+<span class="gradient">
+
+Business perspective.
+
+</span>
+
 </h2>
 
-<div class="about">
 
-<div class="about-text">
+<div class="about-grid">
 
-<p class="intro">
+
+<div class="about-main">
+
+
+<p class="lead">
+
 I am an MBA Finance student with a strong foundation
 in Accounting and Finance and a passion for understanding
 the financial drivers behind successful business.
+
 </p>
 
+
 <p>
+
 My academic journey, internship experience and hands-on
 finance projects have equipped me with practical skills
 to analyse financial statements and evaluate investments
 business problems with a structured analytical approach.
+
 </p>
 
+
 <p>
+
 Driven by curiosity, integrity, and continuous learning,
 I aspire to build a career in Corporate Finance where
 I can contribute analytical expertise while creating
 long-term value for organization.
+
 </p>
 
-<div class="highlight">
-<strong>Professional Direction</strong>
+
+<div class="about-highlight">
+
+<strong>
+
+Professional Direction
+
+</strong>
+
+
 <span>
-Corporate Finance • Financial Analysis •
-Valuation • Financial Consulting
+
+Corporate Finance · Financial Analysis · Valuation ·
+Financial Consulting
+
 </span>
+
 </div>
 
 </div>
+
 
 <div class="about-cards">
 
-<div class="info">
-<div class="info-icon">↗</div>
-<h3>Financial Analysis</h3>
-<p>
-Understanding profitability, liquidity,
-solvency and business performance.
-</p>
+
+<div class="about-card">
+
+<div class="about-icon">
+↗
 </div>
 
-<div class="info">
-<div class="info-icon">◈</div>
-<h3>Valuation</h3>
-<p>
-Applying valuation techniques to support
-investment and strategic decisions.
-</p>
-</div>
+<h3>
 
-<div class="info">
-<div class="info-icon">▣</div>
-<h3>Corporate Finance</h3>
-<p>
-Connecting financial decisions with
-long-term business value.
-</p>
-</div>
+Financial Analysis
 
-<div class="info">
-<div class="info-icon">★</div>
-<h3>Continuous Learning</h3>
+</h3>
+
 <p>
-Building practical expertise through
-projects, certifications and experience.
+
+Interpreting financial statements and identifying
+performance drivers.
+
 </p>
-</div>
 
 </div>
+
+
+<div class="about-card">
+
+<div class="about-icon">
+◈
 </div>
+
+<h3>
+
+Valuation
+
+</h3>
+
+<p>
+
+Applying valuation frameworks to understand
+business value.
+
+</p>
+
 </div>
+
+
+<div class="about-card">
+
+<div class="about-icon">
+▣
+</div>
+
+<h3>
+
+Corporate Finance
+
+</h3>
+
+<p>
+
+Connecting financial decisions with strategic
+business objectives.
+
+</p>
+
+</div>
+
+
+<div class="about-card">
+
+<div class="about-icon">
+✦
+</div>
+
+<h3>
+
+Continuous Learning
+
+</h3>
+
+<p>
+
+Building practical knowledge through projects,
+certifications and experience.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- INTERNSHIP -->
+<!-- =========================================================
+     INTERNSHIP
+========================================================= -->
+
 <section id="internship">
 
 <div class="container">
 
-<div class="label">02 / INTERNSHIP</div>
 
-<h2 class="title">
-Practical Finance.<br>
-Real Business.
+<div class="section-number">
+
+02 / INTERNSHIP
+
+</div>
+
+
+<h2 class="section-title">
+
+From classroom<br>
+
+<span class="gradient">
+
+to corporate exposure.
+
+</span>
+
 </h2>
 
-<div class="internship-card">
 
-<div class="internship-photo">
+<div class="internship">
 
-<img id="internshipImage">
 
-<div class="internship-placeholder" id="internshipPlaceholder">
+<div class="internship-image">
 
-<div>🏢</div>
+
+<img
+id="internshipImage">
+
+
+<div
+class="image-placeholder"
+id="internshipPlaceholder">
+
+
+<div class="big">
+⌂
+</div>
+
 
 <p>
-Add your internship/company photograph
+
+Add your company / internship photograph
+
 </p>
 
-<label class="upload" for="internshipInput">
-Upload Internship Image
+
+<label
+class="upload-btn"
+for="internshipInput">
+
+Upload Image
+
 </label>
 
-<input id="internshipInput"
+
+<input
+id="internshipInput"
 type="file"
-accept="image/*">
+accept="image/*"
+hidden>
 
 </div>
+
 </div>
 
-<div class="internship-info">
 
-<div class="company">
+<div class="internship-content">
+
+
+<div class="company-name">
+
 IOL CHEMICALS & PHARMACEUTICALS LTD
+
 </div>
 
-<h3>Finance Intern</h3>
 
-<div class="date">
-Ludhiana · June 2026 – July 2026
+<h3>
+
+Finance Intern
+
+</h3>
+
+
+<div class="internship-date">
+
+Ludhiana · Summer Internship
+
 </div>
+
 
 <p>
+
 Evaluated six years of financial statements to assess
-liquidity, profitability, solvency, efficiency and cash
-flow, providing a holistic view of company performance.
+liquidity, profitability, solvency, efficiency and
+cash flow, providing a holistic view of company performance.
+
 </p>
 
+
 <p>
+
 Developed a comprehensive financial model incorporating
 trend analysis and common-size statements to generate
 actionable financial insights.
+
 </p>
 
+
 <p>
+
 Delivered a report that revealed declining profitability
 despite stable revenue, assessed creditworthiness and
 recommended actions based on financial performance.
+
 </p>
+
 
 <div class="tags">
 
-<span class="tag">Financial Statements</span>
-<span class="tag">Ratio Analysis</span>
-<span class="tag">Trend Analysis</span>
-<span class="tag">Creditworthiness</span>
+<span class="tag">
+Financial Statements
+</span>
+
+<span class="tag">
+Ratio Analysis
+</span>
+
+<span class="tag">
+Trend Analysis
+</span>
+
+<span class="tag">
+Cash Flow
+</span>
+
+<span class="tag">
+Creditworthiness
+</span>
 
 </div>
 
 </div>
+
 </div>
+
 </div>
+
 </section>
 
 
-<!-- PROJECTS -->
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
 <section id="projects">
 
 <div class="container">
 
-<div class="project-head">
+
+<div class="project-header">
+
 
 <div>
 
-<div class="label">03 / SELECTED WORK</div>
+<div class="section-number">
 
-<h2 class="title">
-Finance Projects.<br>
-Real Analysis.
+03 / PROJECTS
+
+</div>
+
+
+<h2 class="section-title">
+
+Selected work.<br>
+
+<span class="gradient">
+
+Applied finance.
+
+</span>
+
 </h2>
 
 </div>
 
-<p class="project-intro">
-Selected academic and practical projects demonstrating
-financial analysis, valuation, working capital and
-business strategy capabilities.
+
+<p class="section-intro">
+
+A selection of academic and practical projects
+showcasing financial analysis, valuation,
+working capital and strategic thinking.
+
 </p>
 
 </div>
 
+
 <div class="filters">
 
-<button class="filter active"
+
+<button
+class="filter active"
 onclick="filterProjects('all',this)">
+
 All
+
 </button>
 
-<button class="filter"
+
+<button
+class="filter"
 onclick="filterProjects('valuation',this)">
+
 Valuation
+
 </button>
 
-<button class="filter"
+
+<button
+class="filter"
 onclick="filterProjects('analysis',this)">
+
 Financial Analysis
+
 </button>
 
-<button class="filter"
+
+<button
+class="filter"
 onclick="filterProjects('business',this)">
+
 Business
+
 </button>
 
 </div>
@@ -754,49 +2990,79 @@ Business
 <div class="projects">
 
 
-<!-- M&A -->
-<div class="project"
+<div
+class="project"
 data-category="valuation"
 onclick="openProject(
 'M&A Valuation Model',
-'Valuation',
+'VALUATION',
 [
 'Developed a financial model to evaluate the feasibility and value creation potential of an M&A transaction.',
 'Performed company valuation, synergy analysis and accretion/dilution assessment.',
 'Generated insights on deal value, shareholder impact and strategic fit.'
 ])">
 
-<div class="project-icon">M&A</div>
 
-<div class="category">VALUATION</div>
+<div class="project-number">
 
-<h3>M&A Valuation Model</h3>
+01 / M&A
+
+</div>
+
+
+<h3>
+
+M&A Valuation Model
+
+</h3>
+
 
 <p>
+
 Financial model evaluating merger feasibility,
 value creation, synergy potential and shareholder impact.
+
 </p>
 
+
 <div class="tags">
-<span class="tag">Financial Modeling</span>
-<span class="tag">Valuation</span>
-<span class="tag">M&A</span>
+
+<span class="tag">
+Financial Modeling
+</span>
+
+<span class="tag">
+Valuation
+</span>
+
+<span class="tag">
+M&A
+</span>
+
 </div>
 
-<div class="project-bottom">
-<span>May 2026</span>
-<span>View Case Study →</span>
-</div>
+
+<div class="project-footer">
+
+<span>
+Finance
+</span>
+
+<span>
+View Case Study →
+</span>
 
 </div>
 
+</div>
 
-<!-- NMDC -->
-<div class="project"
+
+<div
+class="project"
 data-category="valuation"
 onclick="openProject(
 'NMDC Steel Valuation Model',
-'Valuation',
+'VALUATION',
 [
 'Analysed five years of financial statements.',
 'Reformulated financial statements and performed common-size and ratio analysis.',
@@ -804,37 +3070,67 @@ onclick="openProject(
 'Compared intrinsic and market value to support investment decision-making.'
 ])">
 
-<div class="project-icon">NMDC</div>
 
-<div class="category">VALUATION</div>
+<div class="project-number">
 
-<h3>NMDC Steel Valuation Model</h3>
+02 / VALUATION
+
+</div>
+
+
+<h3>
+
+NMDC Steel Valuation Model
+
+</h3>
+
 
 <p>
-Integrated financial valuation model using five years
-of financial statements and investment metrics.
+
+Integrated financial valuation model using financial
+statements and investment metrics.
+
 </p>
 
+
 <div class="tags">
-<span class="tag">NPV</span>
-<span class="tag">IRR</span>
-<span class="tag">Payback</span>
+
+<span class="tag">
+NPV
+</span>
+
+<span class="tag">
+IRR
+</span>
+
+<span class="tag">
+Payback
+</span>
+
 </div>
 
-<div class="project-bottom">
-<span>Feb 2026</span>
-<span>View Case Study →</span>
-</div>
+
+<div class="project-footer">
+
+<span>
+Valuation
+</span>
+
+<span>
+View Case Study →
+</span>
 
 </div>
 
+</div>
 
-<!-- WORKING CAPITAL -->
-<div class="project"
+
+<div
+class="project"
 data-category="analysis"
 onclick="openProject(
 'Working Capital Analysis',
-'Financial Analysis',
+'FINANCIAL ANALYSIS',
 [
 'Analysed the working capital cycle of Dixon Technologies.',
 'Evaluated supplier credit terms and financing strategies.',
@@ -842,37 +3138,67 @@ onclick="openProject(
 'Focused on inventory-to-cash conversion and financial stability.'
 ])">
 
-<div class="project-icon">WC</div>
 
-<div class="category">FINANCIAL ANALYSIS</div>
+<div class="project-number">
 
-<h3>Working Capital Analysis</h3>
+03 / ANALYSIS
+
+</div>
+
+
+<h3>
+
+Working Capital Analysis
+
+</h3>
+
 
 <p>
-Analysis of Dixon Technologies working capital cycle
-and operational efficiency.
+
+Analysis of working capital cycle and operational
+efficiency.
+
 </p>
 
+
 <div class="tags">
-<span class="tag">Working Capital</span>
-<span class="tag">CCC</span>
-<span class="tag">Efficiency</span>
+
+<span class="tag">
+Working Capital
+</span>
+
+<span class="tag">
+CCC
+</span>
+
+<span class="tag">
+Efficiency
+</span>
+
 </div>
 
-<div class="project-bottom">
-<span>Nov 2025</span>
-<span>View Case Study →</span>
-</div>
+
+<div class="project-footer">
+
+<span>
+Analysis
+</span>
+
+<span>
+View Case Study →
+</span>
 
 </div>
 
+</div>
 
-<!-- ROOTSY -->
-<div class="project"
+
+<div
+class="project"
 data-category="business"
 onclick="openProject(
 'Rootsy Branding Strategy',
-'Business Strategy',
+'BUSINESS STRATEGY',
 [
 'Conducted market research and feasibility analysis.',
 'Developed brand identity and target audience strategy.',
@@ -880,37 +3206,67 @@ onclick="openProject(
 'Generated sales through targeted marketing and sales execution.'
 ])">
 
-<div class="project-icon">R</div>
 
-<div class="category">BUSINESS STRATEGY</div>
+<div class="project-number">
 
-<h3>Rootsy Branding Strategy</h3>
+04 / STRATEGY
+
+</div>
+
+
+<h3>
+
+Rootsy Branding Strategy
+
+</h3>
+
 
 <p>
+
 Transformed an unbranded plant-based product
 into a market-ready brand.
+
 </p>
 
+
 <div class="tags">
-<span class="tag">Market Research</span>
-<span class="tag">Branding</span>
-<span class="tag">Strategy</span>
+
+<span class="tag">
+Market Research
+</span>
+
+<span class="tag">
+Branding
+</span>
+
+<span class="tag">
+Strategy
+</span>
+
 </div>
 
-<div class="project-bottom">
-<span>Oct 2025</span>
-<span>View Case Study →</span>
-</div>
+
+<div class="project-footer">
+
+<span>
+Business
+</span>
+
+<span>
+View Case Study →
+</span>
 
 </div>
 
+</div>
 
-<!-- TARGET COSTING -->
-<div class="project"
+
+<div
+class="project"
 data-category="business"
 onclick="openProject(
 'Strategic Cost Management',
-'Target Costing',
+'TARGET COSTING',
 [
 'Applied target costing methodology to a posture-corrector smart band.',
 'Conducted competitor and survey analysis.',
@@ -918,194 +3274,420 @@ onclick="openProject(
 'Proposed cost-efficient and user-friendly specifications.'
 ])">
 
-<div class="project-icon">SCM</div>
 
-<div class="category">TARGET COSTING</div>
+<div class="project-number">
 
-<h3>Strategic Cost Management</h3>
+05 / COST
+
+</div>
+
+
+<h3>
+
+Strategic Cost Management
+
+</h3>
+
 
 <p>
+
 Target costing project focused on a posture-corrector
 smart band.
+
 </p>
 
+
 <div class="tags">
-<span class="tag">Target Costing</span>
-<span class="tag">Cost Management</span>
-<span class="tag">Research</span>
+
+<span class="tag">
+Target Costing
+</span>
+
+<span class="tag">
+Cost Management
+</span>
+
+<span class="tag">
+Research
+</span>
+
 </div>
 
-<div class="project-bottom">
-<span>Aug 2025</span>
-<span>View Case Study →</span>
-</div>
+
+<div class="project-footer">
+
+<span>
+Strategy
+</span>
+
+<span>
+View Case Study →
+</span>
 
 </div>
 
 </div>
+
+
 </div>
+
+</div>
+
 </section>
 
 
-<!-- SKILLS -->
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
 <section id="skills">
 
 <div class="container">
 
-<div class="label">04 / SKILLS</div>
 
-<h2 class="title">
-Tools I use to<br>
-solve problems.
+<div class="section-number">
+
+04 / SKILLS
+
+</div>
+
+
+<h2 class="section-title">
+
+Tools for<br>
+
+<span class="gradient">
+
+financial thinking.
+
+</span>
+
 </h2>
 
-<div class="skills">
 
-<div class="skill-card">
+<div class="skills-grid">
 
-<h3>Finance & Analysis</h3>
 
-<div class="skill-list">
+<div class="skill-box">
 
-<div class="skill">Financial Analysis</div>
-<div class="skill">Financial Modeling</div>
-<div class="skill">Valuation</div>
-<div class="skill">Ratio Analysis</div>
-<div class="skill">Financial Statements</div>
-<div class="skill">Cash Flow Analysis</div>
+<h3>
 
-</div>
-</div>
+Finance & Analysis
 
-<div class="skill-card">
+</h3>
 
-<h3>Tools & Platforms</h3>
+<div class="skill-items">
 
-<div class="tools">
+<span class="skill-item">
+Financial Analysis
+</span>
 
-<span class="tool">MS Excel</span>
-<span class="tool">Power BI</span>
-<span class="tool">Tableau</span>
-<span class="tool">PowerPoint</span>
-<span class="tool">Canva</span>
-<span class="tool">Tally</span>
+<span class="skill-item">
+Financial Modeling
+</span>
 
-</div>
+<span class="skill-item">
+Valuation
+</span>
 
-<h3 style="margin-top:40px">Power Skills</h3>
+<span class="skill-item">
+Ratio Analysis
+</span>
 
-<div class="tools">
+<span class="skill-item">
+Financial Statements
+</span>
 
-<span class="tool">Time Management</span>
-<span class="tool">Problem Solving</span>
-<span class="tool">Leadership</span>
-<span class="tool">Decision Making</span>
+<span class="skill-item">
+Cash Flow Analysis
+</span>
 
 </div>
 
 </div>
 
+
+<div class="skill-box">
+
+<h3>
+
+Tools & Technologies
+
+</h3>
+
+<div class="skill-items">
+
+<span class="skill-item">
+MS Excel
+</span>
+
+<span class="skill-item">
+Power BI
+</span>
+
+<span class="skill-item">
+Tableau
+</span>
+
+<span class="skill-item">
+PowerPoint
+</span>
+
+<span class="skill-item">
+Canva
+</span>
+
+<span class="skill-item">
+Tally
+</span>
+
 </div>
+
 </div>
+
+
+<div class="skill-box">
+
+<h3>
+
+Professional Strengths
+
+</h3>
+
+<div class="skill-items">
+
+<span class="skill-item">
+Problem Solving
+</span>
+
+<span class="skill-item">
+Decision Making
+</span>
+
+<span class="skill-item">
+Time Management
+</span>
+
+<span class="skill-item">
+Leadership
+</span>
+
+<span class="skill-item">
+Analytical Thinking
+</span>
+
+<span class="skill-item">
+Communication
+</span>
+
+</div>
+
+</div>
+
+
+<div class="skill-box">
+
+<h3>
+
+Finance Interests
+
+</h3>
+
+<div class="skill-items">
+
+<span class="skill-item">
+Corporate Finance
+</span>
+
+<span class="skill-item">
+Financial Consulting
+</span>
+
+<span class="skill-item">
+Investment Analysis
+</span>
+
+<span class="skill-item">
+Business Valuation
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- EDUCATION -->
+<!-- =========================================================
+     EDUCATION
+========================================================= -->
+
 <section id="education">
 
 <div class="container">
 
-<div class="label">05 / EDUCATION & CERTIFICATIONS</div>
 
-<h2 class="title">
-Academic Journey.<br>
-Professional Credentials.
+<div class="section-number">
+
+05 / EDUCATION
+
+</div>
+
+
+<h2 class="section-title">
+
+Academic foundation.<br>
+
+<span class="gradient">
+
+Professional credentials.
+
+</span>
+
 </h2>
 
-<div class="education">
+
+<div class="education-grid">
+
 
 <div class="timeline">
 
-<div class="edu">
+
+<div class="education-item">
 
 <div class="dot"></div>
 
-<div class="edu-date">
-AUG 2025 – PRESENT
+<div class="education-date">
+
+AUG 2025 — PRESENT
+
 </div>
 
 <h3>
-Master of Business Administration – Finance
+
+Master of Business Administration — Finance
+
 </h3>
 
 <p>
+
 Lovely Professional University · Phagwara, Punjab
+
 </p>
 
 </div>
 
-<div class="edu">
+
+<div class="education-item">
 
 <div class="dot"></div>
 
-<div class="edu-date">
-AUG 2022 – MAY 2025
+<div class="education-date">
+
+AUG 2022 — MAY 2025
+
 </div>
 
 <h3>
-Bachelor of Commerce – Accounting & Finance (Hons.)
+
+Bachelor of Commerce — Accounting & Finance
+
 </h3>
 
 <p>
+
 Shree Atam Vallabh Jain College · Ludhiana
+
 </p>
 
 </div>
 
-<div class="edu">
+
+<div class="education-item">
 
 <div class="dot"></div>
 
-<div class="edu-date">
-APR 2021 – MAR 2022
+<div class="education-date">
+
+APR 2021 — MAR 2022
+
 </div>
 
-<h3>Intermediate</h3>
+<h3>
+
+Intermediate
+
+</h3>
 
 <p>
+
 Bhartiya Vidya Mandir Sr. Sec. School · Ludhiana
+
 </p>
 
 </div>
+
 
 </div>
 
 
 <!-- CERTIFICATIONS -->
 
-<div class="certs">
+<div class="certifications">
 
-<h3>Certifications</h3>
+<h3>
 
-<p class="note">
-Add your certificate images using the buttons below.
-</p>
+Certifications
+
+</h3>
+
+
+<div class="cert-note">
+
+Add your certificate images using the upload buttons.
+
+</div>
+
 
 <div class="cert">
 
 <strong>
+
 NISM VA Mutual Fund Distributor Certificate
+
 </strong>
 
-<span>NISM · Mar 2026</span><br>
+<span>
 
-<label class="upload" for="cert1">
+NISM · Mar 2026
+
+</span>
+
+
+<label
+class="upload-btn"
+for="cert1">
+
 + Add Certificate
+
 </label>
 
-<input id="cert1" type="file" accept="image/*">
 
-<img id="certPreview1" class="cert-preview">
+<input
+id="cert1"
+type="file"
+accept="image/*"
+hidden>
+
+
+<img
+id="certPreview1"
+class="cert-preview">
 
 </div>
 
@@ -1113,18 +3695,37 @@ NISM VA Mutual Fund Distributor Certificate
 <div class="cert">
 
 <strong>
+
 SEBI Investor Awareness Test
+
 </strong>
 
-<span>NISM · Sep 2025</span><br>
+<span>
 
-<label class="upload" for="cert2">
+NISM · Sep 2025
+
+</span>
+
+
+<label
+class="upload-btn"
+for="cert2">
+
 + Add Certificate
+
 </label>
 
-<input id="cert2" type="file" accept="image/*">
 
-<img id="certPreview2" class="cert-preview">
+<input
+id="cert2"
+type="file"
+accept="image/*"
+hidden>
+
+
+<img
+id="certPreview2"
+class="cert-preview">
 
 </div>
 
@@ -1132,18 +3733,37 @@ SEBI Investor Awareness Test
 <div class="cert">
 
 <strong>
+
 Investment Banking Workshop
+
 </strong>
 
-<span>Bank of New York · Aug 2025</span><br>
+<span>
 
-<label class="upload" for="cert3">
+Bank of New York · Aug 2025
+
+</span>
+
+
+<label
+class="upload-btn"
+for="cert3">
+
 + Add Certificate
+
 </label>
 
-<input id="cert3" type="file" accept="image/*">
 
-<img id="certPreview3" class="cert-preview">
+<input
+id="cert3"
+type="file"
+accept="image/*"
+hidden>
+
+
+<img
+id="certPreview3"
+class="cert-preview">
 
 </div>
 
@@ -1151,18 +3771,37 @@ Investment Banking Workshop
 <div class="cert">
 
 <strong>
+
 MS Excel, Tableau & Power BI
+
 </strong>
 
-<span>LPU · Aug 2025</span><br>
+<span>
 
-<label class="upload" for="cert4">
+LPU · Aug 2025
+
+</span>
+
+
+<label
+class="upload-btn"
+for="cert4">
+
 + Add Certificate
+
 </label>
 
-<input id="cert4" type="file" accept="image/*">
 
-<img id="certPreview4" class="cert-preview">
+<input
+id="cert4"
+type="file"
+accept="image/*"
+hidden>
+
+
+<img
+id="certPreview4"
+class="cert-preview">
 
 </div>
 
@@ -1170,460 +3809,851 @@ MS Excel, Tableau & Power BI
 <div class="cert">
 
 <strong>
+
 The Practical Marketer
+
 </strong>
 
-<span>LPU · Sep 2025</span><br>
+<span>
 
-<label class="upload" for="cert5">
+LPU · Sep 2025
+
+</span>
+
+
+<label
+class="upload-btn"
+for="cert5">
+
 + Add Certificate
+
 </label>
 
-<input id="cert5" type="file" accept="image/*">
 
-<img id="certPreview5" class="cert-preview">
+<input
+id="cert5"
+type="file"
+accept="image/*"
+hidden>
+
+
+<img
+id="certPreview5"
+class="cert-preview">
+
+</div>
+
 
 </div>
 
 </div>
+
 </div>
-</div>
+
 </section>
 
 
-<!-- ACHIEVEMENT -->
+<!-- =========================================================
+     ACHIEVEMENT
+========================================================= -->
+
 <section>
 
 <div class="container">
 
-<div class="label">06 / ACHIEVEMENT</div>
 
-<h2 class="title">
-A milestone that<br>
-shaped my journey.
+<div class="section-number">
+
+06 / ACHIEVEMENT
+
+</div>
+
+
+<h2 class="section-title">
+
+A milestone in<br>
+
+<span class="gradient">
+
+my professional journey.
+
+</span>
+
 </h2>
+
 
 <div class="achievement">
 
-<div class="achievement-icon">★</div>
+
+<div class="achievement-icon">
+
+★
+
+</div>
+
 
 <div>
 
+
 <div class="achievement-label">
+
 PROFESSIONAL ACHIEVEMENT
+
 </div>
 
+
 <h3>
+
 CS Executive Examination — Both Groups Cleared
+
 </h3>
 
+
 <p>
+
 Cleared the Company Secretary Executive level through
 ICSI, strengthening knowledge of corporate laws,
 finance and governance.
+
 </p>
+
 
 <div class="cs-photo">
 
 <img id="csImage">
 
-<div id="csPlaceholder" class="cs-placeholder">
+
+<div
+id="csPlaceholder"
+class="cs-placeholder">
+
 📷
-</div>
 
 </div>
 
-<label class="upload" for="csInput">
+</div>
+
+
+<label
+class="upload-btn"
+for="csInput">
+
 Add Your Photo
+
 </label>
 
-<input id="csInput" type="file" accept="image/*">
+
+<input
+id="csInput"
+type="file"
+accept="image/*"
+hidden>
 
 </div>
 
-<div class="year">2025</div>
+
+<div class="year">
+
+2025
 
 </div>
+
+
 </div>
+
+</div>
+
 </section>
 
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+class="contact"
+id="contact">
 
 <div class="container">
 
-<div class="label">07 / LET'S CONNECT</div>
+
+<div class="section-number">
+
+07 / CONTACT
+
+</div>
+
 
 <h2>
-Let's talk about<br>
-<span class="gradient">finance & opportunities.</span>
+
+Let's build<br>
+
+<span class="gradient">
+
+something valuable.
+
+</span>
+
 </h2>
 
+
 <p>
+
 I'm interested in opportunities where financial analysis,
 valuation and strategic thinking can create measurable
 business impact.
+
 </p>
+
 
 <div class="contact-buttons">
 
-<a class="btn primary"
+
+<a
+class="btn btn-primary"
 href="mailto:tanishajain315@gmail.com">
+
 ✉ Email Me
+
 </a>
 
-<a class="btn secondary"
+
+<a
+class="btn btn-secondary"
 href="https://www.linkedin.com/in/tanisha-jain207"
 target="_blank">
+
 in LinkedIn
+
 </a>
 
-</div>
-
-<div class="contact-info">
-tanishajain315@gmail.com • India
-</div>
 
 </div>
+
+
+<div class="contact-details">
+
+tanishajain315@gmail.com · India
+
+</div>
+
+
+</div>
+
 </section>
 
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
 <div class="container footer">
 
+
 <div>
-<div class="footer-logo">TJ<span>.</span></div>
-<small>Finance • Valuation • Corporate Finance</small>
+
+<strong>
+
+TJ<span style="color:var(--green)">.</span>
+
+</strong>
+
+
+<small>
+
+Finance · Valuation · Corporate Finance
+
+</small>
+
 </div>
 
-<small>© 2026 Tanisha Jain</small>
 
-<a href="https://www.linkedin.com/in/tanisha-jain207"
+<small>
+
+© 2026 Tanisha Jain
+
+</small>
+
+
+<a
+href="https://www.linkedin.com/in/tanisha-jain207"
 target="_blank">
+
 LinkedIn ↗
+
 </a>
 
+
 </div>
+
 </footer>
 
 
-<!-- PROJECT MODAL -->
-<div class="modal" id="modal">
+<!-- =========================================================
+     PROJECT MODAL
+========================================================= -->
+
+<div
+class="modal"
+id="modal">
+
 
 <div class="modal-box">
 
-<button class="close" onclick="closeModal()">×</button>
 
-<div class="small" id="modalCategory"></div>
+<button
+class="close"
+onclick="closeModal()">
 
-<h2 id="modalTitle"></h2>
+×
 
-<p class="modal-desc">
-Key work and outcomes from this project:
+</button>
+
+
+<div
+class="modal-category"
+id="modalCategory">
+</div>
+
+
+<h2
+id="modalTitle">
+</h2>
+
+
+<p class="modal-description">
+
+Key work and outcomes from this project.
+
 </p>
 
-<!-- IMAGE UPLOAD -->
+
 <div class="modal-image">
 
-<img id="modalImage">
 
-<div class="modal-image-text" id="modalImageText">
+<img
+id="modalImage">
 
-🖼️<br>
+
+<div
+class="modal-image-text"
+id="modalImageText">
+
+🖼️
+
+<br><br>
 
 Add an image related to this project
 
-<br>
+<br><br>
 
-<label class="upload" for="projectImageInput">
+
+<label
+class="upload-btn"
+for="projectImageInput">
+
 Upload Project Image
+
 </label>
 
-<input id="projectImageInput"
+
+<input
+id="projectImageInput"
 type="file"
-accept="image/*">
+accept="image/*"
+hidden>
 
 </div>
 
 </div>
 
-<div class="modal-list" id="modalList"></div>
+
+<div
+class="modal-list"
+id="modalList">
+</div>
+
 
 </div>
+
 </div>
 
 
 <script>
 
-/* THEME */
-function theme(){
+/* =========================================================
+   DARK / LIGHT MODE
+========================================================= */
 
-document.body.classList.toggle("light");
+function toggleTheme(){
 
-let b=document.querySelector(".theme");
+    document.body.classList.toggle("dark");
 
-if(document.body.classList.contains("light")){
+    const button =
+        document.querySelector(".theme");
 
-b.innerHTML="🌙";
-localStorage.setItem("theme","light");
 
-}else{
+    if(
+        document.body.classList.contains("dark")
+    ){
 
-b.innerHTML="☀";
-localStorage.setItem("theme","dark");
+        button.innerHTML="☀️";
+
+        localStorage.setItem(
+            "theme",
+            "dark"
+        );
+
+    }
+
+    else{
+
+        button.innerHTML="🌙";
+
+        localStorage.setItem(
+            "theme",
+            "light"
+        );
+
+    }
 
 }
 
+
+/* =========================================================
+   REMEMBER SELECTED THEME
+========================================================= */
+
+if(
+    localStorage.getItem("theme")==="dark"
+){
+
+    document.body.classList.add("dark");
+
+    document.querySelector(".theme")
+        .innerHTML="☀️";
+
 }
 
-if(localStorage.getItem("theme")==="light"){
+else{
 
-document.body.classList.add("light");
-document.querySelector(".theme").innerHTML="🌙";
+    document.querySelector(".theme")
+        .innerHTML="🌙";
 
 }
 
 
-/* MOBILE MENU */
-function menu(){
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMenu(){
+
+    document
+        .getElementById("links")
+        .classList
+        .toggle("open");
+
+}
+
+
+/* =========================================================
+   INTERNSHIP IMAGE UPLOAD
+========================================================= */
 
 document
-.getElementById("links")
-.classList.toggle("open");
+    .getElementById("internshipInput")
+    .addEventListener(
+        "change",
+        function(e){
+
+            const file =
+                e.target.files[0];
+
+            if(!file)return;
+
+            const reader =
+                new FileReader();
+
+            reader.onload =
+                function(event){
+
+                    const image =
+                        document
+                        .getElementById(
+                            "internshipImage"
+                        );
+
+                    image.src =
+                        event.target.result;
+
+                    image.style.display =
+                        "block";
+
+
+                    document
+                        .getElementById(
+                            "internshipPlaceholder"
+                        )
+                        .style.display =
+                        "none";
+
+                };
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+
+/* =========================================================
+   PROJECT FILTER
+========================================================= */
+
+function filterProjects(
+    category,
+    button
+){
+
+    document
+        .querySelectorAll(".filter")
+        .forEach(btn=>{
+
+            btn.classList
+                .remove("active");
+
+        });
+
+
+    button.classList
+        .add("active");
+
+
+    document
+        .querySelectorAll(".project")
+        .forEach(project=>{
+
+            if(
+                category==="all" ||
+                project.dataset.category===
+                category
+            ){
+
+                project.style.display =
+                    "block";
+
+            }
+
+            else{
+
+                project.style.display =
+                    "none";
+
+            }
+
+        });
 
 }
 
 
-/* PROFILE PHOTO */
-document.getElementById("profileInput")
-.addEventListener("change",function(e){
+/* =========================================================
+   PROJECT MODAL
+========================================================= */
 
-let file=e.target.files[0];
-if(!file)return;
+function openProject(
+    title,
+    category,
+    details
+){
 
-let reader=new FileReader();
-
-reader.onload=function(x){
-
-let img=document.getElementById("profileImage");
-
-img.src=x.target.result;
-img.style.display="block";
-
-document.getElementById("profilePlaceholder")
-.style.display="none";
-
-};
-
-reader.readAsDataURL(file);
-
-});
+    document
+        .getElementById("modal")
+        .classList
+        .add("show");
 
 
-/* INTERNSHIP PHOTO */
-document.getElementById("internshipInput")
-.addEventListener("change",function(e){
-
-let file=e.target.files[0];
-if(!file)return;
-
-let reader=new FileReader();
-
-reader.onload=function(x){
-
-let img=document.getElementById("internshipImage");
-
-img.src=x.target.result;
-img.style.display="block";
-
-document.getElementById("internshipPlaceholder")
-.style.display="none";
-
-};
-
-reader.readAsDataURL(file);
-
-});
+    document
+        .getElementById("modalTitle")
+        .innerText =
+        title;
 
 
-/* PROJECT FILTER */
-function filterProjects(category,button){
+    document
+        .getElementById("modalCategory")
+        .innerText =
+        category;
 
-document.querySelectorAll(".filter")
-.forEach(x=>x.classList.remove("active"));
 
-button.classList.add("active");
+    const list =
+        document
+        .getElementById("modalList");
 
-document.querySelectorAll(".project")
-.forEach(project=>{
 
-if(category==="all" ||
-project.dataset.category===category){
+    list.innerHTML="";
 
-project.style.display="block";
 
-}else{
+    details.forEach(item=>{
 
-project.style.display="none";
+        const row =
+            document
+            .createElement("div");
 
-}
 
-});
+        row.innerHTML =
+            "<span>✓</span><p>"+
+            item+
+            "</p>";
+
+
+        list.appendChild(row);
+
+    });
+
+
+    document
+        .getElementById("modalImage")
+        .style.display =
+        "none";
+
+
+    document
+        .getElementById("modalImageText")
+        .style.display =
+        "block";
+
+
+    document
+        .getElementById(
+            "projectImageInput"
+        )
+        .value="";
 
 }
 
 
-/* PROJECT MODAL */
-function openProject(title,category,details){
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
 
-document.getElementById("modal")
-.classList.add("show");
+document
+    .getElementById("projectImageInput")
+    .addEventListener(
+        "change",
+        function(e){
 
-document.getElementById("modalTitle")
-.innerText=title;
+            const file =
+                e.target.files[0];
 
-document.getElementById("modalCategory")
-.innerText=category.toUpperCase();
+            if(!file)return;
 
-let list=document.getElementById("modalList");
-
-list.innerHTML="";
-
-details.forEach(item=>{
-
-let div=document.createElement("div");
-
-div.innerHTML=
-"<span>✓</span><p>"+item+"</p>";
-
-list.appendChild(div);
-
-});
+            const reader =
+                new FileReader();
 
 
-/* RESET IMAGE */
+            reader.onload =
+                function(event){
 
-document.getElementById("modalImage")
-.style.display="none";
-
-document.getElementById("modalImageText")
-.style.display="block";
-
-document.getElementById("projectImageInput")
-.value="";
-
-}
+                    const image =
+                        document
+                        .getElementById(
+                            "modalImage"
+                        );
 
 
-/* PROJECT IMAGE */
-document.getElementById("projectImageInput")
-.addEventListener("change",function(e){
-
-let file=e.target.files[0];
-
-if(!file)return;
-
-let reader=new FileReader();
-
-reader.onload=function(x){
-
-let img=document.getElementById("modalImage");
-
-img.src=x.target.result;
-
-img.style.display="block";
-
-document.getElementById("modalImageText")
-.style.display="none";
-
-};
-
-reader.readAsDataURL(file);
-
-});
+                    image.src =
+                        event.target.result;
 
 
-/* CLOSE */
+                    image.style.display =
+                        "block";
+
+
+                    document
+                        .getElementById(
+                            "modalImageText"
+                        )
+                        .style.display =
+                        "none";
+
+                };
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+
+/* =========================================================
+   CLOSE MODAL
+========================================================= */
+
 function closeModal(){
 
-document.getElementById("modal")
-.classList.remove("show");
+    document
+        .getElementById("modal")
+        .classList
+        .remove("show");
 
 }
 
-document.getElementById("modal")
-.addEventListener("click",function(e){
 
-if(e.target===this)closeModal();
+document
+    .getElementById("modal")
+    .addEventListener(
+        "click",
+        function(e){
 
-});
+            if(e.target===this){
 
+                closeModal();
 
-/* CS PHOTO */
-document.getElementById("csInput")
-.addEventListener("change",function(e){
+            }
 
-let file=e.target.files[0];
-
-if(!file)return;
-
-let reader=new FileReader();
-
-reader.onload=function(x){
-
-let img=document.getElementById("csImage");
-
-img.src=x.target.result;
-
-img.style.display="block";
-
-document.getElementById("csPlaceholder")
-.style.display="none";
-
-};
-
-reader.readAsDataURL(file);
-
-});
+        }
+    );
 
 
-/* CERTIFICATES */
-function certificate(input,preview){
+/* =========================================================
+   CS PHOTO
+========================================================= */
 
-document.getElementById(input)
-.addEventListener("change",function(e){
+document
+    .getElementById("csInput")
+    .addEventListener(
+        "change",
+        function(e){
 
-let file=e.target.files[0];
+            const file =
+                e.target.files[0];
 
-if(!file)return;
+            if(!file)return;
 
-let reader=new FileReader();
 
-reader.onload=function(x){
+            const reader =
+                new FileReader();
 
-let img=document.getElementById(preview);
 
-img.src=x.target.result;
+            reader.onload =
+                function(event){
 
-img.style.display="block";
+                    const image =
+                        document
+                        .getElementById(
+                            "csImage"
+                        );
 
-};
 
-reader.readAsDataURL(file);
+                    image.src =
+                        event.target.result;
 
-});
+
+                    image.style.display =
+                        "block";
+
+
+                    document
+                        .getElementById(
+                            "csPlaceholder"
+                        )
+                        .style.display =
+                        "none";
+
+                };
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+
+/* =========================================================
+   CERTIFICATE UPLOADS
+========================================================= */
+
+function setupCertificate(
+    inputID,
+    previewID
+){
+
+    document
+        .getElementById(inputID)
+        .addEventListener(
+            "change",
+            function(e){
+
+                const file =
+                    e.target.files[0];
+
+                if(!file)return;
+
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function(event){
+
+                        const image =
+                            document
+                            .getElementById(
+                                previewID
+                            );
+
+
+                        image.src =
+                            event.target.result;
+
+
+                        image.style.display =
+                            "block";
+
+                    };
+
+
+                reader.readAsDataURL(file);
+
+            }
+        );
 
 }
 
-certificate("cert1","certPreview1");
-certificate("cert2","certPreview2");
-certificate("cert3","certPreview3");
-certificate("cert4","certPreview4");
-certificate("cert5","certPreview5");
+
+setupCertificate(
+    "cert1",
+    "certPreview1"
+);
+
+
+setupCertificate(
+    "cert2",
+    "certPreview2"
+);
+
+
+setupCertificate(
+    "cert3",
+    "certPreview3"
+);
+
+
+setupCertificate(
+    "cert4",
+    "certPreview4"
+);
+
+
+setupCertificate(
+    "cert5",
+    "certPreview5"
+);
 
 </script>
+
 
 </body>
 </html>
