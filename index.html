@@ -4507,17 +4507,25 @@ if (imageText) {
 
             if (modalImage) {
 
-                modalImage.src = "";
-
-                modalImage.style.display =
-                    "none";
+                if (title === "M&A Valuation Model") {
+    modalImage.src = "ma-valuation.jpg";
+    modalImage.style.display = "block";
+} else {
+    modalImage.src = "";
+    modalImage.style.display = "none";
+}
 
             }
 
             if (modalImageText) {
 
-                modalImageText.style.display =
-                    "block";
+                 if (title === "M&A Valuation Model") {
+        modalImageText.style.display = "none";
+    } else {
+        modalImageText.style.display = "block";
+    }
+
+}
 
             }
 
