@@ -1,2718 +1,2636 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>
-Tanisha Jain | Finance Portfolio
-</title>
+    <title>
+        Tanisha Jain | Finance Portfolio
+    </title>
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-html{
-scroll-behavior:smooth;
-}
+        body {
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            background: #F7FBF8;
+            color: #172018;
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: .35s;
+        }
 
-body{
-font-family:Inter,"Segoe UI",Arial,sans-serif;
-background:#F7FBF8;
-color:#172018;
-line-height:1.6;
-overflow-x:hidden;
-transition:.35s;
-}
+        body.dark {
+            background: #050B14;
+            color: #F5F7FA;
+        }
 
-body.dark{
-background:#050B14;
-color:#F5F7FA;
-}
+        :root {
 
-:root{
+            --bg: #F7FBF8;
+            --card: #fff;
+            --text: #172018;
+            --muted: #657268;
+            --line: rgba(49, 92, 58, .13);
 
---bg:#F7FBF8;
---card:#fff;
---text:#172018;
---muted:#657268;
---line:rgba(49,92,58,.13);
+            --green: #69A84F;
+            --green-dark: #315C3A;
+            --green-light: #DDF2E3;
 
---green:#69A84F;
---green-dark:#315C3A;
---green-light:#DDF2E3;
+            --mint: #D8F1E3;
+            --cream: #FFF8E7;
+            --yellow: #F4E7A8;
 
---mint:#D8F1E3;
---cream:#FFF8E7;
---yellow:#F4E7A8;
+            --shadow: 0 18px 50px rgba(49, 92, 58, .08);
 
---shadow:0 18px 50px rgba(49,92,58,.08);
+        }
 
-}
+        body.dark {
 
-body.dark{
+            --bg: #050B14;
+            --card: #0D1828;
+            --text: #F5F7FA;
+            --muted: #8D9CAF;
+            --line: rgba(255, 255, 255, .09);
 
---bg:#050B14;
---card:#0D1828;
---text:#F5F7FA;
---muted:#8D9CAF;
---line:rgba(255,255,255,.09);
+            --green: #8CFF70;
+            --green-dark: #8CFF70;
+            --green-light: rgba(140, 255, 112, .10);
 
---green:#8CFF70;
---green-dark:#8CFF70;
---green-light:rgba(140,255,112,.10);
+            --mint: #08111F;
+            --cream: #111D30;
+            --yellow: #17263A;
 
---mint:#08111F;
---cream:#111D30;
---yellow:#17263A;
+            --shadow: 0 18px 50px rgba(0, 0, 0, .35);
 
---shadow:0 18px 50px rgba(0,0,0,.35);
+        }
 
-}
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-a{
-text-decoration:none;
-color:inherit;
-}
+        button,
+        input {
+            font-family: inherit;
+        }
 
-button,
-input{
-font-family:inherit;
-}
+        .container {
+            width: min(1160px, 92%);
+            margin: auto;
+        }
 
-.container{
-width:min(1160px,92%);
-margin:auto;
-}
 
+        /* NAVIGATION */
 
-/* NAVIGATION */
+        nav {
 
-nav{
+            position: fixed;
+            top: 0;
+            left: 0;
 
-position:fixed;
-top:0;
-left:0;
+            width: 100%;
+            height: 72px;
 
-width:100%;
-height:72px;
+            z-index: 1000;
 
-z-index:1000;
+            background: rgba(255, 255, 255, .85);
 
-background:rgba(255,255,255,.85);
+            backdrop-filter: blur(18px);
 
-backdrop-filter:blur(18px);
+            border-bottom: 1px solid var(--line);
 
-border-bottom:1px solid var(--line);
+        }
 
-}
+        body.dark nav {
+            background: rgba(5, 11, 20, .9);
+        }
 
-body.dark nav{
-background:rgba(5,11,20,.9);
-}
+        .nav {
 
-.nav{
+            height: 72px;
 
-height:72px;
+            display: flex;
 
-display:flex;
+            align-items: center;
 
-align-items:center;
+            justify-content: space-between;
 
-justify-content:space-between;
+        }
 
-}
+        .logo {
 
-.logo{
+            font-size: 25px;
 
-font-size:25px;
+            font-weight: 900;
 
-font-weight:900;
+            letter-spacing: -1px;
 
-letter-spacing:-1px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
+        .logo span {
+            color: var(--green);
+        }
 
-.logo span{
-color:var(--green);
-}
+        .links {
 
-.links{
+            display: flex;
 
-display:flex;
+            gap: 28px;
 
-gap:28px;
+        }
 
-}
+        .links a {
 
-.links a{
+            font-size: 11px;
 
-font-size:11px;
+            color: var(--muted);
 
-color:var(--muted);
+            transition: .3s;
 
-transition:.3s;
+        }
 
-}
+        .links a:hover {
+            color: var(--green);
+        }
 
-.links a:hover{
-color:var(--green);
-}
+        .nav-right {
 
-.nav-right{
+            display: flex;
 
-display:flex;
+            gap: 9px;
 
-gap:9px;
+        }
 
-}
+        .theme,
+        .menu {
 
-.theme,
-.menu{
+            width: 40px;
 
-width:40px;
+            height: 40px;
 
-height:40px;
+            border-radius: 50%;
 
-border-radius:50%;
+            border: 1px solid var(--line);
 
-border:1px solid var(--line);
+            background: var(--card);
 
-background:var(--card);
+            color: var(--text);
 
-color:var(--text);
+            cursor: pointer;
 
-cursor:pointer;
+            transition: .3s;
 
-transition:.3s;
+        }
 
-}
+        .theme:hover {
+            transform: rotate(20deg);
+        }
 
-.theme:hover{
-transform:rotate(20deg);
-}
+        .menu {
 
-.menu{
+            display: none;
 
-display:none;
+            border-radius: 9px;
 
-border-radius:9px;
+        }
 
-}
 
+        /* HERO */
 
-/* HERO */
+        .hero {
 
-.hero{
+            min-height: 100vh;
 
-min-height:100vh;
+            padding-top: 110px;
 
-padding-top:110px;
+            display: grid;
 
-display:grid;
+            grid-template-columns: 1.05fr .95fr;
 
-grid-template-columns:1.05fr .95fr;
+            align-items: center;
 
-align-items:center;
+            gap: 65px;
 
-gap:65px;
+            position: relative;
 
-position:relative;
+        }
 
-}
+        .hero:before {
 
-.hero:before{
+            content: "";
 
-content:"";
+            position: absolute;
 
-position:absolute;
+            width: 450px;
 
-width:450px;
+            height: 450px;
 
-height:450px;
+            left: -250px;
 
-left:-250px;
+            top: 150px;
 
-top:150px;
+            background:
+                radial-gradient(circle,
+                    rgba(216, 241, 227, .85),
+                    transparent 70%);
 
-background:
-radial-gradient(
-circle,
-rgba(216,241,227,.85),
-transparent 70%
-);
+            z-index: -1;
 
-z-index:-1;
+        }
 
-}
+        .hero:after {
 
-.hero:after{
+            content: "";
 
-content:"";
+            position: absolute;
 
-position:absolute;
+            width: 420px;
 
-width:420px;
+            height: 420px;
 
-height:420px;
+            right: -200px;
 
-right:-200px;
+            top: 110px;
 
-top:110px;
+            background:
+                radial-gradient(circle,
+                    rgba(244, 231, 168, .55),
+                    transparent 70%);
 
-background:
-radial-gradient(
-circle,
-rgba(244,231,168,.55),
-transparent 70%
-);
+            z-index: -1;
 
-z-index:-1;
+        }
 
-}
+        body.dark .hero:before {
 
-body.dark .hero:before{
+            background:
+                radial-gradient(circle,
+                    rgba(35, 124, 255, .08),
+                    transparent 70%);
 
-background:
-radial-gradient(
-circle,
-rgba(35,124,255,.08),
-transparent 70%
-);
+        }
 
-}
+        body.dark .hero:after {
 
-body.dark .hero:after{
+            background:
+                radial-gradient(circle,
+                    rgba(140, 255, 112, .05),
+                    transparent 70%);
 
-background:
-radial-gradient(
-circle,
-rgba(140,255,112,.05),
-transparent 70%
-);
+        }
 
-}
+        .eyebrow {
 
-.eyebrow{
+            font-family: monospace;
 
-font-family:monospace;
+            font-size: 10px;
 
-font-size:10px;
+            letter-spacing: 3px;
 
-letter-spacing:3px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
+        .hero h1 {
 
-.hero h1{
+            font-size: clamp(55px, 8vw, 100px);
 
-font-size:clamp(55px,8vw,100px);
+            line-height: .92;
 
-line-height:.92;
+            letter-spacing: -7px;
 
-letter-spacing:-7px;
+            margin: 24px 0;
 
-margin:24px 0;
+            white-space: nowrap;
 
-white-space:nowrap;
+        }
 
-}
+        .gradient {
 
-.gradient{
+            background:
+                linear-gradient(90deg,
+                    #315C3A,
+                    #69A84F);
 
-background:
-linear-gradient(
-90deg,
-#315C3A,
-#69A84F
-);
+            -webkit-background-clip: text;
 
--webkit-background-clip:text;
+            color: transparent;
 
-color:transparent;
+        }
 
-}
+        body.dark .gradient {
 
-body.dark .gradient{
+            background:
+                linear-gradient(90deg,
+                    #8CFF70,
+                    #237CFF);
 
-background:
-linear-gradient(
-90deg,
-#8CFF70,
-#237CFF
-);
+            -webkit-background-clip: text;
 
--webkit-background-clip:text;
+            color: transparent;
 
-color:transparent;
+        }
 
-}
+        .hero-description {
 
-.hero-description{
+            max-width: 630px;
 
-max-width:630px;
+            font-size: 15px;
 
-font-size:15px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
+        .hero-buttons {
 
-.hero-buttons{
+            display: flex;
 
-display:flex;
+            gap: 12px;
 
-gap:12px;
+            margin-top: 32px;
 
-margin-top:32px;
+        }
 
-}
+        .btn {
 
-.btn{
+            display: inline-flex;
 
-display:inline-flex;
+            align-items: center;
 
-align-items:center;
+            justify-content: center;
 
-justify-content:center;
+            padding: 13px 19px;
 
-padding:13px 19px;
+            border-radius: 9px;
 
-border-radius:9px;
+            font-size: 11px;
 
-font-size:11px;
+            font-weight: 700;
 
-font-weight:700;
+            border: 1px solid var(--line);
 
-border:1px solid var(--line);
+            transition: .3s;
 
-transition:.3s;
+        }
 
-}
+        .btn-primary {
 
-.btn-primary{
+            background: var(--green);
 
-background:var(--green);
+            color: white;
 
-color:white;
+            border-color: var(--green);
 
-border-color:var(--green);
+        }
 
-}
+        .btn-secondary {
 
-.btn-secondary{
+            background: var(--card);
 
-background:var(--card);
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
+        .btn:hover {
 
-.btn:hover{
+            transform: translateY(-4px);
 
-transform:translateY(-4px);
+            box-shadow:
+                0 14px 30px rgba(49, 92, 58, .13);
 
-box-shadow:
-0 14px 30px
-rgba(49,92,58,.13);
+        }
 
-}
 
+        /* PHOTO BOX */
 
-/* PHOTO BOX */
+        .hero-visual {
 
-.hero-visual{
+            height: 520px;
 
-height:520px;
+            display: flex;
 
-display:flex;
+            align-items: center;
 
-align-items:center;
+            justify-content: center;
 
-justify-content:center;
+        }
 
-}
+        .hero-photo-card {
 
-.hero-photo-card{
+            width: 100%;
 
-width:100%;
+            height: 430px;
 
-height:430px;
+            border:
+                1px dashed rgba(105, 168, 79, .65);
 
-border:
-1px dashed
-rgba(105,168,79,.65);
+            border-radius: 30px;
 
-border-radius:30px;
+            background:
+                linear-gradient(145deg,
+                    #fff,
+                    #EEF9F2 58%,
+                    #FFF8E7);
 
-background:
-linear-gradient(
-145deg,
-#fff,
-#EEF9F2 58%,
-#FFF8E7
-);
+            position: relative;
 
-position:relative;
+            overflow: hidden;
 
-overflow:hidden;
+            box-shadow: var(--shadow);
 
-box-shadow:var(--shadow);
+            display: flex;
 
-display:flex;
+            align-items: center;
 
-align-items:center;
+            justify-content: center;
 
-justify-content:center;
+        }
 
-}
+        .hero-photo-card:before {
 
-.hero-photo-card:before{
+            content: "";
 
-content:"";
+            position: absolute;
 
-position:absolute;
+            width: 270px;
 
-width:270px;
+            height: 270px;
 
-height:270px;
+            border-radius: 50%;
 
-border-radius:50%;
+            top: -105px;
 
-top:-105px;
+            right: -80px;
 
-right:-80px;
+            background:
+                rgba(244, 231, 168, .55);
 
-background:
-rgba(244,231,168,.55);
+        }
 
-}
+        .hero-photo-card:after {
 
-.hero-photo-card:after{
+            content: "";
 
-content:"";
+            position: absolute;
 
-position:absolute;
+            width: 240px;
 
-width:240px;
+            height: 240px;
 
-height:240px;
+            border-radius: 50%;
 
-border-radius:50%;
+            bottom: -120px;
 
-bottom:-120px;
+            left: -75px;
 
-left:-75px;
+            background:
+                rgba(216, 241, 227, .9);
 
-background:
-rgba(216,241,227,.9);
+        }
 
-}
+        body.dark .hero-photo-card {
 
-body.dark .hero-photo-card{
+            background:
+                linear-gradient(145deg,
+                    #0D1828,
+                    #08111F);
 
-background:
-linear-gradient(
-145deg,
-#0D1828,
-#08111F
-);
+            border-color:
+                rgba(140, 255, 112, .42);
 
-border-color:
-rgba(140,255,112,.42);
+        }
 
-}
+        body.dark .hero-photo-card:before {
 
-body.dark .hero-photo-card:before{
+            background:
+                rgba(35, 124, 255, .08);
 
-background:
-rgba(35,124,255,.08);
+        }
 
-}
+        body.dark .hero-photo-card:after {
 
-body.dark .hero-photo-card:after{
+            background:
+                rgba(140, 255, 112, .05);
 
-background:
-rgba(140,255,112,.05);
+        }
 
-}
+        .hero-photo-inner {
 
-.hero-photo-inner{
+            width: 78%;
 
-width:78%;
+            height: 82%;
 
-height:82%;
+            border:
+                1px dashed rgba(105, 168, 79, .5);
 
-border:
-1px dashed
-rgba(105,168,79,.5);
+            border-radius: 24px;
 
-border-radius:24px;
+            position: relative;
 
-position:relative;
+            z-index: 2;
 
-z-index:2;
+            display: flex;
 
-display:flex;
+            align-items: center;
 
-align-items:center;
+            justify-content: center;
 
-justify-content:center;
+            overflow: hidden;
 
-overflow:hidden;
+            background:
+                rgba(255, 255, 255, .38);
 
-background:
-rgba(255,255,255,.38);
+        }
 
-}
+        body.dark .hero-photo-inner {
 
-body.dark .hero-photo-inner{
+            background:
+                rgba(5, 11, 20, .35);
 
-background:
-rgba(5,11,20,.35);
+            border-color:
+                rgba(140, 255, 112, .35);
 
-border-color:
-rgba(140,255,112,.35);
+        }
 
-}
+        .hero-photo-placeholder {
 
-.hero-photo-placeholder{
+            text-align: center;
 
-text-align:center;
+            padding: 25px;
 
-padding:25px;
+            position: relative;
 
-position:relative;
+            z-index: 3;
 
-z-index:3;
+        }
 
-}
+        .hero-photo-icon {
 
-.hero-photo-icon{
+            width: 72px;
 
-width:72px;
+            height: 72px;
 
-height:72px;
+            margin: 0 auto 18px;
 
-margin:0 auto 18px;
+            border-radius: 50%;
 
-border-radius:50%;
+            display: grid;
 
-display:grid;
+            place-items: center;
 
-place-items:center;
+            font-size: 31px;
 
-font-size:31px;
+            background: var(--green-light);
 
-background:var(--green-light);
+            color: var(--green-dark);
 
-color:var(--green-dark);
+            border: 1px solid var(--line);
 
-border:1px solid var(--line);
+        }
 
-}
+        .hero-photo-placeholder h3 {
 
-.hero-photo-placeholder h3{
+            font-size: 20px;
 
-font-size:20px;
+            margin-bottom: 6px;
 
-margin-bottom:6px;
+        }
 
-}
+        .hero-photo-placeholder p {
 
-.hero-photo-placeholder p{
+            font-size: 10px;
 
-font-size:10px;
+            color: var(--muted);
 
-color:var(--muted);
+            margin-bottom: 17px;
 
-margin-bottom:17px;
+        }
 
-}
+        .upload-btn {
 
-.upload-btn{
+            display: inline-block;
 
-display:inline-block;
+            padding: 9px 13px;
 
-padding:9px 13px;
+            background: var(--green);
 
-background:var(--green);
+            color: white;
 
-color:white;
+            border-radius: 7px;
 
-border-radius:7px;
+            font-size: 9px;
 
-font-size:9px;
+            font-weight: 800;
 
-font-weight:800;
+            cursor: pointer;
 
-cursor:pointer;
+            transition: .3s;
 
-transition:.3s;
+        }
 
-}
+        .upload-btn:hover {
 
-.upload-btn:hover{
+            background: var(--green-dark);
 
-background:var(--green-dark);
+            transform: translateY(-2px);
 
-transform:translateY(-2px);
+        }
 
-}
+        .hero-photo-image {
 
-.hero-photo-image{
+            display: none;
 
-display:none;
+            width: 100%;
 
-width:100%;
+            height: 100%;
 
-height:100%;
+            object-fit: cover;
 
-object-fit:cover;
+            position: absolute;
 
-position:absolute;
+            inset: 0;
 
-inset:0;
+            z-index: 4;
 
-z-index:4;
+        }
 
-}
 
+        /* SECTIONS */
 
-/* SECTIONS */
+        section {
 
-section{
+            padding: 110px 0;
 
-padding:110px 0;
+            border-top: 1px solid var(--line);
 
-border-top:1px solid var(--line);
+        }
 
-}
+        .section-number {
 
-.section-number{
+            font-family: monospace;
 
-font-family:monospace;
+            font-size: 10px;
 
-font-size:10px;
+            letter-spacing: 2px;
 
-letter-spacing:2px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
+        .section-title {
 
-.section-title{
+            font-size: clamp(40px, 5vw, 65px);
 
-font-size:clamp(40px,5vw,65px);
+            line-height: 1;
 
-line-height:1;
+            letter-spacing: -4px;
 
-letter-spacing:-4px;
+            margin: 15px 0 55px;
 
-margin:15px 0 55px;
+        }
 
-}
+        .section-intro {
 
-.section-intro{
+            max-width: 500px;
 
-max-width:500px;
+            font-size: 13px;
 
-font-size:13px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
 
+        /* ABOUT */
 
-/* ABOUT */
+        .about-grid {
 
-.about-grid{
+            display: grid;
 
-display:grid;
+            grid-template-columns: 1fr 1fr;
 
-grid-template-columns:1fr 1fr;
+            gap: 70px;
 
-gap:70px;
+        }
 
-}
+        .about-main {
 
-.about-main{
+            font-size: 14px;
 
-font-size:14px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
+        .about-main .lead {
 
-.about-main .lead{
+            font-size: 21px;
 
-font-size:21px;
+            line-height: 1.5;
 
-line-height:1.5;
+            color: var(--text);
 
-color:var(--text);
+            margin-bottom: 25px;
 
-margin-bottom:25px;
+        }
 
-}
+        .about-main p {
 
-.about-main p{
+            margin-bottom: 20px;
 
-margin-bottom:20px;
+        }
 
-}
+        .about-highlight {
 
-.about-highlight{
+            padding: 20px;
 
-padding:20px;
+            border-left:
+                3px solid var(--green);
 
-border-left:
-3px solid var(--green);
+            background:
+                linear-gradient(90deg,
+                    var(--green-light),
+                    rgba(255, 255, 255, .4));
 
-background:
-linear-gradient(
-90deg,
-var(--green-light),
-rgba(255,255,255,.4)
-);
+            border-radius:
+                0 12px 12px 0;
 
-border-radius:
-0 12px 12px 0;
+        }
 
-}
+        body.dark .about-highlight {
 
-body.dark .about-highlight{
+            background:
+                rgba(140, 255, 112, .06);
 
-background:
-rgba(140,255,112,.06);
+        }
 
-}
+        .about-highlight strong {
 
-.about-highlight strong{
+            display: block;
 
-display:block;
+            margin-bottom: 5px;
 
-margin-bottom:5px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
+        .about-highlight span {
 
-.about-highlight span{
+            font-size: 11px;
 
-font-size:11px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
+        .about-cards {
 
-.about-cards{
+            display: grid;
 
-display:grid;
+            grid-template-columns: 1fr 1fr;
 
-grid-template-columns:1fr 1fr;
+            gap: 14px;
 
-gap:14px;
+        }
 
-}
+        .about-card {
 
-.about-card{
+            padding: 25px;
 
-padding:25px;
+            min-height: 190px;
 
-min-height:190px;
+            background: var(--card);
 
-background:var(--card);
+            border: 1px solid var(--line);
 
-border:1px solid var(--line);
+            border-radius: 17px;
 
-border-radius:17px;
+            display: flex;
 
-display:flex;
+            flex-direction: column;
 
-flex-direction:column;
+            justify-content: flex-end;
 
-justify-content:flex-end;
+            box-shadow:
+                0 8px 28px rgba(49, 92, 58, .045);
 
-box-shadow:
-0 8px 28px
-rgba(49,92,58,.045);
+            transition: .35s;
 
-transition:.35s;
+        }
 
-}
+        .about-card:hover {
 
-.about-card:hover{
+            transform: translateY(-7px);
 
-transform:translateY(-7px);
+            box-shadow: var(--shadow);
 
-box-shadow:var(--shadow);
+        }
 
-}
+        .about-icon {
 
-.about-icon{
+            font-size: 26px;
 
-font-size:26px;
+            color: var(--green);
 
-color:var(--green);
+            margin-bottom: auto;
 
-margin-bottom:auto;
+        }
 
-}
+        .about-card h3 {
 
-.about-card h3{
+            font-size: 16px;
 
-font-size:16px;
+            margin-bottom: 7px;
 
-margin-bottom:7px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
+        .about-card p {
 
-.about-card p{
+            font-size: 10px;
 
-font-size:10px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
 
+        /* INTERNSHIP */
 
-/* INTERNSHIP */
+        .internship {
 
-.internship{
+            display: grid;
 
-display:grid;
+            grid-template-columns: .9fr 1.1fr;
 
-grid-template-columns:.9fr 1.1fr;
+            border: 1px solid var(--line);
 
-border:1px solid var(--line);
+            border-radius: 24px;
 
-border-radius:24px;
+            overflow: hidden;
 
-overflow:hidden;
+            background: var(--card);
 
-background:var(--card);
+            box-shadow: var(--shadow);
 
-box-shadow:var(--shadow);
+        }
 
-}
+        .internship-image {
 
-.internship-image{
+            min-height: 470px;
 
-min-height:470px;
+            background:
+                linear-gradient(135deg,
+                    #DDF2E3,
+                    #FFF8E7);
 
-background:
-linear-gradient(
-135deg,
-#DDF2E3,
-#FFF8E7
-);
+            display: flex;
 
-display:flex;
+            align-items: center;
 
-align-items:center;
+            justify-content: center;
 
-justify-content:center;
+            position: relative;
 
-position:relative;
+            overflow: hidden;
 
-overflow:hidden;
+        }
 
-}
+        body.dark .internship-image {
 
-body.dark .internship-image{
+            background:
+                linear-gradient(135deg,
+                    #08111F,
+                    #0D1828);
 
-background:
-linear-gradient(
-135deg,
-#08111F,
-#0D1828
-);
+        }
 
-}
+        .internship-image img {
 
-.internship-image img{
+            display: none;
 
-display:none;
+            width: 100%;
 
-width:100%;
+            height: 100%;
 
-height:100%;
+            object-fit: cover;
 
-object-fit:cover;
+            position: absolute;
 
-position:absolute;
+            z-index: 2;
 
-z-index:2;
+        }
 
-}
+        .image-placeholder {
 
-.image-placeholder{
+            position: relative;
 
-position:relative;
+            z-index: 3;
 
-z-index:3;
+            text-align: center;
 
-text-align:center;
+            color: var(--muted);
 
-color:var(--muted);
+            padding: 25px;
 
-padding:25px;
+        }
 
-}
+        .image-placeholder .big {
 
-.image-placeholder .big{
+            font-size: 50px;
 
-font-size:50px;
+            margin-bottom: 10px;
 
-margin-bottom:10px;
+            color: var(--green);
 
-color:var(--green);
+        }
 
-}
+        .image-placeholder p {
 
-.image-placeholder p{
+            font-size: 10px;
 
-font-size:10px;
+            margin-bottom: 15px;
 
-margin-bottom:15px;
+        }
 
-}
+        .internship-content {
 
-.internship-content{
+            padding: 48px;
 
-padding:48px;
+        }
 
-}
+        .company-name {
 
-.company-name{
+            font-family: monospace;
 
-font-family:monospace;
+            font-size: 10px;
 
-font-size:10px;
+            letter-spacing: 2px;
 
-letter-spacing:2px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
+        .internship-content h3 {
 
-.internship-content h3{
+            font-size: 35px;
 
-font-size:35px;
+            margin: 8px 0;
 
-margin:8px 0;
+        }
 
-}
+        .internship-date {
 
-.internship-date{
+            font-size: 10px;
 
-font-size:10px;
+            color: var(--muted);
 
-color:var(--muted);
+            margin-bottom: 30px;
 
-margin-bottom:30px;
+        }
 
-}
+        .internship-content p {
 
-.internship-content p{
+            font-size: 12px;
 
-font-size:12px;
+            color: var(--muted);
 
-color:var(--muted);
+            margin-bottom: 18px;
 
-margin-bottom:18px;
+        }
 
-}
+        .tags {
 
-.tags{
+            display: flex;
 
-display:flex;
+            flex-wrap: wrap;
 
-flex-wrap:wrap;
+            gap: 7px;
 
-gap:7px;
+            margin-top: 25px;
 
-margin-top:25px;
+        }
 
-}
+        .tag {
 
-.tag{
+            padding: 7px 10px;
 
-padding:7px 10px;
+            border: 1px solid var(--line);
 
-border:1px solid var(--line);
+            background: var(--green-light);
 
-background:var(--green-light);
+            border-radius: 6px;
 
-border-radius:6px;
+            font-size: 9px;
 
-font-size:9px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
 
+        /* PROJECTS */
 
-/* PROJECTS */
+        .project-header {
 
-.project-header{
+            display: flex;
 
-display:flex;
+            justify-content: space-between;
 
-justify-content:space-between;
+            align-items: end;
 
-align-items:end;
+            gap: 30px;
 
-gap:30px;
+        }
 
-}
+        .filters {
 
-.filters{
+            display: flex;
 
-display:flex;
+            gap: 8px;
 
-gap:8px;
+            margin: 35px 0;
 
-margin:35px 0;
+            flex-wrap: wrap;
 
-flex-wrap:wrap;
+        }
 
-}
+        .filter {
 
-.filter{
+            padding: 9px 16px;
 
-padding:9px 16px;
+            border-radius: 20px;
 
-border-radius:20px;
+            border: 1px solid var(--line);
 
-border:1px solid var(--line);
+            background: var(--card);
 
-background:var(--card);
+            color: var(--muted);
 
-color:var(--muted);
+            font-size: 9px;
 
-font-size:9px;
+            cursor: pointer;
 
-cursor:pointer;
+        }
 
-}
+        .filter.active,
+        .filter:hover {
 
-.filter.active,
-.filter:hover{
+            background: var(--green);
 
-background:var(--green);
+            color: white;
 
-color:white;
+            border-color: var(--green);
 
-border-color:var(--green);
+        }
 
-}
+        .projects {
 
-.projects{
+            display: grid;
 
-display:grid;
+            grid-template-columns:
+                repeat(2, 1fr);
 
-grid-template-columns:
-repeat(2,1fr);
+            gap: 17px;
 
-gap:17px;
+        }
 
-}
+        .project {
 
-.project{
+            min-height: 360px;
 
-min-height:360px;
+            padding: 30px;
 
-padding:30px;
+            background: var(--card);
 
-background:var(--card);
+            border: 1px solid var(--line);
 
-border:1px solid var(--line);
+            border-radius: 18px;
 
-border-radius:18px;
+            position: relative;
 
-position:relative;
+            overflow: hidden;
 
-overflow:hidden;
+            cursor: pointer;
 
-cursor:pointer;
+            transition: .35s;
 
-transition:.35s;
+            box-shadow:
+                0 8px 28px rgba(49, 92, 58, .045);
 
-box-shadow:
-0 8px 28px
-rgba(49,92,58,.045);
+        }
 
-}
+        .project:hover {
 
-.project:hover{
+            transform: translateY(-8px);
 
-transform:translateY(-8px);
+            box-shadow: var(--shadow);
 
-box-shadow:var(--shadow);
+        }
 
-}
+        .project-number {
 
-.project-number{
+            font-family: monospace;
 
-font-family:monospace;
+            font-size: 10px;
 
-font-size:10px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
+        .project h3 {
 
-.project h3{
+            font-size: 24px;
 
-font-size:24px;
+            margin: 40px 0 10px;
 
-margin:40px 0 10px;
+        }
 
-}
+        .project p {
 
-.project p{
+            font-size: 11px;
 
-font-size:11px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
+        .project-footer {
 
-.project-footer{
+            position: absolute;
 
-position:absolute;
+            left: 30px;
 
-left:30px;
+            right: 30px;
 
-right:30px;
+            bottom: 22px;
 
-bottom:22px;
+            padding-top: 14px;
 
-padding-top:14px;
+            border-top: 1px solid var(--line);
 
-border-top:1px solid var(--line);
+            display: flex;
 
-display:flex;
+            justify-content: space-between;
 
-justify-content:space-between;
+            font-size: 9px;
 
-font-size:9px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
 
+        /* SKILLS */
 
-/* SKILLS */
+        .skills-layout {
 
-.skills-layout{
+            display: grid !important;
 
-display:grid !important;
+            grid-template-columns:
+                1fr 1fr !important;
 
-grid-template-columns:
-1fr 1fr !important;
+            gap: 15px !important;
 
-gap:15px !important;
+            width: 100% !important;
 
-width:100% !important;
+            margin-top: 20px !important;
 
-margin-top:20px !important;
+        }
 
-}
+        .skill-card {
 
-.skill-card{
+            display: block !important;
 
-display:block !important;
+            background: var(--card) !important;
 
-background:var(--card) !important;
+            border: 1px solid var(--line) !important;
 
-border:1px solid var(--line) !important;
+            border-radius: 17px !important;
 
-border-radius:17px !important;
+            padding: 32px !important;
 
-padding:32px !important;
+            min-height: 290px !important;
 
-min-height:290px !important;
+            box-shadow:
+                0 8px 28px rgba(49, 92, 58, .045) !important;
 
-box-shadow:
-0 8px 28px
-rgba(49,92,58,.045) !important;
+            transition:
+                all .35s ease !important;
 
-transition:
-all .35s ease !important;
+        }
 
-}
+        .skill-card:hover {
 
-.skill-card:hover{
+            transform: translateY(-5px) !important;
 
-transform:translateY(-5px) !important;
+            box-shadow:
+                var(--shadow) !important;
 
-box-shadow:
-var(--shadow) !important;
+        }
 
-}
+        .skill-card h3 {
 
-.skill-card h3{
+            display: block !important;
 
-display:block !important;
+            font-size: 19px !important;
 
-font-size:19px !important;
+            font-weight: 700 !important;
 
-font-weight:700 !important;
+            color: var(--green-dark) !important;
 
-color:var(--green-dark) !important;
+            margin:
+                0 0 28px 0 !important;
 
-margin:
-0 0 28px 0 !important;
+        }
 
-}
+        .skill-grid {
 
-.skill-grid{
+            display: grid !important;
 
-display:grid !important;
+            grid-template-columns:
+                1fr 1fr !important;
 
-grid-template-columns:
-1fr 1fr !important;
+            gap: 10px !important;
 
-gap:10px !important;
+            width: 100% !important;
 
-width:100% !important;
+        }
 
-}
+        .skill-inline {
 
-.skill-inline{
+            display: flex !important;
 
-display:flex !important;
+            flex-wrap: wrap !important;
 
-flex-wrap:wrap !important;
+            gap: 8px !important;
 
-gap:8px !important;
+            width: 100% !important;
 
-width:100% !important;
+        }
 
-}
+        .skill-pill {
 
-.skill-pill{
+            display: inline-flex !important;
 
-display:inline-flex !important;
+            align-items: center !important;
 
-align-items:center !important;
+            justify-content: center !important;
 
-justify-content:center !important;
+            min-height: 38px !important;
 
-min-height:38px !important;
+            padding: 9px 14px !important;
 
-padding:9px 14px !important;
+            background: var(--mint) !important;
 
-background:var(--mint) !important;
+            border: 1px solid var(--line) !important;
 
-border:1px solid var(--line) !important;
+            border-radius: 7px !important;
 
-border-radius:7px !important;
+            font-size: 10px !important;
 
-font-size:10px !important;
+            color: var(--green-dark) !important;
 
-color:var(--green-dark) !important;
+            white-space: nowrap !important;
 
-white-space:nowrap !important;
+            transition:
+                all .3s ease !important;
 
-transition:
-all .3s ease !important;
+        }
 
-}
+        .skill-pill:hover {
 
-.skill-pill:hover{
+            transform: translateY(-2px) !important;
 
-transform:translateY(-2px) !important;
+            border-color: var(--green) !important;
 
-border-color:var(--green) !important;
+            background: var(--green-light) !important;
 
-background:var(--green-light) !important;
+        }
 
-}
+        .power-title {
 
-.power-title{
+            margin-top: 40px !important;
 
-margin-top:40px !important;
+            margin-bottom: 28px !important;
 
-margin-bottom:28px !important;
+        }
 
-}
 
+        /* NIGHT THEME */
 
-/* NIGHT THEME */
+        body.dark .skill-card {
 
-body.dark .skill-card{
+            background: #0B1524 !important;
 
-background:#0B1524 !important;
+            border-color:
+                rgba(255, 255, 255, .09) !important;
 
-border-color:
-rgba(255,255,255,.09) !important;
+        }
 
-}
+        body.dark .skill-card h3 {
 
-body.dark .skill-card h3{
+            color: #FFFFFF !important;
 
-color:#FFFFFF !important;
+        }
 
-}
+        body.dark .skill-pill {
 
-body.dark .skill-pill{
+            background: #111D30 !important;
 
-background:#111D30 !important;
+            border-color:
+                rgba(255, 255, 255, .08) !important;
 
-border-color:
-rgba(255,255,255,.08) !important;
+            color: #C7D2E0 !important;
 
-color:#C7D2E0 !important;
+        }
 
-}
+        body.dark .skill-pill:hover {
 
-body.dark .skill-pill:hover{
+            background:
+                rgba(140, 255, 112, .08) !important;
 
-background:
-rgba(140,255,112,.08) !important;
+            border-color:
+                rgba(140, 255, 112, .35) !important;
 
-border-color:
-rgba(140,255,112,.35) !important;
+            color: #8CFF70 !important;
 
-color:#8CFF70 !important;
+        }
 
-}
 
+        /* EDUCATION */
 
-/* EDUCATION */
+        .education-grid {
 
-.education-grid{
+            display: grid;
 
-display:grid;
+            grid-template-columns: 1fr 1fr;
 
-grid-template-columns:1fr 1fr;
+            gap: 70px;
 
-gap:70px;
+        }
 
-}
+        .timeline {
 
-.timeline{
+            border-left: 1px solid var(--line);
 
-border-left:1px solid var(--line);
+        }
 
-}
+        .education-item {
 
-.education-item{
+            padding:
+                0 0 45px 35px;
 
-padding:
-0 0 45px 35px;
+            position: relative;
 
-position:relative;
+        }
 
-}
+        .dot {
 
-.dot{
+            position: absolute;
 
-position:absolute;
+            left: -5px;
 
-left:-5px;
+            top: 5px;
 
-top:5px;
+            width: 10px;
 
-width:10px;
+            height: 10px;
 
-height:10px;
+            border-radius: 50%;
 
-border-radius:50%;
+            background: var(--green);
 
-background:var(--green);
+        }
 
-}
+        .education-date {
 
-.education-date{
+            font-family: monospace;
 
-font-family:monospace;
+            font-size: 9px;
 
-font-size:9px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
+        .education-item h3 {
 
-.education-item h3{
+            font-size: 17px;
 
-font-size:17px;
+            margin: 8px 0;
 
-margin:8px 0;
+        }
 
-}
+        .education-item p {
 
-.education-item p{
+            font-size: 10px;
 
-font-size:10px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
 
+        /* CERTIFICATIONS */
 
-/* CERTIFICATIONS */
+        .certifications {
 
-.certifications{
+            padding: 30px;
 
-padding:30px;
+            border: 1px solid var(--line);
 
-border:1px solid var(--line);
+            background: var(--card);
 
-background:var(--card);
+            border-radius: 18px;
 
-border-radius:18px;
+            box-shadow: var(--shadow);
 
-box-shadow:var(--shadow);
+        }
 
-}
+        .certifications h3 {
 
-.certifications h3{
+            font-size: 22px;
 
-font-size:22px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
+        .cert-note {
 
-.cert-note{
+            font-size: 10px;
 
-font-size:10px;
+            color: var(--muted);
 
-color:var(--muted);
+            margin: 5px 0 20px;
 
-margin:5px 0 20px;
+        }
 
-}
+        .cert {
 
-.cert{
+            padding: 16px 0;
 
-padding:16px 0;
+            border-bottom: 1px solid var(--line);
 
-border-bottom:1px solid var(--line);
+        }
 
-}
+        .cert strong {
 
-.cert strong{
+            font-size: 11px;
 
-font-size:11px;
+            display: block;
 
-display:block;
+            margin-bottom: 4px;
 
-margin-bottom:4px;
+        }
 
-}
+        .cert span {
 
-.cert span{
+            font-size: 9px;
 
-font-size:9px;
+            color: var(--muted);
 
-color:var(--muted);
+            display: block;
 
-display:block;
+            margin-bottom: 9px;
 
-margin-bottom:9px;
+        }
 
-}
+        .cert-preview {
 
-.cert-preview{
+            display: none;
 
-display:none;
+            width: 100%;
 
-width:100%;
+            max-height: 170px;
 
-max-height:170px;
+            object-fit: contain;
 
-object-fit:contain;
+            margin-top: 12px;
 
-margin-top:12px;
+            border-radius: 8px;
 
-border-radius:8px;
+            background: var(--mint);
 
-background:var(--mint);
+        }
 
-}
 
+        /* ACHIEVEMENT */
 
-/* ACHIEVEMENT */
+        .achievement {
 
-.achievement{
+            display: grid;
 
-display:grid;
+            grid-template-columns: 70px 1fr auto;
 
-grid-template-columns:70px 1fr auto;
+            gap: 25px;
 
-gap:25px;
+            align-items: start;
 
-align-items:start;
+            padding: 35px;
 
-padding:35px;
+            border:
+                1px solid rgba(111, 174, 85, .28);
 
-border:
-1px solid
-rgba(111,174,85,.28);
+            border-radius: 20px;
 
-border-radius:20px;
+            background:
+                linear-gradient(120deg,
+                    rgba(216, 241, 227, .65),
+                    rgba(255, 248, 231, .65));
 
-background:
-linear-gradient(
-120deg,
-rgba(216,241,227,.65),
-rgba(255,248,231,.65)
-);
+            box-shadow: var(--shadow);
 
-box-shadow:var(--shadow);
+        }
 
-}
+        body.dark .achievement {
 
-body.dark .achievement{
+            background:
+                linear-gradient(120deg,
+                    #08111F,
+                    #0D1828);
 
-background:
-linear-gradient(
-120deg,
-#08111F,
-#0D1828
-);
+        }
 
-}
+        .achievement-icon {
 
-.achievement-icon{
+            width: 60px;
 
-width:60px;
+            height: 60px;
 
-height:60px;
+            display: grid;
 
-display:grid;
+            place-items: center;
 
-place-items:center;
+            border-radius: 14px;
 
-border-radius:14px;
+            background: var(--green-light);
 
-background:var(--green-light);
+            color: var(--green-dark);
 
-color:var(--green-dark);
+            font-size: 25px;
 
-font-size:25px;
+        }
 
-}
+        .achievement-label {
 
-.achievement-label{
+            font-family: monospace;
 
-font-family:monospace;
+            font-size: 9px;
 
-font-size:9px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
+        .achievement h3 {
 
-.achievement h3{
+            font-size: 22px;
 
-font-size:22px;
+            margin: 7px 0;
 
-margin:7px 0;
+        }
 
-}
+        .achievement p {
 
-.achievement p{
+            font-size: 11px;
 
-font-size:11px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
+        .cs-photo {
 
-.cs-photo{
+            width: 100px;
 
-width:100px;
+            height: 100px;
 
-height:100px;
+            margin-top: 18px;
 
-margin-top:18px;
+            border:
+                1px dashed var(--green);
 
-border:
-1px dashed
-var(--green);
+            border-radius: 10px;
 
-border-radius:10px;
+            background: var(--card);
 
-background:var(--card);
+            display: grid;
 
-display:grid;
+            place-items: center;
 
-place-items:center;
+            overflow: hidden;
 
-overflow:hidden;
+        }
 
-}
+        .cs-photo img {
 
-.cs-photo img{
+            display: none;
 
-display:none;
+            width: 100%;
 
-width:100%;
+            height: 100%;
 
-height:100%;
+            object-fit: cover;
 
-object-fit:cover;
+        }
 
-}
+        .cs-placeholder {
 
-.cs-placeholder{
+            font-size: 24px;
 
-font-size:24px;
+        }
 
-}
+        .year {
 
-.year{
+            font-family: monospace;
 
-font-family:monospace;
+            font-size: 10px;
 
-font-size:10px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+        }
 
-}
 
+        /* CONTACT */
 
-/* CONTACT */
+        .contact {
 
-.contact{
+            text-align: center;
 
-text-align:center;
+            padding: 150px 0;
 
-padding:150px 0;
+        }
 
-}
+        .contact h2 {
 
-.contact h2{
+            font-size:
+                clamp(45px, 7vw, 88px);
 
-font-size:
-clamp(45px,7vw,88px);
+            letter-spacing: -6px;
 
-letter-spacing:-6px;
+            line-height: .95;
 
-line-height:.95;
+            margin: 20px 0;
 
-margin:20px 0;
+        }
 
-}
+        .contact p {
 
-.contact p{
+            max-width: 570px;
 
-max-width:570px;
+            margin: auto;
 
-margin:auto;
+            font-size: 13px;
 
-font-size:13px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
+        .contact-buttons {
 
-.contact-buttons{
+            display: flex;
 
-display:flex;
+            justify-content: center;
 
-justify-content:center;
+            gap: 10px;
 
-gap:10px;
+            margin-top: 30px;
 
-margin-top:30px;
+        }
 
-}
+        .contact-details {
 
-.contact-details{
+            margin-top: 25px;
 
-margin-top:25px;
+            font-family: monospace;
 
-font-family:monospace;
+            font-size: 9px;
 
-font-size:9px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
 
+        /* FOOTER */
 
-/* FOOTER */
+        footer {
 
-footer{
+            padding: 30px 0;
 
-padding:30px 0;
+            border-top: 1px solid var(--line);
 
-border-top:1px solid var(--line);
+        }
 
-}
+        .footer {
 
-.footer{
+            display: flex;
 
-display:flex;
+            justify-content: space-between;
 
-justify-content:space-between;
+            align-items: center;
 
-align-items:center;
+        }
 
-}
+        .footer small {
 
-.footer small{
+            font-size: 9px;
 
-font-size:9px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
 
+        /* MODAL */
 
-/* MODAL */
+        .modal {
 
-.modal{
+            display: none;
 
-display:none;
+            position: fixed;
 
-position:fixed;
+            inset: 0;
 
-inset:0;
+            z-index: 2000;
 
-z-index:2000;
+            background:
+                rgba(25, 40, 30, .55);
 
-background:
-rgba(25,40,30,.55);
+            backdrop-filter: blur(12px);
 
-backdrop-filter:blur(12px);
+            align-items: center;
 
-align-items:center;
+            justify-content: center;
 
-justify-content:center;
+            padding: 20px;
 
-padding:20px;
+        }
 
-}
+        body.dark .modal {
 
-body.dark .modal{
+            background:
+                rgba(0, 0, 0, .72);
 
-background:
-rgba(0,0,0,.72);
+        }
 
-}
+        .modal.show {
 
-.modal.show{
+            display: flex;
 
-display:flex;
+        }
 
-}
+        .modal-box {
 
-.modal-box{
+            width: min(700px, 100%);
 
-width:min(700px,100%);
+            max-height: 90vh;
 
-max-height:90vh;
+            overflow: auto;
 
-overflow:auto;
+            padding: 40px;
 
-padding:40px;
+            background: var(--card);
 
-background:var(--card);
+            border: 1px solid var(--line);
 
-border:1px solid var(--line);
+            border-radius: 20px;
 
-border-radius:20px;
+            position: relative;
 
-position:relative;
+            box-shadow:
+                0 30px 90px rgba(49, 92, 58, .22);
 
-box-shadow:
-0 30px 90px
-rgba(49,92,58,.22);
+        }
 
-}
+        .close {
 
-.close{
+            position: absolute;
 
-position:absolute;
+            right: 15px;
 
-right:15px;
+            top: 15px;
 
-top:15px;
+            width: 36px;
 
-width:36px;
+            height: 36px;
 
-height:36px;
+            border-radius: 50%;
 
-border-radius:50%;
+            border: 1px solid var(--line);
 
-border:1px solid var(--line);
+            background: var(--card);
 
-background:var(--card);
+            color: var(--text);
 
-color:var(--text);
+            font-size: 20px;
 
-font-size:20px;
+            cursor: pointer;
 
-cursor:pointer;
+        }
 
-}
+        .modal-category {
 
-.modal-category{
+            font-family: monospace;
 
-font-family:monospace;
+            font-size: 9px;
 
-font-size:9px;
+            color: var(--green-dark);
 
-color:var(--green-dark);
+            letter-spacing: 2px;
 
-letter-spacing:2px;
+        }
 
-}
+        .modal-box h2 {
 
-.modal-box h2{
+            font-size: 32px;
 
-font-size:32px;
+            margin: 8px 0;
 
-margin:8px 0;
+        }
 
-}
+        .modal-description {
 
-.modal-description{
+            font-size: 11px;
 
-font-size:11px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
+        .modal-image {
 
-.modal-image{
+            height: 240px;
 
-height:240px;
+            margin-top: 22px;
 
-margin-top:22px;
+            border-radius: 12px;
 
-border-radius:12px;
+            border:
+                1px dashed var(--green);
 
-border:
-1px dashed
-var(--green);
+            background: var(--mint);
 
-background:var(--mint);
+            display: flex;
 
-display:flex;
+            align-items: center;
 
-align-items:center;
+            justify-content: center;
 
-justify-content:center;
+            overflow: hidden;
 
-overflow:hidden;
+            text-align: center;
 
-text-align:center;
+        }
 
-}
+        .modal-image img {
 
-.modal-image img{
+            display: none;
 
-display:none;
+            width: 100%;
 
-width:100%;
+            height: 100%;
 
-height:100%;
+            object-fit: cover;
 
-object-fit:cover;
+        }
 
-}
+        .modal-image-text {
 
-.modal-image-text{
+            font-size: 10px;
 
-font-size:10px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
+        .modal-list {
 
-.modal-list{
+            margin-top: 20px;
 
-margin-top:20px;
+        }
 
-}
+        .modal-list div {
 
-.modal-list div{
+            display: flex;
 
-display:flex;
+            gap: 12px;
 
-gap:12px;
+            padding: 12px 0;
 
-padding:12px 0;
+            border-bottom: 1px solid var(--line);
 
-border-bottom:1px solid var(--line);
+            font-size: 11px;
 
-font-size:11px;
+            color: var(--muted);
 
-color:var(--muted);
+        }
 
-}
+        .modal-list span {
 
-.modal-list span{
+            color: var(--green);
 
-color:var(--green);
+        }
 
-}
 
+        /* MOBILE */
 
-/* MOBILE */
+        @media(max-width:900px) {
 
-@media(max-width:900px){
+            .links {
 
-.links{
+                display: none;
 
-display:none;
+                position: absolute;
 
-position:absolute;
+                top: 72px;
 
-top:72px;
+                left: 0;
 
-left:0;
+                width: 100%;
 
-width:100%;
+                padding: 25px;
 
-padding:25px;
+                background: var(--card);
 
-background:var(--card);
+                flex-direction: column;
 
-flex-direction:column;
+            }
 
-}
+            .links.open {
 
-.links.open{
+                display: flex;
 
-display:flex;
+            }
 
-}
+            .menu {
 
-.menu{
+                display: block;
 
-display:block;
+            }
 
-}
+            .hero {
 
-.hero{
+                grid-template-columns: 1fr;
 
-grid-template-columns:1fr;
+                padding-top: 120px;
 
-padding-top:120px;
+            }
 
-}
+            .hero-visual {
 
-.hero-visual{
+                height: 400px;
 
-height:400px;
+                order: -1;
 
-order:-1;
+            }
 
-}
+            .hero h1 {
 
-.hero h1{
+                font-size: 58px;
 
-font-size:58px;
+            }
 
-}
+            .about-grid,
+            .education-grid,
+            .skills-grid {
 
-.about-grid,
-.education-grid,
-.skills-grid{
+                grid-template-columns: 1fr;
 
-grid-template-columns:1fr;
+            }
 
-}
+            .internship {
 
-.internship{
+                grid-template-columns: 1fr;
 
-grid-template-columns:1fr;
+            }
 
-}
+            .internship-image {
 
-.internship-image{
+                min-height: 300px;
 
-min-height:300px;
+            }
 
-}
+            .projects {
 
-.projects{
+                grid-template-columns: 1fr;
 
-grid-template-columns:1fr;
+            }
 
-}
+            .skills-layout {
 
-.skills-layout{
+                grid-template-columns:
+                    1fr !important;
 
-grid-template-columns:
-1fr !important;
+            }
 
-}
+        }
 
-}
 
+        /* MOBILE SKILLS */
 
-/* MOBILE SKILLS */
+        @media(max-width:600px) {
 
-@media(max-width:600px){
+            .hero h1 {
 
-.hero h1{
+                font-size: 45px;
 
-font-size:45px;
+                letter-spacing: -4px;
 
-letter-spacing:-4px;
+            }
 
-}
+            .hero-buttons {
 
-.hero-buttons{
+                flex-direction: column;
 
-flex-direction:column;
+            }
 
-}
+            .about-cards {
 
-.about-cards{
+                grid-template-columns: 1fr;
 
-grid-template-columns:1fr;
+            }
 
-}
+            .project-header {
 
-.project-header{
+                display: block;
 
-display:block;
+            }
 
-}
+            .achievement {
 
-.achievement{
+                grid-template-columns: 1fr;
 
-grid-template-columns:1fr;
+            }
 
-}
+            .year {
 
-.year{
+                display: none;
 
-display:none;
+            }
 
-}
+            .contact-buttons {
 
-.contact-buttons{
+                flex-direction: column;
 
-flex-direction:column;
+            }
 
-}
+            .footer {
 
-.footer{
+                flex-direction: column;
 
-flex-direction:column;
+                gap: 10px;
 
-gap:10px;
+                text-align: center;
 
-text-align:center;
+            }
 
-}
+            .skill-card {
 
-.skill-card{
+                padding: 24px !important;
 
-padding:24px !important;
+            }
 
-}
+            .skill-grid {
 
-.skill-grid{
+                grid-template-columns:
+                    1fr 1fr !important;
 
-grid-template-columns:
-1fr 1fr !important;
+            }
 
-}
+            .skill-pill {
 
-.skill-pill{
+                font-size: 9px !important;
 
-font-size:9px !important;
+                padding: 8px 10px !important;
 
-padding:8px 10px !important;
+            }
 
-}
-
-}
-
-</style>
+        }
+    </style>
 
 </head>
 
 <body>
 
 
-<!-- NAVIGATION -->
+    <!-- NAVIGATION -->
 
-<nav>
+    <nav>
 
-<div class="container nav">
+        <div class="container nav">
 
-<a href="#home" class="logo">
+            <a href="#home" class="logo">
 
-TJ<span>.</span>
+                TJ<span>.</span>
 
-</a>
+            </a>
 
-<div class="links" id="links">
+            <div class="links" id="links">
 
-<a href="#home">Home</a>
+                <a href="#home">Home</a>
 
-<a href="#about">About</a>
+                <a href="#about">About</a>
 
-<a href="#internship">Internship</a>
+                <a href="#internship">Internship</a>
 
-<a href="#projects">Projects</a>
+                <a href="#projects">Projects</a>
 
-<a href="#skills">Skills</a>
+                <a href="#skills">Skills</a>
 
-<a href="#education">Education</a>
+                <a href="#education">Education</a>
 
-<a href="#contact">Contact</a>
+                <a href="#contact">Contact</a>
 
-</div>
+            </div>
 
-<div class="nav-right">
+            <div class="nav-right">
 
-<button
-class="theme"
-onclick="toggleTheme()"
-title="Change theme">
+                <button class="theme" onclick="toggleTheme()" title="Change theme">
 
-🌙
+                    🌙
 
-</button>
+                </button>
 
-<button
-class="menu"
-onclick="toggleMenu()">
+                <button class="menu" onclick="toggleMenu()">
 
-☰
+                    ☰
 
-</button>
+                </button>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</nav>
+    </nav>
 
 
-<!-- COVER PAGE -->
+    <!-- COVER PAGE -->
 
-<header
-class="container hero"
-id="home">
+    <header class="container hero" id="home">
 
-<div class="hero-content">
+        <div class="hero-content">
 
-<div class="eyebrow">
+            <div class="eyebrow">
 
-MBA FINANCE · FINANCIAL ANALYSIS · VALUATION
+                MBA FINANCE · FINANCIAL ANALYSIS · VALUATION
 
-</div>
+            </div>
 
-<h1>
+            <h1>
 
-Tanisha
-<span class="gradient">
-Jain
-</span>
+                Tanisha
+                <span class="gradient">
+                    Jain
+                </span>
 
-</h1>
+            </h1>
 
-<p class="hero-description">
+            <p class="hero-description">
 
-MBA Finance student with a strong foundation
-in Accounting and Finance and a passion for
-understanding the financial drivers behind
-successful business.
+                MBA Finance student with a strong foundation
+                in Accounting and Finance and a passion for
+                understanding the financial drivers behind
+                successful business.
 
-</p>
+            </p>
 
-<div class="hero-buttons">
+            <div class="hero-buttons">
 
-<a
-href="#about"
-class="btn btn-primary">
+                <a href="#about" class="btn btn-primary">
 
-Explore My Profile →
+                    Explore My Profile →
 
-</a>
+                </a>
 
-<a
-href="resume.pdf"
-target="_blank"
-class="btn btn-secondary">
+                <a href="resume.pdf" target="_blank" class="btn btn-secondary">
 
-↓ View Resume
+                    ↓ View Resume
 
-</a>
+                </a>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
 
-<!-- PHOTO BOX -->
+        <!-- PHOTO BOX -->
 
-<div class="hero-visual">
+        <div class="hero-visual">
 
-<div class="hero-photo-card">
+            <div class="hero-photo-card">
 
-<div class="hero-photo-inner">
+                <div class="hero-photo-inner">
 
-<div
-class="hero-photo-placeholder"
-id="heroPhotoPlaceholder">
+                    <div class="hero-photo-placeholder" id="heroPhotoPlaceholder">
 
-<div class="hero-photo-icon">
+                        <div class="hero-photo-icon">
 
-👤
+                            👤
 
-</div>
+                        </div>
 
-<h3>
+                        <h3>
 
-Insert Your Photo
+                            Insert Your Photo
 
-</h3>
+                        </h3>
 
-<p>
+                        <p>
 
-Add your professional photograph here.
+                            Add your professional photograph here.
 
-</p>
+                        </p>
 
-<label
-class="upload-btn"
-for="heroPhotoInput">
+                        <label class="upload-btn" for="heroPhotoInput">
 
-Upload Photo
+                            Upload Photo
 
-</label>
+                        </label>
 
-</div>
+                    </div>
 
-<img
-id="heroPhotoImage"
-class="hero-photo-image"
-alt="Tanisha Jain professional photograph">
+                    <img id="heroPhotoImage" class="hero-photo-image" alt="Tanisha Jain professional photograph">
 
-<input
-id="heroPhotoInput"
-type="file"
-accept="image/*"
-hidden>
+                    <input id="heroPhotoInput" type="file" accept="image/*" hidden>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</header>
+    </header>
 
 
-<!-- ABOUT -->
+    <!-- ABOUT -->
 
-<section id="about">
+    <section id="about">
 
-<div class="container">
+        <div class="container">
 
-<div class="section-number">
+            <div class="section-number">
 
-01 / ABOUT ME
+                01 / ABOUT ME
 
-</div>
+            </div>
 
-<h2 class="section-title">
+            <h2 class="section-title">
 
-Analytical thinking.<br>
+                Analytical thinking.<br>
 
-<span class="gradient">
+                <span class="gradient">
 
-Business perspective.
+                    Business perspective.
 
-</span>
+                </span>
 
-</h2>
+            </h2>
 
-<div class="about-grid">
+            <div class="about-grid">
 
-<div class="about-main">
+                <div class="about-main">
 
-<p class="lead">
+                    <p class="lead">
 
-I am an MBA Finance student with a strong
-foundation in Accounting and Finance and
-a passion for understanding the financial
-drivers behind successful business.
+                        I am an MBA Finance student with a strong
+                        foundation in Accounting and Finance and
+                        a passion for understanding the financial
+                        drivers behind successful business.
 
-</p>
+                    </p>
 
-<p>
+                    <p>
 
-My academic journey, internship experience
-and hands-on finance projects have equipped
-me with practical skills to analyse financial
-statements and evaluate investments business
-problems with a structured analytical approach.
+                        My academic journey, internship experience
+                        and hands-on finance projects have equipped
+                        me with practical skills to analyse financial
+                        statements and evaluate investments business
+                        problems with a structured analytical approach.
 
-</p>
+                    </p>
 
-<p>
+                    <p>
 
-Driven by curiosity, integrity, and continuous
-learning, I aspire to build a career in Corporate
-Finance where I can contribute analytical expertise
-while creating long-term value for organization.
+                        Driven by curiosity, integrity, and continuous
+                        learning, I aspire to build a career in Corporate
+                        Finance where I can contribute analytical expertise
+                        while creating long-term value for organization.
 
-</p>
+                    </p>
 
-<div class="about-highlight">
+                    <div class="about-highlight">
 
-<strong>
+                        <strong>
 
-Professional Direction
+                            Professional Direction
 
-</strong>
+                        </strong>
 
-<span>
+                        <span>
 
-Corporate Finance · Financial Analysis ·
-Valuation · Financial Consulting
+                            Corporate Finance · Financial Analysis ·
+                            Valuation · Financial Consulting
 
-</span>
+                        </span>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="about-cards">
+                <div class="about-cards">
 
-<div class="about-card">
+                    <div class="about-card">
 
-<div class="about-icon">
-↗
-</div>
+                        <div class="about-icon">
+                            ↗
+                        </div>
 
-<h3>
-Financial Analysis
-</h3>
+                        <h3>
+                            Financial Analysis
+                        </h3>
 
-<p>
+                        <p>
 
-Interpreting financial statements and identifying
-performance drivers.
+                            Interpreting financial statements and identifying
+                            performance drivers.
 
-</p>
+                        </p>
 
-</div>
+                    </div>
 
-<div class="about-card">
+                    <div class="about-card">
 
-<div class="about-icon">
-◈
-</div>
+                        <div class="about-icon">
+                            ◈
+                        </div>
 
-<h3>
-Valuation
-</h3>
+                        <h3>
+                            Valuation
+                        </h3>
 
-<p>
+                        <p>
 
-Applying valuation frameworks to understand
-business value.
+                            Applying valuation frameworks to understand
+                            business value.
 
-</p>
+                        </p>
 
-</div>
+                    </div>
 
-<div class="about-card">
+                    <div class="about-card">
 
-<div class="about-icon">
-▣
-</div>
+                        <div class="about-icon">
+                            ▣
+                        </div>
 
-<h3>
-Corporate Finance
-</h3>
+                        <h3>
+                            Corporate Finance
+                        </h3>
 
-<p>
+                        <p>
 
-Connecting financial decisions with strategic
-business objectives.
+                            Connecting financial decisions with strategic
+                            business objectives.
 
-</p>
+                        </p>
 
-</div>
+                    </div>
 
-<div class="about-card">
+                    <div class="about-card">
 
-<div class="about-icon">
-✦
-</div>
+                        <div class="about-icon">
+                            ✦
+                        </div>
 
-<h3>
-Continuous Learning
-</h3>
+                        <h3>
+                            Continuous Learning
+                        </h3>
 
-<p>
+                        <p>
 
-Building practical knowledge through projects,
-certifications and experience.
+                            Building practical knowledge through projects,
+                            certifications and experience.
 
-</p>
+                        </p>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
 
-<!-- INTERNSHIP -->
+    <!-- INTERNSHIP -->
 
-<section id="internship">
+    <section id="internship">
 
-<div class="container">
+        <div class="container">
 
-<div class="section-number">
+            <div class="section-number">
 
-02 / INTERNSHIP
+                02 / INTERNSHIP
 
-</div>
+            </div>
 
-<h2 class="section-title">
+            <h2 class="section-title">
 
-From classroom<br>
+                From classroom<br>
 
-<span class="gradient">
+                <span class="gradient">
 
-to corporate exposure.
+                    to corporate exposure.
 
-</span>
+                </span>
 
-</h2>
+            </h2>
 
-<div class="internship">
+            <div class="internship">
 
-<div class="internship-image">
+                <div class="internship-image">
 
-<img
-id="internshipImage">
+                    <img id="internshipImage">
 
-<div
-class="image-placeholder"
-id="internshipPlaceholder">
+                    <div class="image-placeholder" id="internshipPlaceholder">
 
-<div class="big">
-⌂
-</div>
+                        <div class="big">
+                            ⌂
+                        </div>
 
-<p>
+                        <p>
 
-Add your company / internship photograph
+                            Add your company / internship photograph
 
-</p>
+                        </p>
 
-<label
-class="upload-btn"
-for="internshipInput">
+                        <label class="upload-btn" for="internshipInput">
 
-Upload Image
+                            Upload Image
 
-</label>
+                        </label>
 
-<input
-id="internshipInput"
-type="file"
-accept="image/*"
-hidden>
+                        <input id="internshipInput" type="file" accept="image/*" hidden>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="internship-content">
+                <div class="internship-content">
 
-<div class="company-name">
+                    <div class="company-name">
 
-IOL CHEMICALS &amp; PHARMACEUTICALS LTD
+                        IOL CHEMICALS &amp; PHARMACEUTICALS LTD
 
-</div>
+                    </div>
 
-<h3>
+                    <h3>
 
-Finance Intern
+                        Finance Intern
 
-</h3>
+                    </h3>
 
-<div class="internship-date">
+                    <div class="internship-date">
 
-Ludhiana · Summer Internship
+                        Ludhiana · Summer Internship
 
-</div>
+                    </div>
 
-<p>
+                    <p>
 
-Evaluated six years of financial statements
-to assess liquidity, profitability, solvency,
-efficiency and cash flow, providing a holistic
-view of company performance.
+                        Evaluated six years of financial statements
+                        to assess liquidity, profitability, solvency,
+                        efficiency and cash flow, providing a holistic
+                        view of company performance.
 
-</p>
+                    </p>
 
-<p>
+                    <p>
 
-Developed a comprehensive financial model
-incorporating trend analysis and common-size
-statements to generate actionable financial insights.
+                        Developed a comprehensive financial model
+                        incorporating trend analysis and common-size
+                        statements to generate actionable financial insights.
 
-</p>
+                    </p>
 
-<p>
+                    <p>
 
-Delivered a report that revealed declining
-profitability despite stable revenue, assessed
-creditworthiness and recommended actions
-based on financial performance.
+                        Delivered a report that revealed declining
+                        profitability despite stable revenue, assessed
+                        creditworthiness and recommended actions
+                        based on financial performance.
 
-</p>
+                    </p>
 
-<div class="tags">
+                    <div class="tags">
 
-<span class="tag">
-Financial Statements
-</span>
+                        <span class="tag">
+                            Financial Statements
+                        </span>
 
-<span class="tag">
-Ratio Analysis
-</span>
+                        <span class="tag">
+                            Ratio Analysis
+                        </span>
 
-<span class="tag">
-Trend Analysis
-</span>
+                        <span class="tag">
+                            Trend Analysis
+                        </span>
 
-<span class="tag">
-Cash Flow
-</span>
+                        <span class="tag">
+                            Cash Flow
+                        </span>
 
-<span class="tag">
-Creditworthiness
-</span>
+                        <span class="tag">
+                            Creditworthiness
+                        </span>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
 
-<!-- PROJECTS -->
+    <!-- PROJECTS -->
 
-<section id="projects">
+    <section id="projects">
 
-<div class="container">
+        <div class="container">
 
-<div class="project-header">
+            <div class="project-header">
 
-<div>
+                <div>
 
-<div class="section-number">
+                    <div class="section-number">
 
-03 / PROJECTS
+                        03 / PROJECTS
 
-</div>
+                    </div>
 
-<h2 class="section-title">
+                    <h2 class="section-title">
 
-Selected work.<br>
+                        Selected work.<br>
 
-<span class="gradient">
+                        <span class="gradient">
 
-Applied finance.
+                            Applied finance.
 
-</span>
+                        </span>
 
-</h2>
+                    </h2>
 
-</div>
+                </div>
 
-<p class="section-intro">
+                <p class="section-intro">
 
-A selection of academic and practical projects
-showcasing financial analysis, valuation,
-working capital and strategic thinking.
+                    A selection of academic and practical projects
+                    showcasing financial analysis, valuation,
+                    working capital and strategic thinking.
 
-</p>
+                </p>
 
-</div>
+            </div>
 
-<div class="filters">
+            <div class="filters">
 
-<button
-class="filter active"
-onclick="filterProjects('all',this)">
+                <button class="filter active" onclick="filterProjects('all',this)">
 
-All
+                    All
 
-</button>
+                </button>
 
-<button
-class="filter"
-onclick="filterProjects('valuation',this)">
+                <button class="filter" onclick="filterProjects('valuation',this)">
 
-Valuation
+                    Valuation
 
-</button>
+                </button>
 
-<button
-class="filter"
-onclick="filterProjects('analysis',this)">
+                <button class="filter" onclick="filterProjects('analysis',this)">
 
-Financial Analysis
+                    Financial Analysis
 
-</button>
+                </button>
 
-<button
-class="filter"
-onclick="filterProjects('business',this)">
+                <button class="filter" onclick="filterProjects('business',this)">
 
-Business
+                    Business
 
-</button>
+                </button>
 
-</div>
+            </div>
 
-<div class="projects">
+            <div class="projects">
 
 
-<div
-class="project"
-data-category="valuation"
-onclick="openProject(
+                <div class="project" data-category="valuation" onclick="openProject(
 'M&A Valuation Model',
 'VALUATION',
 [
@@ -2721,61 +2639,58 @@ onclick="openProject(
 'Generated insights on deal value, shareholder impact and strategic fit.'
 ])">
 
-<div class="project-number">
+                    <div class="project-number">
 
-01 / M&A
+                        01 / M&A
 
-</div>
+                    </div>
 
-<h3>
+                    <h3>
 
-M&A Valuation Model
+                        M&A Valuation Model
 
-</h3>
+                    </h3>
 
-<p>
+                    <p>
 
-Financial model evaluating merger feasibility,
-value creation, synergy potential and
-shareholder impact.
+                        Financial model evaluating merger feasibility,
+                        value creation, synergy potential and
+                        shareholder impact.
 
-</p>
+                    </p>
 
-<div class="tags">
+                    <div class="tags">
 
-<span class="tag">
-Financial Modeling
-</span>
+                        <span class="tag">
+                            Financial Modeling
+                        </span>
 
-<span class="tag">
-Valuation
-</span>
+                        <span class="tag">
+                            Valuation
+                        </span>
 
-<span class="tag">
-M&A
-</span>
+                        <span class="tag">
+                            M&A
+                        </span>
 
-</div>
+                    </div>
 
-<div class="project-footer">
+                    <div class="project-footer">
 
-<span>
-Finance
-</span>
+                        <span>
+                            Finance
+                        </span>
 
-<span>
-View Case Study →
-</span>
+                        <span>
+                            View Case Study →
+                        </span>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
 
-<div
-class="project"
-data-category="valuation"
-onclick="openProject(
+                <div class="project" data-category="valuation" onclick="openProject(
 'NMDC Steel Valuation Model',
 'VALUATION',
 [
@@ -2785,60 +2700,57 @@ onclick="openProject(
 'Compared intrinsic and market value to support investment decision-making.'
 ])">
 
-<div class="project-number">
+                    <div class="project-number">
 
-02 / VALUATION
+                        02 / VALUATION
 
-</div>
+                    </div>
 
-<h3>
+                    <h3>
 
-NMDC Steel Valuation Model
+                        NMDC Steel Valuation Model
 
-</h3>
+                    </h3>
 
-<p>
+                    <p>
 
-Integrated financial valuation model using
-financial statements and investment metrics.
+                        Integrated financial valuation model using
+                        financial statements and investment metrics.
 
-</p>
+                    </p>
 
-<div class="tags">
+                    <div class="tags">
 
-<span class="tag">
-NPV
-</span>
+                        <span class="tag">
+                            NPV
+                        </span>
 
-<span class="tag">
-IRR
-</span>
+                        <span class="tag">
+                            IRR
+                        </span>
 
-<span class="tag">
-Payback
-</span>
+                        <span class="tag">
+                            Payback
+                        </span>
 
-</div>
+                    </div>
 
-<div class="project-footer">
+                    <div class="project-footer">
 
-<span>
-Valuation
-</span>
+                        <span>
+                            Valuation
+                        </span>
 
-<span>
-View Case Study →
-</span>
+                        <span>
+                            View Case Study →
+                        </span>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
 
-<div
-class="project"
-data-category="analysis"
-onclick="openProject(
+                <div class="project" data-category="analysis" onclick="openProject(
 'Working Capital Analysis',
 'FINANCIAL ANALYSIS',
 [
@@ -2848,60 +2760,57 @@ onclick="openProject(
 'Focused on inventory-to-cash conversion and financial stability.'
 ])">
 
-<div class="project-number">
+                    <div class="project-number">
 
-03 / ANALYSIS
+                        03 / ANALYSIS
 
-</div>
+                    </div>
 
-<h3>
+                    <h3>
 
-Working Capital Analysis
+                        Working Capital Analysis
 
-</h3>
+                    </h3>
 
-<p>
+                    <p>
 
-Analysis of working capital cycle and
-operational efficiency.
+                        Analysis of working capital cycle and
+                        operational efficiency.
 
-</p>
+                    </p>
 
-<div class="tags">
+                    <div class="tags">
 
-<span class="tag">
-Working Capital
-</span>
+                        <span class="tag">
+                            Working Capital
+                        </span>
 
-<span class="tag">
-CCC
-</span>
+                        <span class="tag">
+                            CCC
+                        </span>
 
-<span class="tag">
-Efficiency
-</span>
+                        <span class="tag">
+                            Efficiency
+                        </span>
 
-</div>
+                    </div>
 
-<div class="project-footer">
+                    <div class="project-footer">
 
-<span>
-Analysis
-</span>
+                        <span>
+                            Analysis
+                        </span>
 
-<span>
-View Case Study →
-</span>
+                        <span>
+                            View Case Study →
+                        </span>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
 
-<div
-class="project"
-data-category="business"
-onclick="openProject(
+                <div class="project" data-category="business" onclick="openProject(
 'Rootsy Branding Strategy',
 'BUSINESS STRATEGY',
 [
@@ -2911,60 +2820,57 @@ onclick="openProject(
 'Generated sales through targeted marketing and sales execution.'
 ])">
 
-<div class="project-number">
+                    <div class="project-number">
 
-04 / STRATEGY
+                        04 / STRATEGY
 
-</div>
+                    </div>
 
-<h3>
+                    <h3>
 
-Rootsy Branding Strategy
+                        Rootsy Branding Strategy
 
-</h3>
+                    </h3>
 
-<p>
+                    <p>
 
-Transformed an unbranded plant-based product
-into a market-ready brand.
+                        Transformed an unbranded plant-based product
+                        into a market-ready brand.
 
-</p>
+                    </p>
 
-<div class="tags">
+                    <div class="tags">
 
-<span class="tag">
-Market Research
-</span>
+                        <span class="tag">
+                            Market Research
+                        </span>
 
-<span class="tag">
-Branding
-</span>
+                        <span class="tag">
+                            Branding
+                        </span>
 
-<span class="tag">
-Strategy
-</span>
+                        <span class="tag">
+                            Strategy
+                        </span>
 
-</div>
+                    </div>
 
-<div class="project-footer">
+                    <div class="project-footer">
 
-<span>
-Business
-</span>
+                        <span>
+                            Business
+                        </span>
 
-<span>
-View Case Study →
-</span>
+                        <span>
+                            View Case Study →
+                        </span>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
 
-<div
-class="project"
-data-category="business"
-onclick="openProject(
+                <div class="project" data-category="business" onclick="openProject(
 'Strategic Cost Management',
 'TARGET COSTING',
 [
@@ -2974,2465 +2880,2380 @@ onclick="openProject(
 'Proposed cost-efficient and user-friendly specifications.'
 ])">
 
-<div class="project-number">
+                    <div class="project-number">
 
-05 / COST
+                        05 / COST
 
-</div>
+                    </div>
 
-<h3>
+                    <h3>
 
-Strategic Cost Management
+                        Strategic Cost Management
 
-</h3>
+                    </h3>
 
-<p>
+                    <p>
 
-Target costing project focused on a
-posture-corrector smart band.
+                        Target costing project focused on a
+                        posture-corrector smart band.
 
-</p>
+                    </p>
 
-<div class="tags">
+                    <div class="tags">
 
-<span class="tag">
-Target Costing
-</span>
+                        <span class="tag">
+                            Target Costing
+                        </span>
 
-<span class="tag">
-Cost Management
-</span>
+                        <span class="tag">
+                            Cost Management
+                        </span>
 
-<span class="tag">
-Research
-</span>
+                        <span class="tag">
+                            Research
+                        </span>
 
-</div>
+                    </div>
 
-<div class="project-footer">
+                    <div class="project-footer">
 
-<span>
-Strategy
-</span>
+                        <span>
+                            Strategy
+                        </span>
 
-<span>
-View Case Study →
-</span>
+                        <span>
+                            View Case Study →
+                        </span>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
 
-<!-- SKILLS -->
+    <!-- SKILLS -->
 
-<section id="skills">
+    <section id="skills">
 
-<div class="container">
+        <div class="container">
 
-<div class="section-number">
+            <div class="section-number">
 
-04 / SKILLS
+                04 / SKILLS
 
-</div>
+            </div>
 
-<h2 class="section-title">
+            <h2 class="section-title">
 
-Solve problems.
+                Solve problems.
 
-</h2>
+            </h2>
 
-<div class="skills-layout">
+            <div class="skills-layout">
 
 
-<!-- LEFT CARD -->
+                <!-- LEFT CARD -->
 
-<div class="skill-card">
+                <div class="skill-card">
 
-<h3>
+                    <h3>
 
-Financial Analysis Skills
+                        Financial Analysis Skills
 
-</h3>
+                    </h3>
 
-<div class="skill-grid">
+                    <div class="skill-grid">
 
-<span class="skill-pill">
+                        <span class="skill-pill">
 
-Financial Analysis
+                            Financial Analysis
 
-</span>
+                        </span>
 
-<span class="skill-pill">
+                        <span class="skill-pill">
 
-Financial Modeling
+                            Financial Modeling
 
-</span>
+                        </span>
 
-<span class="skill-pill">
+                        <span class="skill-pill">
 
-Valuation
+                            Valuation
 
-</span>
+                        </span>
 
-<span class="skill-pill">
+                        <span class="skill-pill">
 
-Ratio Analysis
+                            Ratio Analysis
 
-</span>
+                        </span>
 
-<span class="skill-pill">
+                        <span class="skill-pill">
 
-Financial Statements
+                            Financial Statements
 
-</span>
+                        </span>
 
-<span class="skill-pill">
+                        <span class="skill-pill">
 
-Cash Flow Analysis
+                            Cash Flow Analysis
 
-</span>
+                        </span>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
 
-<!-- RIGHT CARD -->
+                <!-- RIGHT CARD -->
 
-<div class="skill-card">
+                <div class="skill-card">
 
-<h3>
+                    <h3>
 
-Tools &amp; Platforms
+                        Tools &amp; Platforms
 
-</h3>
+                    </h3>
 
-<div class="skill-inline">
+                    <div class="skill-inline">
 
-<span class="skill-pill">
-MS Excel
-</span>
+                        <span class="skill-pill">
+                            MS Excel
+                        </span>
 
-<span class="skill-pill">
-Power BI
-</span>
+                        <span class="skill-pill">
+                            Power BI
+                        </span>
 
-<span class="skill-pill">
-Tableau
-</span>
+                        <span class="skill-pill">
+                            Tableau
+                        </span>
 
-<span class="skill-pill">
-PowerPoint
-</span>
+                        <span class="skill-pill">
+                            PowerPoint
+                        </span>
 
-<span class="skill-pill">
-Canva
-</span>
+                        <span class="skill-pill">
+                            Canva
+                        </span>
 
-<span class="skill-pill">
-Tally
-</span>
+                        <span class="skill-pill">
+                            Tally
+                        </span>
 
-</div>
+                    </div>
 
-<h3 class="power-title" style="margin-top:25px !important; padding-top:5px !important;">
+                    <h3 class="power-title" style="margin-top:25px !important; padding-top:5px !important;">
 
-Power Skills
+                        Power Skills
 
-</h3>
+                    </h3>
 
-<div class="skill-inline">
+                    <div class="skill-inline">
 
-<span class="skill-pill">
+                        <span class="skill-pill">
 
-Time Management
+                            Time Management
 
-</span>
+                        </span>
 
-<span class="skill-pill">
+                        <span class="skill-pill">
 
-Problem Solving
+                            Problem Solving
 
-</span>
+                        </span>
 
-<span class="skill-pill">
+                        <span class="skill-pill">
 
-Leadership
+                            Leadership
 
-</span>
+                        </span>
 
-<span class="skill-pill">
+                        <span class="skill-pill">
 
-Decision Making
+                            Decision Making
 
-</span>
+                        </span>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
 
-<!-- EDUCATION -->
+    <!-- EDUCATION -->
 
-<section id="education">
+    <section id="education">
 
-<div class="container">
+        <div class="container">
 
-<div class="section-number">
+            <div class="section-number">
 
-05 / EDUCATION
+                05 / EDUCATION
 
-</div>
+            </div>
 
-<h2 class="section-title">
+            <h2 class="section-title">
 
-Academic foundation.<br>
+                Academic foundation.<br>
 
-<span class="gradient">
+                <span class="gradient">
 
-Professional credentials.
+                    Professional credentials.
 
-</span>
+                </span>
 
-</h2>
+            </h2>
 
-<div class="education-grid">
+            <div class="education-grid">
 
-<div class="timeline">
+                <div class="timeline">
 
-<div class="education-item">
+                    <div class="education-item">
 
-<div class="dot"></div>
+                        <div class="dot"></div>
 
-<div class="education-date">
+                        <div class="education-date">
 
-AUG 2025 — PRESENT
+                            AUG 2025 — PRESENT
 
-</div>
+                        </div>
 
-<h3>
+                        <h3>
 
-Master of Business Administration — Finance
+                            Master of Business Administration — Finance
 
-</h3>
+                        </h3>
 
-<p>
+                        <p>
 
-Lovely Professional University ·
-Phagwara, Punjab
+                            Lovely Professional University ·
+                            Phagwara, Punjab
 
-</p>
+                        </p>
 
-</div>
+                    </div>
 
-<div class="education-item">
+                    <div class="education-item">
 
-<div class="dot"></div>
+                        <div class="dot"></div>
 
-<div class="education-date">
+                        <div class="education-date">
 
-AUG 2022 — MAY 2025
+                            AUG 2022 — MAY 2025
 
-</div>
+                        </div>
 
-<h3>
+                        <h3>
 
-Bachelor of Commerce — Accounting &amp; Finance
+                            Bachelor of Commerce — Accounting &amp; Finance
 
-</h3>
+                        </h3>
 
-<p>
+                        <p>
 
-Shree Atam Vallabh Jain College · Ludhiana
+                            Shree Atam Vallabh Jain College · Ludhiana
 
-</p>
+                        </p>
 
-</div>
+                    </div>
 
-<div class="education-item">
+                    <div class="education-item">
 
-<div class="dot"></div>
+                        <div class="dot"></div>
 
-<div class="education-date">
+                        <div class="education-date">
 
-APR 2021 — MAR 2022
+                            APR 2021 — MAR 2022
 
-</div>
+                        </div>
 
-<h3>
+                        <h3>
 
-Intermediate
+                            Intermediate
 
-</h3>
+                        </h3>
 
-<p>
+                        <p>
 
-Bhartiya Vidya Mandir Sr. Sec. School · Ludhiana
+                            Bhartiya Vidya Mandir Sr. Sec. School · Ludhiana
 
-</p>
+                        </p>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="certifications">
+                <div class="certifications">
 
-<h3>
+                    <h3>
 
-Certifications
+                        Certifications
 
-</h3>
+                    </h3>
 
-<div class="cert-note">
+                    <div class="cert-note">
 
-Add your certificate images using the upload buttons.
+                        Add your certificate images using the upload buttons.
 
-</div>
+                    </div>
 
-<div class="cert">
+                    <div class="cert">
 
-<strong>
+                        <strong>
 
-NISM VA Mutual Fund Distributor Certificate
+                            NISM VA Mutual Fund Distributor Certificate
 
-</strong>
+                        </strong>
 
-<span>
+                        <span>
 
-NISM · Mar 2026
+                            NISM · Mar 2026
 
-</span>
+                        </span>
 
-<label
-class="upload-btn"
-for="cert1">
+                        <label class="upload-btn" for="cert1">
 
-+ Add Certificate
+                            + Add Certificate
 
-</label>
+                        </label>
 
-<input
-id="cert1"
-type="file"
-accept="image/*"
-hidden>
+                        <input id="cert1" type="file" accept="image/*" hidden>
 
-<img
-id="certPreview1"
-class="cert-preview">
+                        <img id="certPreview1" class="cert-preview">
 
-</div>
+                    </div>
 
-<div class="cert">
+                    <div class="cert">
 
-<strong>
+                        <strong>
 
-SEBI Investor Awareness Test
+                            SEBI Investor Awareness Test
 
-</strong>
+                        </strong>
 
-<span>
+                        <span>
 
-NISM · Sep 2025
+                            NISM · Sep 2025
 
-</span>
+                        </span>
 
-<label
-class="upload-btn"
-for="cert2">
+                        <label class="upload-btn" for="cert2">
 
-+ Add Certificate
+                            + Add Certificate
 
-</label>
+                        </label>
 
-<input
-id="cert2"
-type="file"
-accept="image/*"
-hidden>
+                        <input id="cert2" type="file" accept="image/*" hidden>
 
-<img
-id="certPreview2"
-class="cert-preview">
+                        <img id="certPreview2" class="cert-preview">
 
-</div>
+                    </div>
 
-<div class="cert">
+                    <div class="cert">
 
-<strong>
+                        <strong>
 
-Investment Banking Workshop
+                            Investment Banking Workshop
 
-</strong>
+                        </strong>
 
-<span>
+                        <span>
 
-Bank of New York · Aug 2025
+                            Bank of New York · Aug 2025
 
-</span>
+                        </span>
 
-<label
-class="upload-btn"
-for="cert3">
+                        <label class="upload-btn" for="cert3">
 
-+ Add Certificate
+                            + Add Certificate
 
-</label>
+                        </label>
 
-<input
-id="cert3"
-type="file"
-accept="image/*"
-hidden>
+                        <input id="cert3" type="file" accept="image/*" hidden>
 
-<img
-id="certPreview3"
-class="cert-preview">
+                        <img id="certPreview3" class="cert-preview">
 
-</div>
+                    </div>
 
-<div class="cert">
+                    <div class="cert">
 
-<strong>
+                        <strong>
 
-MS Excel, Tableau &amp; Power BI
+                            MS Excel, Tableau &amp; Power BI
 
-</strong>
+                        </strong>
 
-<span>
+                        <span>
 
-LPU · Aug 2025
+                            LPU · Aug 2025
 
-</span>
+                        </span>
 
-<label
-class="upload-btn"
-for="cert4">
+                        <label class="upload-btn" for="cert4">
 
-+ Add Certificate
+                            + Add Certificate
 
-</label>
+                        </label>
 
-<input
-id="cert4"
-type="file"
-accept="image/*"
-hidden>
+                        <input id="cert4" type="file" accept="image/*" hidden>
 
-<img
-id="certPreview4"
-class="cert-preview">
+                        <img id="certPreview4" class="cert-preview">
 
-</div>
+                    </div>
 
-<div class="cert">
+                    <div class="cert">
 
-<strong>
+                        <strong>
 
-The Practical Marketer
+                            The Practical Marketer
 
-</strong>
+                        </strong>
 
-<span>
+                        <span>
 
-LPU · Sep 2025
+                            LPU · Sep 2025
 
-</span>
+                        </span>
 
-<label
-class="upload-btn"
-for="cert5">
+                        <label class="upload-btn" for="cert5">
 
-+ Add Certificate
+                            + Add Certificate
 
-</label>
+                        </label>
 
-<input
-id="cert5"
-type="file"
-accept="image/*"
-hidden>
+                        <input id="cert5" type="file" accept="image/*" hidden>
 
-<img
-id="certPreview5"
-class="cert-preview">
+                        <img id="certPreview5" class="cert-preview">
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
 
-<!-- ACHIEVEMENT -->
+    <!-- ACHIEVEMENT -->
 
-<section>
+    <section>
 
-<div class="container">
+        <div class="container">
 
-<div class="section-number">
+            <div class="section-number">
 
-06 / ACHIEVEMENT
+                06 / ACHIEVEMENT
 
-</div>
+            </div>
 
-<h2 class="section-title">
+            <h2 class="section-title">
 
-A milestone in<br>
+                A milestone in<br>
 
-<span class="gradient">
+                <span class="gradient">
 
-my professional journey.
+                    my professional journey.
 
-</span>
+                </span>
 
-</h2>
+            </h2>
 
-<div class="achievement">
+            <div class="achievement">
 
-<div class="achievement-icon">
+                <div class="achievement-icon">
 
-★
+                    ★
 
-</div>
+                </div>
 
-<div>
+                <div>
 
-<div class="achievement-label">
+                    <div class="achievement-label">
 
-PROFESSIONAL ACHIEVEMENT
+                        PROFESSIONAL ACHIEVEMENT
 
-</div>
+                    </div>
 
-<h3>
+                    <h3>
 
-CS Executive Examination —
-Both Groups Cleared
+                        CS Executive Examination —
+                        Both Groups Cleared
 
-</h3>
+                    </h3>
 
-<p>
+                    <p>
 
-Cleared the Company Secretary Executive level
-through ICSI, strengthening knowledge of corporate
-laws, finance and governance.
+                        Cleared the Company Secretary Executive level
+                        through ICSI, strengthening knowledge of corporate
+                        laws, finance and governance.
 
-</p>
+                    </p>
 
-<div class="cs-photo">
+                    <div class="cs-photo">
 
-<img id="csImage">
+                        <img id="csImage">
 
-<div
-id="csPlaceholder"
-class="cs-placeholder">
+                        <div id="csPlaceholder" class="cs-placeholder">
 
-📷
+                            📷
 
-</div>
+                        </div>
 
-</div>
+                    </div>
 
-<label
-class="upload-btn"
-for="csInput">
+                    <label class="upload-btn" for="csInput">
 
-Add Your Photo
+                        Add Your Photo
 
-</label>
+                    </label>
 
-<input
-id="csInput"
-type="file"
-accept="image/*"
-hidden>
+                    <input id="csInput" type="file" accept="image/*" hidden>
 
-</div>
+                </div>
 
-<div class="year">
+                <div class="year">
 
-2025
+                    2025
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
 
-<!-- CONTACT -->
+    <!-- CONTACT -->
 
-<section
-class="contact"
-id="contact">
+    <section class="contact" id="contact">
 
-<div class="container">
+        <div class="container">
 
-<div class="section-number">
+            <div class="section-number">
 
-07 / CONTACT
+                07 / CONTACT
 
-</div>
+            </div>
 
-<h2>
+            <h2>
 
-Let's build<br>
+                Let's build<br>
 
-<span class="gradient">
+                <span class="gradient">
 
-something valuable.
+                    something valuable.
 
-</span>
+                </span>
 
-</h2>
+            </h2>
 
-<p>
+            <p>
 
-I'm interested in opportunities where financial
-analysis, valuation and strategic thinking can
-create measurable business impact.
+                I'm interested in opportunities where financial
+                analysis, valuation and strategic thinking can
+                create measurable business impact.
 
-</p>
+            </p>
 
-<div class="contact-buttons">
+            <div class="contact-buttons">
 
-<a
-class="btn btn-primary"
-href="mailto:tanishajain315@gmail.com">
+                <a class="btn btn-primary" href="mailto:tanishajain315@gmail.com">
 
-✉ Email Me
+                    ✉ Email Me
 
-</a>
+                </a>
 
-<a
-class="btn btn-secondary"
-href="https://www.linkedin.com/in/tanisha-jain207"
-target="_blank">
+                <a class="btn btn-secondary" href="https://www.linkedin.com/in/tanisha-jain207" target="_blank">
 
-in LinkedIn
+                    in LinkedIn
 
-</a>
+                </a>
 
-</div>
+            </div>
 
-<div class="contact-details">
+        </div>
 
-tanishajain315@gmail.com · India
+    </section>
 
-</div>
 
-</div>
+    <!-- FOOTER -->
 
-</section>
+    <footer>
 
+        <div class="container footer">
 
-<!-- FOOTER -->
+            <div>
 
-<footer>
+                <strong>
 
-<div class="container footer">
+                    TJ<span style="color:var(--green)">.</span>
 
-<div>
+                </strong>
 
-<strong>
+                <small>
 
-TJ<span style="color:var(--green)">.</span>
+                    Finance · Valuation · Corporate Finance
 
-</strong>
+                </small>
 
-<small>
+            </div>
 
-Finance · Valuation · Corporate Finance
+            <small>
 
-</small>
+                © 2026 Tanisha Jain
 
-</div>
+            </small>
+        </div>
 
-<small>
+    </footer>
 
-© 2026 Tanisha Jain
 
-</small>
+    <!-- PROJECT MODAL -->
 
-<a
-href="https://www.linkedin.com/in/tanisha-jain207"
-target="_blank">
+    <div class="modal" id="modal">
 
-LinkedIn ↗
+        <div class="modal-box">
 
-</a>
+            <button class="close" onclick="closeModal()">
 
-</div>
+                ×
 
-</footer>
+            </button>
 
+            <div class="modal-category" id="modalCategory">
+            </div>
 
-<!-- PROJECT MODAL -->
+            <h2 id="modalTitle">
+            </h2>
 
-<div
-class="modal"
-id="modal">
+            <p class="modal-description">
 
-<div class="modal-box">
+                Key work and outcomes from this project.
 
-<button
-class="close"
-onclick="closeModal()">
+            </p>
 
-×
+            <div class="modal-image">
 
-</button>
+                <img id="modalImage">
 
-<div
-class="modal-category"
-id="modalCategory">
-</div>
+                <div class="modal-image-text" id="modalImageText">
 
-<h2 id="modalTitle">
-</h2>
+                    🖼️
 
-<p class="modal-description">
+                    <br><br>
 
-Key work and outcomes from this project.
+                    Add an image related to this project
 
-</p>
+                    <br><br>
 
-<div class="modal-image">
+                    <label class="upload-btn" for="projectImageInput">
 
-<img id="modalImage">
+                        Upload Project Image
 
-<div
-class="modal-image-text"
-id="modalImageText">
+                    </label>
 
-🖼️
+                    <input id="projectImageInput" type="file" accept="image/*" hidden>
 
-<br><br>
+                </div>
 
-Add an image related to this project
+            </div>
 
-<br><br>
+            <div class="modal-list" id="modalList">
+            </div>
 
-<label
-class="upload-btn"
-for="projectImageInput">
+        </div>
 
-Upload Project Image
+    </div>
 
-</label>
 
-<input
-id="projectImageInput"
-type="file"
-accept="image/*"
-hidden>
+    <script>
 
-</div>
+        function toggleTheme() {
 
-</div>
+            document.body.classList.toggle("dark");
 
-<div
-class="modal-list"
-id="modalList">
-</div>
+            const button =
+                document.querySelector(".theme");
 
-</div>
+            if (
+                document.body.classList.contains("dark")
+            ) {
 
-</div>
+                button.innerHTML = "☀️";
 
+                localStorage.setItem(
+                    "theme",
+                    "dark"
+                );
 
-<script>
+            } else {
 
-function toggleTheme(){
+                button.innerHTML = "🌙";
 
-document.body.classList.toggle("dark");
+                localStorage.setItem(
+                    "theme",
+                    "light"
+                );
 
-const button=
-document.querySelector(".theme");
+            }
 
-if(
-document.body.classList.contains("dark")
-){
+        }
 
-button.innerHTML="☀️";
+        if (
+            localStorage.getItem("theme") === "dark"
+        ) {
 
-localStorage.setItem(
-"theme",
-"dark"
-);
+            document.body.classList.add("dark");
 
-}else{
+            document
+                .querySelector(".theme")
+                .innerHTML = "☀️";
 
-button.innerHTML="🌙";
+        } else {
 
-localStorage.setItem(
-"theme",
-"light"
-);
+            document
+                .querySelector(".theme")
+                .innerHTML = "🌙";
 
-}
+        }
 
-}
 
-if(
-localStorage.getItem("theme")==="dark"
-){
+        function toggleMenu() {
 
-document.body.classList.add("dark");
+            document
+                .getElementById("links")
+                .classList
+                .toggle("open");
 
-document
-.querySelector(".theme")
-.innerHTML="☀️";
+        }
 
-}else{
 
-document
-.querySelector(".theme")
-.innerHTML="🌙";
+        const heroPhotoInput =
+            document.getElementById(
+                "heroPhotoInput"
+            );
 
-}
+        function loadHeroPhoto() {
 
+            const saved =
+                localStorage.getItem(
+                    "heroPhoto"
+                );
 
-function toggleMenu(){
+            if (!saved) return;
 
-document
-.getElementById("links")
-.classList
-.toggle("open");
+            const image =
+                document.getElementById(
+                    "heroPhotoImage"
+                );
 
-}
+            const placeholder =
+                document.getElementById(
+                    "heroPhotoPlaceholder"
+                );
 
+            if (image && placeholder) {
 
-const heroPhotoInput=
-document.getElementById(
-"heroPhotoInput"
-);
+                image.src = saved;
 
-function loadHeroPhoto(){
+                image.style.display = "block";
 
-const saved=
-localStorage.getItem(
-"heroPhoto"
-);
+                placeholder.style.display = "none";
 
-if(!saved)return;
+            }
 
-const image=
-document.getElementById(
-"heroPhotoImage"
-);
+        }
 
-const placeholder=
-document.getElementById(
-"heroPhotoPlaceholder"
-);
+        if (heroPhotoInput) {
 
-if(image && placeholder){
+            heroPhotoInput.addEventListener(
+                "change",
+                function (e) {
 
-image.src=saved;
+                    const file = e.target.files[0];
 
-image.style.display="block";
+                    if (!file) return;
 
-placeholder.style.display="none";
+                    if (
+                        !file.type.startsWith("image/")
+                    ) {
 
-}
+                        alert(
+                            "Please select an image file."
+                        );
 
-}
+                        return;
 
-if(heroPhotoInput){
+                    }
 
-heroPhotoInput.addEventListener(
-"change",
-function(e){
+                    const reader =
+                        new FileReader();
 
-const file=e.target.files[0];
+                    reader.onload =
+                        function (event) {
 
-if(!file)return;
+                            const image =
+                                document.getElementById(
+                                    "heroPhotoImage"
+                                );
 
-if(
-!file.type.startsWith("image/")
-){
+                            const placeholder =
+                                document.getElementById(
+                                    "heroPhotoPlaceholder"
+                                );
 
-alert(
-"Please select an image file."
-);
+                            image.src =
+                                event.target.result;
 
-return;
+                            image.style.display = "block";
 
-}
+                            placeholder.style.display = "none";
 
-const reader=
-new FileReader();
+                            try {
 
-reader.onload=
-function(event){
+                                localStorage.setItem(
+                                    "heroPhoto",
+                                    event.target.result
+                                );
 
-const image=
-document.getElementById(
-"heroPhotoImage"
-);
+                            } catch (error) {
 
-const placeholder=
-document.getElementById(
-"heroPhotoPlaceholder"
-);
+                                console.warn(
+                                    "Photo could not be saved locally.",
+                                    error
+                                );
 
-image.src=
-event.target.result;
+                            }
 
-image.style.display="block";
+                        };
 
-placeholder.style.display="none";
+                    reader.readAsDataURL(file);
 
-try{
+                });
 
-localStorage.setItem(
-"heroPhoto",
-event.target.result
-);
+            loadHeroPhoto();
 
-}catch(error){
+        }
 
-console.warn(
-"Photo could not be saved locally.",
-error
-);
 
-}
+        document
+            .getElementById("internshipInput")
+            .addEventListener(
+                "change",
+                function (e) {
 
-};
+                    const file = e.target.files[0];
 
-reader.readAsDataURL(file);
+                    if (!file) return;
 
-});
+                    const reader =
+                        new FileReader();
 
-loadHeroPhoto();
+                    reader.onload =
+                        function (event) {
 
-}
+                            const image =
+                                document.getElementById(
+                                    "internshipImage"
+                                );
 
+                            image.src =
+                                event.target.result;
 
-document
-.getElementById("internshipInput")
-.addEventListener(
-"change",
-function(e){
+                            image.style.display =
+                                "block";
 
-const file=e.target.files[0];
+                            document
+                                .getElementById(
+                                    "internshipPlaceholder"
+                                )
+                                .style.display = "none";
 
-if(!file)return;
+                        };
 
-const reader=
-new FileReader();
+                    reader.readAsDataURL(file);
 
-reader.onload=
-function(event){
+                });
 
-const image=
-document.getElementById(
-"internshipImage"
-);
 
-image.src=
-event.target.result;
+        function filterProjects(
+            category,
+            button
+        ) {
 
-image.style.display=
-"block";
+            document
+                .querySelectorAll(".filter")
+                .forEach(btn => {
 
-document
-.getElementById(
-"internshipPlaceholder"
-)
-.style.display="none";
+                    btn.classList.remove(
+                        "active"
+                    );
 
-};
+                });
 
-reader.readAsDataURL(file);
+            button.classList.add(
+                "active"
+            );
 
-});
+            document
+                .querySelectorAll(".project")
+                .forEach(project => {
 
+                    if (
+                        category === "all" ||
+                        project.dataset.category === category
+                    ) {
 
-function filterProjects(
-category,
-button
-){
+                        project.style.display = "block";
 
-document
-.querySelectorAll(".filter")
-.forEach(btn=>{
+                    } else {
 
-btn.classList.remove(
-"active"
-);
+                        project.style.display = "none";
 
-});
+                    }
 
-button.classList.add(
-"active"
-);
+                });
 
-document
-.querySelectorAll(".project")
-.forEach(project=>{
+        }
 
-if(
-category==="all" ||
-project.dataset.category===category
-){
 
-project.style.display="block";
+        function openProject(
+            title,
+            category,
+            details
+        ) {
 
-}else{
+            document
+                .getElementById("modal")
+                .classList
+                .add("show");
 
-project.style.display="none";
+            document
+                .getElementById("modalTitle")
+                .innerText =
+                title;
 
-}
+            document
+                .getElementById("modalCategory")
+                .innerText =
+                category;
 
-});
+            const list =
+                document.getElementById(
+                    "modalList"
+                );
 
-}
+            list.innerHTML = "";
 
+            details.forEach(item => {
 
-function openProject(
-title,
-category,
-details
-){
+                const row =
+                    document.createElement("div");
 
-document
-.getElementById("modal")
-.classList
-.add("show");
+                row.innerHTML =
+                    "<span>✓</span><p>" +
+                    item +
+                    "</p>";
 
-document
-.getElementById("modalTitle")
-.innerText=
-title;
+                list.appendChild(row);
 
-document
-.getElementById("modalCategory")
-.innerText=
-category;
+            });
 
-const list=
-document.getElementById(
-"modalList"
-);
+            document
+                .getElementById("modalImage")
+                .style.display = "none";
 
-list.innerHTML="";
+            document
+                .getElementById("modalImageText")
+                .style.display = "block";
 
-details.forEach(item=>{
+            document
+                .getElementById("projectImageInput")
+                .value = "";
 
-const row=
-document.createElement("div");
+        }
 
-row.innerHTML=
-"<span>✓</span><p>"+
-item+
-"</p>";
 
-list.appendChild(row);
+        function closeModal() {
 
-});
+            document
+                .getElementById("modal")
+                .classList
+                .remove("show");
 
-document
-.getElementById("modalImage")
-.style.display="none";
+        }
 
-document
-.getElementById("modalImageText")
-.style.display="block";
 
-document
-.getElementById("projectImageInput")
-.value="";
+        document
+            .getElementById("modal")
+            .addEventListener(
+                "click",
+                function (e) {
 
-}
+                    if (e.target === this) {
 
+                        closeModal();
 
-function closeModal(){
+                    }
 
-document
-.getElementById("modal")
-.classList
-.remove("show");
+                });
 
-}
 
+        document
+            .getElementById("projectImageInput")
+            .addEventListener(
+                "change",
+                function (e) {
 
-document
-.getElementById("modal")
-.addEventListener(
-"click",
-function(e){
+                    const file = e.target.files[0];
 
-if(e.target===this){
+                    if (!file) return;
 
-closeModal();
+                    const reader =
+                        new FileReader();
 
-}
+                    reader.onload =
+                        function (event) {
 
-});
+                            const image =
+                                document.getElementById(
+                                    "modalImage"
+                                );
 
+                            image.src =
+                                event.target.result;
 
-document
-.getElementById("projectImageInput")
-.addEventListener(
-"change",
-function(e){
+                            image.style.display =
+                                "block";
 
-const file=e.target.files[0];
+                            document
+                                .getElementById(
+                                    "modalImageText"
+                                )
+                                .style.display = "none";
 
-if(!file)return;
+                        };
 
-const reader=
-new FileReader();
+                    reader.readAsDataURL(file);
 
-reader.onload=
-function(event){
+                });
 
-const image=
-document.getElementById(
-"modalImage"
-);
 
-image.src=
-event.target.result;
+        document
+            .getElementById("csInput")
+            .addEventListener(
+                "change",
+                function (e) {
 
-image.style.display=
-"block";
+                    const file = e.target.files[0];
 
-document
-.getElementById(
-"modalImageText"
-)
-.style.display="none";
+                    if (!file) return;
 
-};
+                    const reader =
+                        new FileReader();
 
-reader.readAsDataURL(file);
+                    reader.onload =
+                        function (event) {
 
-});
+                            const image =
+                                document.getElementById(
+                                    "csImage"
+                                );
 
+                            image.src =
+                                event.target.result;
 
-document
-.getElementById("csInput")
-.addEventListener(
-"change",
-function(e){
+                            image.style.display =
+                                "block";
 
-const file=e.target.files[0];
+                            document
+                                .getElementById(
+                                    "csPlaceholder"
+                                )
+                                .style.display = "none";
 
-if(!file)return;
+                        };
 
-const reader=
-new FileReader();
+                    reader.readAsDataURL(file);
 
-reader.onload=
-function(event){
+                });
 
-const image=
-document.getElementById(
-"csImage"
-);
 
-image.src=
-event.target.result;
+        function setupCertificate(
+            inputID,
+            previewID
+        ) {
 
-image.style.display=
-"block";
+            document
+                .getElementById(inputID)
+                .addEventListener(
+                    "change",
+                    function (e) {
 
-document
-.getElementById(
-"csPlaceholder"
-)
-.style.display="none";
+                        const file = e.target.files[0];
 
-};
+                        if (!file) return;
 
-reader.readAsDataURL(file);
+                        const reader =
+                            new FileReader();
 
-});
+                        reader.onload =
+                            function (event) {
 
+                                const image =
+                                    document.getElementById(
+                                        previewID
+                                    );
 
-function setupCertificate(
-inputID,
-previewID
-){
+                                image.src =
+                                    event.target.result;
 
-document
-.getElementById(inputID)
-.addEventListener(
-"change",
-function(e){
+                                image.style.display =
+                                    "block";
 
-const file=e.target.files[0];
+                            };
 
-if(!file)return;
+                        reader.readAsDataURL(file);
 
-const reader=
-new FileReader();
+                    });
 
-reader.onload=
-function(event){
+        }
 
-const image=
-document.getElementById(
-previewID
-);
 
-image.src=
-event.target.result;
+        setupCertificate(
+            "cert1",
+            "certPreview1"
+        );
 
-image.style.display=
-"block";
+        setupCertificate(
+            "cert2",
+            "certPreview2"
+        );
 
-};
+        setupCertificate(
+            "cert3",
+            "certPreview3"
+        );
 
-reader.readAsDataURL(file);
+        setupCertificate(
+            "cert4",
+            "certPreview4"
+        );
 
-});
+        setupCertificate(
+            "cert5",
+            "certPreview5"
+        );
+        document.addEventListener(
+            "keydown",
+            function (e) {
 
-}
+                if (e.key === "Escape") {
 
+                    closeModal();
 
-setupCertificate(
-"cert1",
-"certPreview1"
-);
+                }
 
-setupCertificate(
-"cert2",
-"certPreview2"
-);
+            });
 
-setupCertificate(
-"cert3",
-"certPreview3"
-);
 
-setupCertificate(
-"cert4",
-"certPreview4"
-);
+        window.addEventListener(
+            "scroll",
+            function () {
 
-setupCertificate(
-"cert5",
-"certPreview5"
-);
-document.addEventListener(
-"keydown",
-function(e){
+                const nav =
+                    document.querySelector("nav");
 
-if(e.key==="Escape"){
+                if (window.scrollY > 30) {
 
-closeModal();
+                    nav.style.boxShadow =
+                        "0 8px 30px rgba(0,0,0,.06)";
 
-}
+                } else {
 
-});
+                    nav.style.boxShadow =
+                        "none";
 
+                }
 
-window.addEventListener(
-"scroll",
-function(){
+            });
 
-const nav=
-document.querySelector("nav");
 
-if(window.scrollY>30){
+        /* SMOOTH MOBILE MENU */
 
-nav.style.boxShadow=
-"0 8px 30px rgba(0,0,0,.06)";
+        document
+            .querySelectorAll(".links a")
+            .forEach(link => {
 
-}else{
+                link.addEventListener(
+                    "click",
+                    function () {
 
-nav.style.boxShadow=
-"none";
+                        document
+                            .getElementById("links")
+                            .classList
+                            .remove("open");
 
-}
+                    });
 
-});
+            });
 
 
-/* SMOOTH MOBILE MENU */
+        /* INTERNSHIP IMAGE */
 
-document
-.querySelectorAll(".links a")
-.forEach(link=>{
+        const internshipInput =
+            document.getElementById(
+                "internshipInput"
+            );
 
-link.addEventListener(
-"click",
-function(){
+        if (internshipInput) {
 
-document
-.getElementById("links")
-.classList
-.remove("open");
+            internshipInput.addEventListener(
+                "change",
+                function (e) {
 
-});
+                    const file = e.target.files[0];
 
-});
+                    if (!file) return;
 
+                    if (
+                        !file.type.startsWith("image/")
+                    ) {
 
-/* INTERNSHIP IMAGE */
+                        alert(
+                            "Please select an image file."
+                        );
 
-const internshipInput=
-document.getElementById(
-"internshipInput"
-);
+                        return;
 
-if(internshipInput){
+                    }
 
-internshipInput.addEventListener(
-"change",
-function(e){
+                    const reader =
+                        new FileReader();
 
-const file=e.target.files[0];
+                    reader.onload =
+                        function (event) {
 
-if(!file)return;
+                            const image =
+                                document.getElementById(
+                                    "internshipImage"
+                                );
 
-if(
-!file.type.startsWith("image/")
-){
+                            const placeholder =
+                                document.getElementById(
+                                    "internshipPlaceholder"
+                                );
 
-alert(
-"Please select an image file."
-);
+                            if (image) {
 
-return;
+                                image.src =
+                                    event.target.result;
 
-}
+                                image.style.display =
+                                    "block";
 
-const reader=
-new FileReader();
+                            }
 
-reader.onload=
-function(event){
+                            if (placeholder) {
 
-const image=
-document.getElementById(
-"internshipImage"
-);
+                                placeholder.style.display =
+                                    "none";
 
-const placeholder=
-document.getElementById(
-"internshipPlaceholder"
-);
+                            }
 
-if(image){
+                        };
 
-image.src=
-event.target.result;
+                    reader.readAsDataURL(file);
 
-image.style.display=
-"block";
+                });
 
-}
+        }
 
-if(placeholder){
 
-placeholder.style.display=
-"none";
+        /* CERTIFICATE IMAGE UPLOAD */
 
-}
+        function certificateUpload(
+            inputId,
+            imageId
+        ) {
 
-};
+            const input =
+                document.getElementById(
+                    inputId
+                );
 
-reader.readAsDataURL(file);
+            if (!input) return;
 
-});
+            input.addEventListener(
+                "change",
+                function (e) {
 
-}
+                    const file =
+                        e.target.files[0];
 
+                    if (!file) return;
 
-/* CERTIFICATE IMAGE UPLOAD */
+                    if (
+                        !file.type.startsWith("image/")
+                    ) {
 
-function certificateUpload(
-inputId,
-imageId
-){
+                        alert(
+                            "Please select an image file."
+                        );
 
-const input=
-document.getElementById(
-inputId
-);
+                        return;
 
-if(!input)return;
+                    }
 
-input.addEventListener(
-"change",
-function(e){
+                    const reader =
+                        new FileReader();
 
-const file=
-e.target.files[0];
+                    reader.onload =
+                        function (event) {
 
-if(!file)return;
+                            const image =
+                                document.getElementById(
+                                    imageId
+                                );
 
-if(
-!file.type.startsWith("image/")
-){
+                            if (image) {
 
-alert(
-"Please select an image file."
-);
+                                image.src =
+                                    event.target.result;
 
-return;
+                                image.style.display =
+                                    "block";
 
-}
+                            }
 
-const reader=
-new FileReader();
+                        };
 
-reader.onload=
-function(event){
+                    reader.readAsDataURL(file);
 
-const image=
-document.getElementById(
-imageId
-);
+                });
 
-if(image){
+        }
 
-image.src=
-event.target.result;
 
-image.style.display=
-"block";
+        certificateUpload(
+            "cert1",
+            "certPreview1"
+        );
 
-}
+        certificateUpload(
+            "cert2",
+            "certPreview2"
+        );
 
-};
+        certificateUpload(
+            "cert3",
+            "certPreview3"
+        );
 
-reader.readAsDataURL(file);
+        certificateUpload(
+            "cert4",
+            "certPreview4"
+        );
 
-});
+        certificateUpload(
+            "cert5",
+            "certPreview5"
+        );
 
-}
 
+        /* ACHIEVEMENT PHOTO */
 
-certificateUpload(
-"cert1",
-"certPreview1"
-);
+        const csInput =
+            document.getElementById(
+                "csInput"
+            );
 
-certificateUpload(
-"cert2",
-"certPreview2"
-);
+        if (csInput) {
 
-certificateUpload(
-"cert3",
-"certPreview3"
-);
+            csInput.addEventListener(
+                "change",
+                function (e) {
 
-certificateUpload(
-"cert4",
-"certPreview4"
-);
+                    const file =
+                        e.target.files[0];
 
-certificateUpload(
-"cert5",
-"certPreview5"
-);
+                    if (!file) return;
 
+                    if (
+                        !file.type.startsWith("image/")
+                    ) {
 
-/* ACHIEVEMENT PHOTO */
+                        alert(
+                            "Please select an image file."
+                        );
 
-const csInput=
-document.getElementById(
-"csInput"
-);
+                        return;
 
-if(csInput){
+                    }
 
-csInput.addEventListener(
-"change",
-function(e){
+                    const reader =
+                        new FileReader();
 
-const file=
-e.target.files[0];
+                    reader.onload =
+                        function (event) {
 
-if(!file)return;
+                            const image =
+                                document.getElementById(
+                                    "csImage"
+                                );
 
-if(
-!file.type.startsWith("image/")
-){
+                            const placeholder =
+                                document.getElementById(
+                                    "csPlaceholder"
+                                );
 
-alert(
-"Please select an image file."
-);
+                            if (image) {
 
-return;
+                                image.src =
+                                    event.target.result;
 
-}
+                                image.style.display =
+                                    "block";
 
-const reader=
-new FileReader();
+                            }
 
-reader.onload=
-function(event){
+                            if (placeholder) {
 
-const image=
-document.getElementById(
-"csImage"
-);
+                                placeholder.style.display =
+                                    "none";
 
-const placeholder=
-document.getElementById(
-"csPlaceholder"
-);
+                            }
 
-if(image){
+                        };
 
-image.src=
-event.target.result;
+                    reader.readAsDataURL(file);
 
-image.style.display=
-"block";
+                });
 
-}
+        }
 
-if(placeholder){
 
-placeholder.style.display=
-"none";
+        /* PROJECT IMAGE */
 
-}
+        const projectImageInput =
+            document.getElementById(
+                "projectImageInput"
+            );
 
-};
+        if (projectImageInput) {
 
-reader.readAsDataURL(file);
+            projectImageInput.addEventListener(
+                "change",
+                function (e) {
 
-});
+                    const file =
+                        e.target.files[0];
 
-}
+                    if (!file) return;
 
+                    if (
+                        !file.type.startsWith("image/")
+                    ) {
 
-/* PROJECT IMAGE */
+                        alert(
+                            "Please select an image file."
+                        );
 
-const projectImageInput=
-document.getElementById(
-"projectImageInput"
-);
+                        return;
 
-if(projectImageInput){
+                    }
 
-projectImageInput.addEventListener(
-"change",
-function(e){
+                    const reader =
+                        new FileReader();
 
-const file=
-e.target.files[0];
+                    reader.onload =
+                        function (event) {
 
-if(!file)return;
+                            const image =
+                                document.getElementById(
+                                    "modalImage"
+                                );
 
-if(
-!file.type.startsWith("image/")
-){
+                            const imageText =
+                                document.getElementById(
+                                    "modalImageText"
+                                );
 
-alert(
-"Please select an image file."
-);
+                            if (image) {
 
-return;
+                                image.src =
+                                    event.target.result;
 
-}
+                                image.style.display =
+                                    "block";
 
-const reader=
-new FileReader();
+                            }
 
-reader.onload=
-function(event){
+                            if (imageText) {
 
-const image=
-document.getElementById(
-"modalImage"
-);
+                                imageText.style.display =
+                                    "none";
 
-const imageText=
-document.getElementById(
-"modalImageText"
-);
+                            }
 
-if(image){
+                        };
 
-image.src=
-event.target.result;
+                    reader.readAsDataURL(file);
 
-image.style.display=
-"block";
+                });
 
-}
+        }
 
-if(imageText){
 
-imageText.style.display=
-"none";
+        /* PROJECT MODAL */
 
-}
+        function openProject(
+            title,
+            category,
+            details
+        ) {
 
-};
+            const modal =
+                document.getElementById(
+                    "modal"
+                );
 
-reader.readAsDataURL(file);
+            const modalTitle =
+                document.getElementById(
+                    "modalTitle"
+                );
 
-});
+            const modalCategory =
+                document.getElementById(
+                    "modalCategory"
+                );
 
-}
+            const modalList =
+                document.getElementById(
+                    "modalList"
+                );
 
+            const modalImage =
+                document.getElementById(
+                    "modalImage"
+                );
 
-/* PROJECT MODAL */
+            const modalImageText =
+                document.getElementById(
+                    "modalImageText"
+                );
 
-function openProject(
-title,
-category,
-details
-){
+            if (modalTitle) {
 
-const modal=
-document.getElementById(
-"modal"
-);
+                modalTitle.textContent =
+                    title;
 
-const modalTitle=
-document.getElementById(
-"modalTitle"
-);
+            }
 
-const modalCategory=
-document.getElementById(
-"modalCategory"
-);
+            if (modalCategory) {
 
-const modalList=
-document.getElementById(
-"modalList"
-);
+                modalCategory.textContent =
+                    category;
 
-const modalImage=
-document.getElementById(
-"modalImage"
-);
+            }
 
-const modalImageText=
-document.getElementById(
-"modalImageText"
-);
+            if (modalList) {
 
-if(modalTitle){
+                modalList.innerHTML = "";
 
-modalTitle.textContent=
-title;
+                details.forEach(
+                    function (detail) {
 
-}
+                        const item =
+                            document.createElement(
+                                "div"
+                            );
 
-if(modalCategory){
-
-modalCategory.textContent=
-category;
-
-}
-
-if(modalList){
-
-modalList.innerHTML="";
-
-details.forEach(
-function(detail){
-
-const item=
-document.createElement(
-"div"
-);
-
-item.innerHTML=
-`
+                        item.innerHTML =
+                            `
 <span>✓</span>
 <p>${detail}</p>
 `;
 
-modalList.appendChild(item);
+                        modalList.appendChild(item);
 
-});
+                    });
 
-}
+            }
 
-if(modalImage){
+            if (modalImage) {
 
-modalImage.src="";
+                modalImage.src = "";
 
-modalImage.style.display=
-"none";
+                modalImage.style.display =
+                    "none";
 
-}
+            }
 
-if(modalImageText){
+            if (modalImageText) {
 
-modalImageText.style.display=
-"block";
+                modalImageText.style.display =
+                    "block";
 
-}
+            }
 
-if(modal){
+            if (modal) {
 
-modal.classList.add(
-"show"
-);
+                modal.classList.add(
+                    "show"
+                );
 
-}
+            }
 
-}
+        }
 
 
-function closeModal(){
+        function closeModal() {
 
-const modal=
-document.getElementById(
-"modal"
-);
+            const modal =
+                document.getElementById(
+                    "modal"
+                );
 
-if(modal){
+            if (modal) {
 
-modal.classList.remove(
-"show"
-);
+                modal.classList.remove(
+                    "show"
+                );
 
-}
+            }
 
-}
+        }
 
 
-/* PROJECT FILTER */
+        /* PROJECT FILTER */
 
-function filterProjects(
-category,
-button
-){
+        function filterProjects(
+            category,
+            button
+        ) {
 
-document
-.querySelectorAll(".filter")
-.forEach(
-function(btn){
+            document
+                .querySelectorAll(".filter")
+                .forEach(
+                    function (btn) {
 
-btn.classList.remove(
-"active"
-);
+                        btn.classList.remove(
+                            "active"
+                        );
 
-});
+                    });
 
-if(button){
+            if (button) {
 
-button.classList.add(
-"active"
-);
+                button.classList.add(
+                    "active"
+                );
 
-}
+            }
 
-document
-.querySelectorAll(".project")
-.forEach(
-function(project){
+            document
+                .querySelectorAll(".project")
+                .forEach(
+                    function (project) {
 
-const projectCategory=
-project.getAttribute(
-"data-category"
-);
+                        const projectCategory =
+                            project.getAttribute(
+                                "data-category"
+                            );
 
-if(
-category==="all" ||
-projectCategory===category
-){
+                        if (
+                            category === "all" ||
+                            projectCategory === category
+                        ) {
 
-project.style.display=
-"block";
+                            project.style.display =
+                                "block";
 
-}else{
+                        } else {
 
-project.style.display=
-"none";
+                            project.style.display =
+                                "none";
 
-}
+                        }
 
-});
+                    });
 
-}
+        }
 
 
-/* NAVIGATION */
+        /* NAVIGATION */
 
-function toggleMenu(){
+        function toggleMenu() {
 
-const links=
-document.getElementById(
-"links"
-);
+            const links =
+                document.getElementById(
+                    "links"
+                );
 
-if(links){
+            if (links) {
 
-links.classList.toggle(
-"open"
-);
+                links.classList.toggle(
+                    "open"
+                );
 
-}
+            }
 
-}
+        }
 
 
-/* THEME */
+        /* THEME */
 
-function toggleTheme(){
+        function toggleTheme() {
 
-const body=
-document.body;
+            const body =
+                document.body;
 
-const themeButton=
-document.querySelector(
-".theme"
-);
+            const themeButton =
+                document.querySelector(
+                    ".theme"
+                );
 
-body.classList.toggle(
-"dark"
-);
+            body.classList.toggle(
+                "dark"
+            );
 
-if(
-body.classList.contains(
-"dark"
-)
-){
+            if (
+                body.classList.contains(
+                    "dark"
+                )
+            ) {
 
-if(themeButton){
+                if (themeButton) {
 
-themeButton.innerHTML=
-"☀️";
+                    themeButton.innerHTML =
+                        "☀️";
 
-}
+                }
 
-localStorage.setItem(
-"theme",
-"dark"
-);
+                localStorage.setItem(
+                    "theme",
+                    "dark"
+                );
 
-}else{
+            } else {
 
-if(themeButton){
+                if (themeButton) {
 
-themeButton.innerHTML=
-"🌙";
+                    themeButton.innerHTML =
+                        "🌙";
 
-}
+                }
 
-localStorage.setItem(
-"theme",
-"light"
-);
+                localStorage.setItem(
+                    "theme",
+                    "light"
+                );
 
-}
+            }
 
-}
+        }
 
 
-/* LOAD SAVED THEME */
+        /* LOAD SAVED THEME */
 
-document.addEventListener(
-"DOMContentLoaded",
-function(){
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
-const savedTheme=
-localStorage.getItem(
-"theme"
-);
+                const savedTheme =
+                    localStorage.getItem(
+                        "theme"
+                    );
 
-const themeButton=
-document.querySelector(
-".theme"
-);
+                const themeButton =
+                    document.querySelector(
+                        ".theme"
+                    );
 
-if(
-savedTheme==="dark"
-){
+                if (
+                    savedTheme === "dark"
+                ) {
 
-document.body.classList.add(
-"dark"
-);
+                    document.body.classList.add(
+                        "dark"
+                    );
 
-if(themeButton){
+                    if (themeButton) {
 
-themeButton.innerHTML=
-"☀️";
+                        themeButton.innerHTML =
+                            "☀️";
 
-}
+                    }
 
-}else{
+                } else {
 
-document.body.classList.remove(
-"dark"
-);
+                    document.body.classList.remove(
+                        "dark"
+                    );
 
-if(themeButton){
+                    if (themeButton) {
 
-themeButton.innerHTML=
-"🌙";
+                        themeButton.innerHTML =
+                            "🌙";
 
-}
+                    }
 
-}
+                }
 
-});
+            });
 
 
-/* HERO PHOTO */
+        /* HERO PHOTO */
 
-document.addEventListener(
-"DOMContentLoaded",
-function(){
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
-const input=
-document.getElementById(
-"heroPhotoInput"
-);
+                const input =
+                    document.getElementById(
+                        "heroPhotoInput"
+                    );
 
-const image=
-document.getElementById(
-"heroPhotoImage"
-);
+                const image =
+                    document.getElementById(
+                        "heroPhotoImage"
+                    );
 
-const placeholder=
-document.getElementById(
-"heroPhotoPlaceholder"
-);
+                const placeholder =
+                    document.getElementById(
+                        "heroPhotoPlaceholder"
+                    );
 
-if(!input)return;
+                if (!input) return;
 
-input.addEventListener(
-"change",
-function(e){
+                input.addEventListener(
+                    "change",
+                    function (e) {
 
-const file=
-e.target.files[0];
+                        const file =
+                            e.target.files[0];
 
-if(!file)return;
+                        if (!file) return;
 
-if(
-!file.type.startsWith("image/")
-){
+                        if (
+                            !file.type.startsWith("image/")
+                        ) {
 
-alert(
-"Please upload an image file."
-);
+                            alert(
+                                "Please upload an image file."
+                            );
 
-return;
+                            return;
 
-}
+                        }
 
-const reader=
-new FileReader();
+                        const reader =
+                            new FileReader();
 
-reader.onload=
-function(event){
+                        reader.onload =
+                            function (event) {
 
-if(image){
+                                if (image) {
 
-image.src=
-event.target.result;
+                                    image.src =
+                                        event.target.result;
 
-image.style.display=
-"block";
+                                    image.style.display =
+                                        "block";
 
-}
+                                }
 
-if(placeholder){
+                                if (placeholder) {
 
-placeholder.style.display=
-"none";
+                                    placeholder.style.display =
+                                        "none";
 
-}
+                                }
 
-try{
+                                try {
 
-localStorage.setItem(
-"tanishaHeroPhoto",
-event.target.result
-);
+                                    localStorage.setItem(
+                                        "tanishaHeroPhoto",
+                                        event.target.result
+                                    );
 
-}catch(error){
+                                } catch (error) {
 
-console.log(
-"Photo preview loaded."
-);
+                                    console.log(
+                                        "Photo preview loaded."
+                                    );
 
-}
+                                }
 
-};
+                            };
 
-reader.readAsDataURL(file);
+                        reader.readAsDataURL(file);
 
-});
+                    });
 
 
-const savedPhoto=
-localStorage.getItem(
-"tanishaHeroPhoto"
-);
+                const savedPhoto =
+                    localStorage.getItem(
+                        "tanishaHeroPhoto"
+                    );
 
-if(savedPhoto){
+                if (savedPhoto) {
 
-if(image){
+                    if (image) {
 
-image.src=
-savedPhoto;
+                        image.src =
+                            savedPhoto;
 
-image.style.display=
-"block";
+                        image.style.display =
+                            "block";
 
-}
+                    }
 
-if(placeholder){
+                    if (placeholder) {
 
-placeholder.style.display=
-"none";
+                        placeholder.style.display =
+                            "none";
 
-}
+                    }
 
-}
+                }
 
-});
+            });
 
 
-/* CLOSE MODAL WHEN CLICKING OUTSIDE */
+        /* CLOSE MODAL WHEN CLICKING OUTSIDE */
 
-document.addEventListener(
-"click",
-function(e){
+        document.addEventListener(
+            "click",
+            function (e) {
 
-const modal=
-document.getElementById(
-"modal"
-);
+                const modal =
+                    document.getElementById(
+                        "modal"
+                    );
 
-if(
-e.target===modal
-){
+                if (
+                    e.target === modal
+                ) {
 
-closeModal();
+                    closeModal();
 
-}
+                }
 
-});
+            });
 
 
-/* ESCAPE KEY */
+        /* ESCAPE KEY */
 
-document.addEventListener(
-"keydown",
-function(e){
+        document.addEventListener(
+            "keydown",
+            function (e) {
 
-if(
-e.key==="Escape"
-){
+                if (
+                    e.key === "Escape"
+                ) {
 
-closeModal();
+                    closeModal();
 
-}
+                }
 
-});
+            });
 
 
-/* INTERNSHIP IMAGE */
+        /* INTERNSHIP IMAGE */
 
-document.addEventListener(
-"DOMContentLoaded",
-function(){
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
-const input=
-document.getElementById(
-"internshipInput"
-);
+                const input =
+                    document.getElementById(
+                        "internshipInput"
+                    );
 
-if(!input)return;
+                if (!input) return;
 
-input.addEventListener(
-"change",
-function(e){
+                input.addEventListener(
+                    "change",
+                    function (e) {
 
-const file=
-e.target.files[0];
+                        const file =
+                            e.target.files[0];
 
-if(!file)return;
+                        if (!file) return;
 
-const reader=
-new FileReader();
+                        const reader =
+                            new FileReader();
 
-reader.onload=
-function(event){
+                        reader.onload =
+                            function (event) {
 
-const image=
-document.getElementById(
-"internshipImage"
-);
+                                const image =
+                                    document.getElementById(
+                                        "internshipImage"
+                                    );
 
-const placeholder=
-document.getElementById(
-"internshipPlaceholder"
-);
+                                const placeholder =
+                                    document.getElementById(
+                                        "internshipPlaceholder"
+                                    );
 
-image.src=
-event.target.result;
+                                image.src =
+                                    event.target.result;
 
-image.style.display=
-"block";
+                                image.style.display =
+                                    "block";
 
-placeholder.style.display=
-"none";
+                                placeholder.style.display =
+                                    "none";
 
-};
+                            };
 
-reader.readAsDataURL(file);
+                        reader.readAsDataURL(file);
 
-});
+                    });
 
-});
+            });
 
 
-/* CERTIFICATION UPLOAD */
+        /* CERTIFICATION UPLOAD */
 
-document.addEventListener(
-"DOMContentLoaded",
-function(){
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
-const certificates=[
-["cert1","certPreview1"],
-["cert2","certPreview2"],
-["cert3","certPreview3"],
-["cert4","certPreview4"],
-["cert5","certPreview5"]
-];
+                const certificates = [
+                    ["cert1", "certPreview1"],
+                    ["cert2", "certPreview2"],
+                    ["cert3", "certPreview3"],
+                    ["cert4", "certPreview4"],
+                    ["cert5", "certPreview5"]
+                ];
 
-certificates.forEach(
-function(item){
+                certificates.forEach(
+                    function (item) {
 
-const input=
-document.getElementById(
-item[0]
-);
+                        const input =
+                            document.getElementById(
+                                item[0]
+                            );
 
-const preview=
-document.getElementById(
-item[1]
-);
+                        const preview =
+                            document.getElementById(
+                                item[1]
+                            );
 
-if(!input)return;
+                        if (!input) return;
 
-input.addEventListener(
-"change",
-function(e){
+                        input.addEventListener(
+                            "change",
+                            function (e) {
 
-const file=
-e.target.files[0];
+                                const file =
+                                    e.target.files[0];
 
-if(!file)return;
+                                if (!file) return;
 
-const reader=
-new FileReader();
+                                const reader =
+                                    new FileReader();
 
-reader.onload=
-function(event){
+                                reader.onload =
+                                    function (event) {
 
-preview.src=
-event.target.result;
+                                        preview.src =
+                                            event.target.result;
 
-preview.style.display=
-"block";
+                                        preview.style.display =
+                                            "block";
 
-};
+                                    };
 
-reader.readAsDataURL(file);
+                                reader.readAsDataURL(file);
 
-});
+                            });
 
-});
+                    });
 
-});
+            });
 
 
-/* ACHIEVEMENT PHOTO */
+        /* ACHIEVEMENT PHOTO */
 
-document.addEventListener(
-"DOMContentLoaded",
-function(){
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
-const input=
-document.getElementById(
-"csInput"
-);
+                const input =
+                    document.getElementById(
+                        "csInput"
+                    );
 
-if(!input)return;
+                if (!input) return;
 
-input.addEventListener(
-"change",
-function(e){
+                input.addEventListener(
+                    "change",
+                    function (e) {
 
-const file=
-e.target.files[0];
+                        const file =
+                            e.target.files[0];
 
-if(!file)return;
+                        if (!file) return;
 
-const reader=
-new FileReader();
+                        const reader =
+                            new FileReader();
 
-reader.onload=
-function(event){
+                        reader.onload =
+                            function (event) {
 
-const image=
-document.getElementById(
-"csImage"
-);
+                                const image =
+                                    document.getElementById(
+                                        "csImage"
+                                    );
 
-const placeholder=
-document.getElementById(
-"csPlaceholder"
-);
+                                const placeholder =
+                                    document.getElementById(
+                                        "csPlaceholder"
+                                    );
 
-image.src=
-event.target.result;
+                                image.src =
+                                    event.target.result;
 
-image.style.display=
-"block";
+                                image.style.display =
+                                    "block";
 
-placeholder.style.display=
-"none";
+                                placeholder.style.display =
+                                    "none";
 
-};
+                            };
 
-reader.readAsDataURL(file);
+                        reader.readAsDataURL(file);
 
-});
+                    });
 
-});
+            });
 
 
-/* PROJECT IMAGE */
+        /* PROJECT IMAGE */
 
-document.addEventListener(
-"DOMContentLoaded",
-function(){
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
-const input=
-document.getElementById(
-"projectImageInput"
-);
+                const input =
+                    document.getElementById(
+                        "projectImageInput"
+                    );
 
-if(!input)return;
+                if (!input) return;
 
-input.addEventListener(
-"change",
-function(e){
+                input.addEventListener(
+                    "change",
+                    function (e) {
 
-const file=
-e.target.files[0];
+                        const file =
+                            e.target.files[0];
 
-if(!file)return;
+                        if (!file) return;
 
-const reader=
-new FileReader();
+                        const reader =
+                            new FileReader();
 
-reader.onload=
-function(event){
+                        reader.onload =
+                            function (event) {
 
-const image=
-document.getElementById(
-"modalImage"
-);
+                                const image =
+                                    document.getElementById(
+                                        "modalImage"
+                                    );
 
-const text=
-document.getElementById(
-"modalImageText"
-);
+                                const text =
+                                    document.getElementById(
+                                        "modalImageText"
+                                    );
 
-image.src=
-event.target.result;
+                                image.src =
+                                    event.target.result;
 
-image.style.display=
-"block";
+                                image.style.display =
+                                    "block";
 
-text.style.display=
-"none";
+                                text.style.display =
+                                    "none";
 
-};
+                            };
 
-reader.readAsDataURL(file);
+                        reader.readAsDataURL(file);
 
-});
+                    });
 
-});
+            });
 
 
-/* ACTIVE NAVIGATION */
+        /* ACTIVE NAVIGATION */
 
-window.addEventListener(
-"scroll",
-function(){
+        window.addEventListener(
+            "scroll",
+            function () {
 
-const sections=
-document.querySelectorAll(
-"section, header"
-);
+                const sections =
+                    document.querySelectorAll(
+                        "section, header"
+                    );
 
-const navLinks=
-document.querySelectorAll(
-".links a"
-);
+                const navLinks =
+                    document.querySelectorAll(
+                        ".links a"
+                    );
 
-let current="home";
+                let current = "home";
 
-sections.forEach(
-function(section){
+                sections.forEach(
+                    function (section) {
 
-const top=
-section.offsetTop-120;
+                        const top =
+                            section.offsetTop - 120;
 
-if(
-window.scrollY>=top
-){
+                        if (
+                            window.scrollY >= top
+                        ) {
 
-current=
-section.getAttribute(
-"id"
-) || current;
+                            current =
+                                section.getAttribute(
+                                    "id"
+                                ) || current;
 
-}
+                        }
 
-});
+                    });
 
-navLinks.forEach(
-function(link){
+                navLinks.forEach(
+                    function (link) {
 
-link.classList.remove(
-"active"
-);
+                        link.classList.remove(
+                            "active"
+                        );
 
-if(
-link.getAttribute("href")===
-"#"+current
-){
+                        if (
+                            link.getAttribute("href") ===
+                            "#" + current
+                        ) {
 
-link.classList.add(
-"active"
-);
+                            link.classList.add(
+                                "active"
+                            );
 
-}
+                        }
 
-});
+                    });
 
-});
+            });
 
 
-/* IMAGE DRAG EFFECT */
+        /* IMAGE DRAG EFFECT */
 
-document
-.querySelectorAll(
-".project, .about-card, .skill-card"
-)
-.forEach(
-function(card){
+        document
+            .querySelectorAll(
+                ".project, .about-card, .skill-card"
+            )
+            .forEach(
+                function (card) {
 
-card.addEventListener(
-"mousemove",
-function(e){
+                    card.addEventListener(
+                        "mousemove",
+                        function (e) {
 
-const rect=
-card.getBoundingClientRect();
+                            const rect =
+                                card.getBoundingClientRect();
 
-const x=
-e.clientX-
-rect.left;
+                            const x =
+                                e.clientX -
+                                rect.left;
 
-const y=
-e.clientY-
-rect.top;
+                            const y =
+                                e.clientY -
+                                rect.top;
 
-const rotateX=
-(y-
-rect.height/2)/
-35;
+                            const rotateX =
+                                (y -
+                                    rect.height / 2) /
+                                35;
 
-const rotateY=
-(rect.width/2-x)/
-35;
+                            const rotateY =
+                                (rect.width / 2 - x) /
+                                35;
 
-card.style.transform=
-`perspective(800px)
+                            card.style.transform =
+                                `perspective(800px)
 rotateX(${rotateX}deg)
 rotateY(${rotateY}deg)
 translateY(-5px)`;
 
-});
+                        });
 
-card.addEventListener(
-"mouseleave",
-function(){
+                    card.addEventListener(
+                        "mouseleave",
+                        function () {
 
-card.style.transform="";
+                            card.style.transform = "";
 
-});
+                        });
 
-});
-
-
-/* INITIALIZE */
-
-document.addEventListener(
-"DOMContentLoaded",
-function(){
-
-const savedTheme=
-localStorage.getItem(
-"theme"
-);
-
-if(
-savedTheme==="dark"
-){
-
-document.body.classList.add(
-"dark"
-);
-
-const button=
-document.querySelector(
-".theme"
-);
-
-if(button){
-
-button.innerHTML=
-"☀️";
-
-}
-
-}
-
-});
+                });
 
 
-</script>
+        /* INITIALIZE */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const savedTheme =
+                    localStorage.getItem(
+                        "theme"
+                    );
+
+                if (
+                    savedTheme === "dark"
+                ) {
+
+                    document.body.classList.add(
+                        "dark"
+                    );
+
+                    const button =
+                        document.querySelector(
+                            ".theme"
+                        );
+
+                    if (button) {
+
+                        button.innerHTML =
+                            "☀️";
+
+                    }
+
+                }
+
+            });
+
+
+    </script>
 </body>
+
 </html>
