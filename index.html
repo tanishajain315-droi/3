@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanisha Jain | Finance Portfolio</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#050b16;--card:#0b1424;--card2:#111d30;
+--text:#f4f7fb;--muted:#9aa8ba;--line:#1d2a3c;
+--green:#8cff72;--blue:#237cff;
+}
+body.light{
+--bg:#f3f6fa;--card:#fff;--card2:#edf2f7;
+--text:#111827;--muted:#5f6b7a;--line:#dce3eb;
+--green:#26851b;--blue:#1266d4;
+}
+html{scroll-behavior:smooth}
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:var(--bg);color:var(--text);
+line-height:1.6;transition:.3s
+}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+.container{width:min(1150px,92%);margin:auto}
+
+/* NAV */
+nav{
+position:fixed;top:0;width:100%;z-index:1000;
+background:rgba(5,11,22,.82);backdrop-filter:blur(15px);
+border-bottom:1px solid var(--line)
+}
+body.light nav{background:rgba(243,246,250,.88)}
+.nav{
+height:70px;display:flex;align-items:center;
+justify-content:space-between
+}
+.logo{font-size:24px;font-weight:800}
+.logo span{color:var(--green)}
+.links{display:flex;gap:25px}
+.links a{font-size:12px;color:var(--muted)}
+.links a:hover{color:var(--green)}
+.nav-buttons{display:flex;gap:8px}
+.theme,.menu{
+width:40px;height:40px;border-radius:50%;
+border:1px solid var(--line);
+background:var(--card);color:var(--text)
+}
+.menu{display:none;border-radius:8px}
+
+/* TOP MARKET IMAGE */
+.market{
+margin-top:70px;height:390px;position:relative;overflow:hidden
+}
+.market>img{
+width:100%;height:100%;object-fit:cover;
+filter:brightness(.43) saturate(1.25)
+}
+.market-overlay{
+position:absolute;inset:0;display:flex;
+align-items:center;justify-content:center;text-align:center;
+background:linear-gradient(90deg,rgba(0,0,20,.75),rgba(0,20,60,.2),rgba(0,0,0,.7))
+}
+.market-text{width:min(850px,90%)}
+.small{
+font-family:monospace;color:var(--green);
+font-size:10px;letter-spacing:3px
+}
+.market h2{
+font-size:clamp(38px,6vw,68px);
+line-height:1;letter-spacing:-4px;margin:15px 0
+}
+.market p{color:#dce4ef;font-size:14px}
+
+/* HERO */
+.hero{
+min-height:calc(100vh - 460px);
+display:grid;grid-template-columns:1.15fr .85fr;
+gap:70px;align-items:center;padding:90px 0
+}
+.hero h1{
+font-size:clamp(48px,7vw,90px);
+letter-spacing:-5px;line-height:1;
+margin:18px 0 25px;
+white-space:nowrap
+}
+.gradient{
+background:linear-gradient(100deg,var(--green),var(--blue));
+-webkit-background-clip:text;color:transparent
+}
+.hero p{color:var(--muted);max-width:600px;font-size:15px}
+.buttons{display:flex;gap:10px;margin-top:30px}
+.btn{
+padding:13px 20px;border-radius:8px;font-size:12px;
+font-weight:bold;display:inline-block;transition:.25s
+}
+.primary{background:var(--green);color:#071007}
+.secondary{border:1px solid var(--line);background:var(--card)}
+.btn:hover{transform:translateY(-3px)}
+
+/* PROFILE */
+.photo{
+height:400px;width:320px;margin:auto;
+border:1px dashed rgba(140,255,114,.5);
+border-radius:22px;background:var(--card);
+display:flex;align-items:center;justify-content:center;
+overflow:hidden;text-align:center
+}
+.photo img{display:none;width:100%;height:100%;object-fit:cover}
+.placeholder{padding:30px}
+.placeholder-icon{font-size:45px}
+.placeholder p{color:var(--muted);font-size:11px;margin:10px 0 18px}
+.upload{
+display:inline-block;background:var(--green);
+color:#071007;padding:9px 14px;
+border-radius:7px;font-size:10px;font-weight:bold;cursor:pointer
+}
+input[type=file]{display:none}
+
+/* SECTIONS */
+section{padding:105px 0;border-top:1px solid var(--line)}
+.label{
+font-family:monospace;color:var(--green);
+font-size:10px;letter-spacing:2px
+}
+.title{
+font-size:clamp(38px,5vw,64px);
+line-height:1;letter-spacing:-4px;margin:14px 0 55px
+}
+
+/* ABOUT */
+.about{
+display:grid;grid-template-columns:1fr 1fr;gap:80px
+}
+.about-text{color:var(--muted);font-size:13px;line-height:1.9}
+.about-text .intro{font-size:20px;color:var(--text);line-height:1.55;margin-bottom:25px}
+.about-text p{margin-bottom:20px}
+.highlight{
+padding:20px;background:var(--card);
+border:1px solid var(--line);border-radius:12px
+}
+.highlight strong{display:block;margin-bottom:5px}
+.highlight span{font-size:11px;color:var(--muted)}
+.about-cards{
+display:grid;grid-template-columns:1fr 1fr;gap:12px
+}
+.info{
+min-height:180px;padding:24px;
+background:var(--card);border:1px solid var(--line);
+border-radius:14px;display:flex;flex-direction:column;
+justify-content:flex-end;transition:.3s
+}
+.info:hover{transform:translateY(-5px);border-color:var(--green)}
+.info-icon{font-size:25px;color:var(--green);margin-bottom:auto}
+.info h3{font-size:15px;margin-bottom:7px}
+.info p{font-size:10px;color:var(--muted)}
+
+/* INTERNSHIP */
+.internship-card{
+background:var(--card);border:1px solid var(--line);
+border-radius:18px;overflow:hidden
+}
+.internship-photo{
+height:340px;background:var(--card2);
+display:flex;align-items:center;justify-content:center;
+position:relative;overflow:hidden;text-align:center
+}
+.internship-photo img{
+display:none;width:100%;height:100%;object-fit:cover
+}
+.internship-placeholder{color:var(--muted);font-size:11px}
+.internship-placeholder div{font-size:45px;margin-bottom:10px}
+.internship-info{padding:35px}
+.company{
+font-family:monospace;font-size:10px;
+letter-spacing:1.5px;color:var(--green)
+}
+.internship-info h3{font-size:32px;margin:8px 0}
+.date{font-size:11px;color:var(--muted);margin-bottom:25px}
+.internship-info p{font-size:13px;color:var(--muted);margin-bottom:17px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.tag{
+padding:7px 10px;background:var(--card2);
+border-radius:5px;color:var(--muted);font-size:9px
+}
+
+/* PROJECTS */
+.project-head{
+display:flex;justify-content:space-between;
+align-items:end;gap:30px
+}
+.project-intro{max-width:400px;color:var(--muted);font-size:12px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:35px 0}
+.filter{
+padding:9px 15px;border-radius:20px;
+background:var(--card);color:var(--muted);
+border:1px solid var(--line);font-size:10px
+}
+.filter.active,.filter:hover{
+background:var(--green);color:#071007;border-color:var(--green)
+}
+.projects{
+display:grid;grid-template-columns:1fr 1fr;gap:15px
+}
+.project{
+min-height:370px;padding:28px;background:var(--card);
+border:1px solid var(--line);border-radius:16px;
+position:relative;cursor:pointer;transition:.3s
+}
+.project:hover{transform:translateY(-5px);border-color:var(--green)}
+.project-icon{
+width:50px;height:50px;border-radius:12px;
+background:rgba(140,255,114,.08);
+display:grid;place-items:center;color:var(--green);
+font-family:monospace;font-size:10px
+}
+.category{
+display:block;color:var(--green);
+font-family:monospace;font-size:9px;
+letter-spacing:1.5px;margin-top:38px
+}
+.project h3{font-size:23px;margin:9px 0}
+.project p{color:var(--muted);font-size:12px}
+.project-bottom{
+position:absolute;left:28px;right:28px;bottom:20px;
+padding-top:13px;border-top:1px solid var(--line);
+display:flex;justify-content:space-between;
+font-size:9px;color:var(--muted)
+}
+
+/* SKILLS */
+.skills{
+display:grid;grid-template-columns:1fr 1fr;gap:15px
+}
+.skill-card{
+background:var(--card);border:1px solid var(--line);
+border-radius:15px;padding:32px
+}
+.skill-card h3{margin-bottom:25px}
+.skill-list{
+display:grid;grid-template-columns:1fr 1fr;gap:10px
+}
+.skill{
+padding:14px;background:var(--card2);
+border:1px solid var(--line);border-radius:8px;
+font-size:11px;color:var(--muted)
+}
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+.tool{
+padding:10px 13px;border:1px solid var(--line);
+border-radius:7px;color:var(--muted);font-size:10px
+}
+
+/* EDUCATION */
+.education{
+display:grid;grid-template-columns:1fr 1fr;gap:80px
+}
+.timeline{border-left:1px solid var(--line)}
+.edu{
+position:relative;padding:0 0 42px 35px
+}
+.dot{
+position:absolute;left:-5px;top:3px;width:9px;height:9px;
+border-radius:50%;background:var(--green);
+box-shadow:0 0 14px var(--green)
+}
+.edu-date{
+font-family:monospace;font-size:9px;color:var(--green)
+}
+.edu h3{font-size:17px;margin:8px 0}
+.edu p{font-size:11px;color:var(--muted)}
+
+/* CERTIFICATIONS */
+.certs{
+background:var(--card);border:1px solid var(--line);
+border-radius:15px;padding:30px
+}
+.certs>h3{font-size:21px}
+.note{font-size:10px;color:var(--muted);margin:5px 0 18px}
+.cert{
+padding:16px 0;border-bottom:1px solid var(--line)
+}
+.cert strong{display:block;font-size:12px}
+.cert span{font-size:9px;color:var(--muted)}
+.cert-preview{
+display:none;width:100%;max-height:180px;
+object-fit:contain;margin-top:10px;border-radius:7px
+}
+
+/* ACHIEVEMENT */
+.achievement{
+display:grid;grid-template-columns:70px 1fr auto;
+gap:25px;align-items:center;padding:32px;
+background:linear-gradient(110deg,rgba(140,255,114,.08),var(--card));
+border:1px solid rgba(140,255,114,.2);border-radius:16px
+}
+.achievement-icon{
+width:60px;height:60px;border-radius:12px;
+display:grid;place-items:center;color:var(--green);
+background:rgba(140,255,114,.08);font-size:25px
+}
+.achievement-label{
+font-family:monospace;color:var(--green);
+font-size:9px
+}
+.achievement h3{font-size:20px;margin:8px 0}
+.achievement p{font-size:11px;color:var(--muted)}
+.cs-photo{
+width:90px;height:90px;margin-top:15px;
+background:var(--card2);border:1px dashed var(--green);
+border-radius:9px;display:grid;place-items:center;overflow:hidden
+}
+.cs-photo img{display:none;width:100%;height:100%;object-fit:cover}
+.cs-placeholder{font-size:22px}
+.year{font-family:monospace;color:var(--green);font-size:10px}
+
+/* CONTACT */
+.contact{text-align:center;min-height:65vh;display:grid;place-items:center}
+.contact h2{
+font-size:clamp(43px,7vw,85px);
+line-height:.95;letter-spacing:-5px;margin:18px 0
+}
+.contact p{max-width:600px;margin:auto;color:var(--muted);font-size:13px}
+.contact-buttons{display:flex;justify-content:center;gap:10px;margin-top:28px}
+.contact-info{font-family:monospace;font-size:9px;color:var(--muted);margin-top:25px}
+
+/* FOOTER */
+footer{padding:30px 0;border-top:1px solid var(--line)}
+.footer{
+display:flex;justify-content:space-between;align-items:center
+}
+.footer-logo{font-size:22px;font-weight:bold}
+.footer-logo span{color:var(--green)}
+.footer small{color:var(--muted);font-size:9px}
+
+/* MODAL */
+.modal{
+display:none;position:fixed;inset:0;z-index:2000;
+background:rgba(0,0,0,.8);backdrop-filter:blur(10px);
+align-items:center;justify-content:center;padding:20px
+}
+.modal.show{display:flex}
+.modal-box{
+width:min(680px,100%);max-height:90vh;overflow:auto;
+background:var(--card);border:1px solid var(--line);
+border-radius:18px;padding:38px;position:relative
+}
+.close{
+position:absolute;right:15px;top:15px;
+width:35px;height:35px;border-radius:50%;
+background:var(--card2);color:var(--text);
+border:1px solid var(--line);font-size:20px
+}
+.modal h2{font-size:30px;margin:10px 0}
+.modal-desc{font-size:12px;color:var(--muted)}
+.modal-list{margin-top:20px}
+.modal-list div{
+display:flex;gap:10px;padding:11px 0;
+border-bottom:1px solid var(--line);
+font-size:12px;color:var(--muted)
+}
+.modal-list span{color:var(--green)}
+.modal-image{
+height:230px;margin-top:22px;border-radius:10px;
+background:var(--card2);border:1px dashed var(--green);
+display:flex;align-items:center;justify-content:center;
+overflow:hidden;text-align:center
+}
+.modal-image img{display:none;width:100%;height:100%;object-fit:cover}
+.modal-image-text{font-size:11px;color:var(--muted)}
+.modal-image-text label{
+display:inline-block;margin-top:10px;
+background:var(--green);color:#071007;
+padding:8px 12px;border-radius:6px;font-size:9px;
+font-weight:bold;cursor:pointer
+
+/* MOBILE */
+@media(max-width:900px){
+.links{
+display:none;position:absolute;top:70px;left:0;width:100%;
+background:var(--card);padding:25px;flex-direction:column
+}
+.links.open{display:flex}
+.menu{display:block}
+.hero{grid-template-columns:1fr}
+.photo{order:-1}
+.about,.skills,.education{grid-template-columns:1fr}
+.projects{grid-template-columns:1fr}
+.project-head{display:block}
+.project-intro{margin-top:18px}
+.achievement{grid-template-columns:1fr}
+.year{display:none}
+}
+@media(max-width:600px){
+.market{height:280px}
+.hero h1{font-size:45px;letter-spacing:-3px}
+.photo{width:270px;height:340px}
+.about-cards{grid-template-columns:1fr}
+.skill-list{grid-template-columns:1fr}
+.hero .buttons,.contact-buttons{flex-direction:column}
+.internship-photo{height:230px}
+.footer{flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+<div class="container nav">
+
+<a class="logo" href="#home">TJ<span>.</span></a>
+
+<div class="links" id="links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#internship">Internship</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div class="nav-buttons">
+<button class="theme" onclick="theme()">☀</button>
+<button class="menu" onclick="menu()">☰</button>
+</div>
+
+</div>
+</nav>
+
+
+<!-- OPENING IMAGE -->
+<div class="market">
+
+<img src="stock-market.jpg"
+alt="Stock market">
+
+<div class="market-overlay">
+
+<div class="market-text">
+
+<div class="small">
+FINANCE • ANALYSIS • VALUATION
+</div>
+
+<h2>
+Understanding Markets.<br>
+Creating Financial Insight.
+</h2>
+
+<p>
+A finance portfolio built around analysis,
+valuation and strategic thinking.
+</p>
+
+</div>
+</div>
+</div>
+
+
+<!-- HERO -->
+<header class="container hero" id="home">
+
+<div>
+
+<div class="small">
+MBA FINANCE • FINANCIAL ANALYSIS • VALUATION
+</div>
+
+<h1>
+Tanisha <span class="gradient">Jain.</span>
+</h1>
+
+<p>
+MBA Finance student with a strong foundation in Accounting
+and Finance and a passion for understanding the financial
+drivers behind successful business.
+</p>
+
+<div class="buttons">
+
+<a class="btn primary" href="#about">
+Explore My Profile →
+</a>
+
+<a class="btn secondary" href="resume.pdf" target="_blank">
+↓ View Resume
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROFILE PHOTO -->
+<div>
+
+<div class="photo">
+
+<img id="profileImage">
+
+<div class="placeholder" id="profilePlaceholder">
+
+<div class="placeholder-icon">👤</div>
+
+<h3>Insert Your Photo</h3>
+
+<p>
+Add your professional photograph here.
+</p>
+
+<label class="upload" for="profileInput">
+Upload Photo
+</label>
+
+<input id="profileInput" type="file" accept="image/*">
+
+</div>
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+<div class="container">
+
+<div class="label">01 / ABOUT ME</div>
+
+<h2 class="title">
+Understanding Numbers.<br>
+<span class="gradient">Understanding Business.</span>
+</h2>
+
+<div class="about">
+
+<div class="about-text">
+
+<p class="intro">
+I am an MBA Finance student with a strong foundation
+in Accounting and Finance and a passion for understanding
+the financial drivers behind successful business.
+</p>
+
+<p>
+My academic journey, internship experience and hands-on
+finance projects have equipped me with practical skills
+to analyse financial statements and evaluate investments
+business problems with a structured analytical approach.
+</p>
+
+<p>
+Driven by curiosity, integrity, and continuous learning,
+I aspire to build a career in Corporate Finance where
+I can contribute analytical expertise while creating
+long-term value for organization.
+</p>
+
+<div class="highlight">
+<strong>Professional Direction</strong>
+<span>
+Corporate Finance • Financial Analysis •
+Valuation • Financial Consulting
+</span>
+</div>
+
+</div>
+
+<div class="about-cards">
+
+<div class="info">
+<div class="info-icon">↗</div>
+<h3>Financial Analysis</h3>
+<p>
+Understanding profitability, liquidity,
+solvency and business performance.
+</p>
+</div>
+
+<div class="info">
+<div class="info-icon">◈</div>
+<h3>Valuation</h3>
+<p>
+Applying valuation techniques to support
+investment and strategic decisions.
+</p>
+</div>
+
+<div class="info">
+<div class="info-icon">▣</div>
+<h3>Corporate Finance</h3>
+<p>
+Connecting financial decisions with
+long-term business value.
+</p>
+</div>
+
+<div class="info">
+<div class="info-icon">★</div>
+<h3>Continuous Learning</h3>
+<p>
+Building practical expertise through
+projects, certifications and experience.
+</p>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- INTERNSHIP -->
+<section id="internship">
+
+<div class="container">
+
+<div class="label">02 / INTERNSHIP</div>
+
+<h2 class="title">
+Practical Finance.<br>
+Real Business.
+</h2>
+
+<div class="internship-card">
+
+<div class="internship-photo">
+
+<img id="internshipImage">
+
+<div class="internship-placeholder" id="internshipPlaceholder">
+
+<div>🏢</div>
+
+<p>
+Add your internship/company photograph
+</p>
+
+<label class="upload" for="internshipInput">
+Upload Internship Image
+</label>
+
+<input id="internshipInput"
+type="file"
+accept="image/*">
+
+</div>
+</div>
+
+<div class="internship-info">
+
+<div class="company">
+IOL CHEMICALS & PHARMACEUTICALS LTD
+</div>
+
+<h3>Finance Intern</h3>
+
+<div class="date">
+Ludhiana · June 2026 – July 2026
+</div>
+
+<p>
+Evaluated six years of financial statements to assess
+liquidity, profitability, solvency, efficiency and cash
+flow, providing a holistic view of company performance.
+</p>
+
+<p>
+Developed a comprehensive financial model incorporating
+trend analysis and common-size statements to generate
+actionable financial insights.
+</p>
+
+<p>
+Delivered a report that revealed declining profitability
+despite stable revenue, assessed creditworthiness and
+recommended actions based on financial performance.
+</p>
+
+<div class="tags">
+
+<span class="tag">Financial Statements</span>
+<span class="tag">Ratio Analysis</span>
+<span class="tag">Trend Analysis</span>
+<span class="tag">Creditworthiness</span>
+
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+
+<div class="container">
+
+<div class="project-head">
+
+<div>
+
+<div class="label">03 / SELECTED WORK</div>
+
+<h2 class="title">
+Finance Projects.<br>
+Real Analysis.
+</h2>
+
+</div>
+
+<p class="project-intro">
+Selected academic and practical projects demonstrating
+financial analysis, valuation, working capital and
+business strategy capabilities.
+</p>
+
+</div>
+
+<div class="filters">
+
+<button class="filter active"
+onclick="filterProjects('all',this)">
+All
+</button>
+
+<button class="filter"
+onclick="filterProjects('valuation',this)">
+Valuation
+</button>
+
+<button class="filter"
+onclick="filterProjects('analysis',this)">
+Financial Analysis
+</button>
+
+<button class="filter"
+onclick="filterProjects('business',this)">
+Business
+</button>
+
+</div>
+
+
+<div class="projects">
+
+
+<!-- M&A -->
+<div class="project"
+data-category="valuation"
+onclick="openProject(
+'M&A Valuation Model',
+'Valuation',
+[
+'Developed a financial model to evaluate the feasibility and value creation potential of an M&A transaction.',
+'Performed company valuation, synergy analysis and accretion/dilution assessment.',
+'Generated insights on deal value, shareholder impact and strategic fit.'
+])">
+
+<div class="project-icon">M&A</div>
+
+<div class="category">VALUATION</div>
+
+<h3>M&A Valuation Model</h3>
+
+<p>
+Financial model evaluating merger feasibility,
+value creation, synergy potential and shareholder impact.
+</p>
+
+<div class="tags">
+<span class="tag">Financial Modeling</span>
+<span class="tag">Valuation</span>
+<span class="tag">M&A</span>
+</div>
+
+<div class="project-bottom">
+<span>May 2026</span>
+<span>View Case Study →</span>
+</div>
+
+</div>
+
+
+<!-- NMDC -->
+<div class="project"
+data-category="valuation"
+onclick="openProject(
+'NMDC Steel Valuation Model',
+'Valuation',
+[
+'Analysed five years of financial statements.',
+'Reformulated financial statements and performed common-size and ratio analysis.',
+'Applied NPV, IRR and payback period techniques.',
+'Compared intrinsic and market value to support investment decision-making.'
+])">
+
+<div class="project-icon">NMDC</div>
+
+<div class="category">VALUATION</div>
+
+<h3>NMDC Steel Valuation Model</h3>
+
+<p>
+Integrated financial valuation model using five years
+of financial statements and investment metrics.
+</p>
+
+<div class="tags">
+<span class="tag">NPV</span>
+<span class="tag">IRR</span>
+<span class="tag">Payback</span>
+</div>
+
+<div class="project-bottom">
+<span>Feb 2026</span>
+<span>View Case Study →</span>
+</div>
+
+</div>
+
+
+<!-- WORKING CAPITAL -->
+<div class="project"
+data-category="analysis"
+onclick="openProject(
+'Working Capital Analysis',
+'Financial Analysis',
+[
+'Analysed the working capital cycle of Dixon Technologies.',
+'Evaluated supplier credit terms and financing strategies.',
+'Identified operational efficiency drivers.',
+'Focused on inventory-to-cash conversion and financial stability.'
+])">
+
+<div class="project-icon">WC</div>
+
+<div class="category">FINANCIAL ANALYSIS</div>
+
+<h3>Working Capital Analysis</h3>
+
+<p>
+Analysis of Dixon Technologies working capital cycle
+and operational efficiency.
+</p>
+
+<div class="tags">
+<span class="tag">Working Capital</span>
+<span class="tag">CCC</span>
+<span class="tag">Efficiency</span>
+</div>
+
+<div class="project-bottom">
+<span>Nov 2025</span>
+<span>View Case Study →</span>
+</div>
+
+</div>
+
+
+<!-- ROOTSY -->
+<div class="project"
+data-category="business"
+onclick="openProject(
+'Rootsy Branding Strategy',
+'Business Strategy',
+[
+'Conducted market research and feasibility analysis.',
+'Developed brand identity and target audience strategy.',
+'Created promotional campaigns using Instagram, WhatsApp and campus marketing.',
+'Generated sales through targeted marketing and sales execution.'
+])">
+
+<div class="project-icon">R</div>
+
+<div class="category">BUSINESS STRATEGY</div>
+
+<h3>Rootsy Branding Strategy</h3>
+
+<p>
+Transformed an unbranded plant-based product
+into a market-ready brand.
+</p>
+
+<div class="tags">
+<span class="tag">Market Research</span>
+<span class="tag">Branding</span>
+<span class="tag">Strategy</span>
+</div>
+
+<div class="project-bottom">
+<span>Oct 2025</span>
+<span>View Case Study →</span>
+</div>
+
+</div>
+
+
+<!-- TARGET COSTING -->
+<div class="project"
+data-category="business"
+onclick="openProject(
+'Strategic Cost Management',
+'Target Costing',
+[
+'Applied target costing methodology to a posture-corrector smart band.',
+'Conducted competitor and survey analysis.',
+'Identified gaps in existing products.',
+'Proposed cost-efficient and user-friendly specifications.'
+])">
+
+<div class="project-icon">SCM</div>
+
+<div class="category">TARGET COSTING</div>
+
+<h3>Strategic Cost Management</h3>
+
+<p>
+Target costing project focused on a posture-corrector
+smart band.
+</p>
+
+<div class="tags">
+<span class="tag">Target Costing</span>
+<span class="tag">Cost Management</span>
+<span class="tag">Research</span>
+</div>
+
+<div class="project-bottom">
+<span>Aug 2025</span>
+<span>View Case Study →</span>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+<div class="container">
+
+<div class="label">04 / SKILLS</div>
+
+<h2 class="title">
+Tools I use to<br>
+solve problems.
+</h2>
+
+<div class="skills">
+
+<div class="skill-card">
+
+<h3>Finance & Analysis</h3>
+
+<div class="skill-list">
+
+<div class="skill">Financial Analysis</div>
+<div class="skill">Financial Modeling</div>
+<div class="skill">Valuation</div>
+<div class="skill">Ratio Analysis</div>
+<div class="skill">Financial Statements</div>
+<div class="skill">Cash Flow Analysis</div>
+
+</div>
+</div>
+
+<div class="skill-card">
+
+<h3>Tools & Platforms</h3>
+
+<div class="tools">
+
+<span class="tool">MS Excel</span>
+<span class="tool">Power BI</span>
+<span class="tool">Tableau</span>
+<span class="tool">PowerPoint</span>
+<span class="tool">Canva</span>
+<span class="tool">Tally</span>
+
+</div>
+
+<h3 style="margin-top:40px">Power Skills</h3>
+
+<div class="tools">
+
+<span class="tool">Time Management</span>
+<span class="tool">Problem Solving</span>
+<span class="tool">Leadership</span>
+<span class="tool">Decision Making</span>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education">
+
+<div class="container">
+
+<div class="label">05 / EDUCATION & CERTIFICATIONS</div>
+
+<h2 class="title">
+Academic Journey.<br>
+Professional Credentials.
+</h2>
+
+<div class="education">
+
+<div class="timeline">
+
+<div class="edu">
+
+<div class="dot"></div>
+
+<div class="edu-date">
+AUG 2025 – PRESENT
+</div>
+
+<h3>
+Master of Business Administration – Finance
+</h3>
+
+<p>
+Lovely Professional University · Phagwara, Punjab
+</p>
+
+</div>
+
+<div class="edu">
+
+<div class="dot"></div>
+
+<div class="edu-date">
+AUG 2022 – MAY 2025
+</div>
+
+<h3>
+Bachelor of Commerce – Accounting & Finance (Hons.)
+</h3>
+
+<p>
+Shree Atam Vallabh Jain College · Ludhiana
+</p>
+
+</div>
+
+<div class="edu">
+
+<div class="dot"></div>
+
+<div class="edu-date">
+APR 2021 – MAR 2022
+</div>
+
+<h3>Intermediate</h3>
+
+<p>
+Bhartiya Vidya Mandir Sr. Sec. School · Ludhiana
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CERTIFICATIONS -->
+
+<div class="certs">
+
+<h3>Certifications</h3>
+
+<p class="note">
+Add your certificate images using the buttons below.
+</p>
+
+<div class="cert">
+
+<strong>
+NISM VA Mutual Fund Distributor Certificate
+</strong>
+
+<span>NISM · Mar 2026</span><br>
+
+<label class="upload" for="cert1">
++ Add Certificate
+</label>
+
+<input id="cert1" type="file" accept="image/*">
+
+<img id="certPreview1" class="cert-preview">
+
+</div>
+
+
+<div class="cert">
+
+<strong>
+SEBI Investor Awareness Test
+</strong>
+
+<span>NISM · Sep 2025</span><br>
+
+<label class="upload" for="cert2">
++ Add Certificate
+</label>
+
+<input id="cert2" type="file" accept="image/*">
+
+<img id="certPreview2" class="cert-preview">
+
+</div>
+
+
+<div class="cert">
+
+<strong>
+Investment Banking Workshop
+</strong>
+
+<span>Bank of New York · Aug 2025</span><br>
+
+<label class="upload" for="cert3">
++ Add Certificate
+</label>
+
+<input id="cert3" type="file" accept="image/*">
+
+<img id="certPreview3" class="cert-preview">
+
+</div>
+
+
+<div class="cert">
+
+<strong>
+MS Excel, Tableau & Power BI
+</strong>
+
+<span>LPU · Aug 2025</span><br>
+
+<label class="upload" for="cert4">
++ Add Certificate
+</label>
+
+<input id="cert4" type="file" accept="image/*">
+
+<img id="certPreview4" class="cert-preview">
+
+</div>
+
+
+<div class="cert">
+
+<strong>
+The Practical Marketer
+</strong>
+
+<span>LPU · Sep 2025</span><br>
+
+<label class="upload" for="cert5">
++ Add Certificate
+</label>
+
+<input id="cert5" type="file" accept="image/*">
+
+<img id="certPreview5" class="cert-preview">
+
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- ACHIEVEMENT -->
+<section>
+
+<div class="container">
+
+<div class="label">06 / ACHIEVEMENT</div>
+
+<h2 class="title">
+A milestone that<br>
+shaped my journey.
+</h2>
+
+<div class="achievement">
+
+<div class="achievement-icon">★</div>
+
+<div>
+
+<div class="achievement-label">
+PROFESSIONAL ACHIEVEMENT
+</div>
+
+<h3>
+CS Executive Examination — Both Groups Cleared
+</h3>
+
+<p>
+Cleared the Company Secretary Executive level through
+ICSI, strengthening knowledge of corporate laws,
+finance and governance.
+</p>
+
+<div class="cs-photo">
+
+<img id="csImage">
+
+<div id="csPlaceholder" class="cs-placeholder">
+📷
+</div>
+
+</div>
+
+<label class="upload" for="csInput">
+Add Your Photo
+</label>
+
+<input id="csInput" type="file" accept="image/*">
+
+</div>
+
+<div class="year">2025</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="label">07 / LET'S CONNECT</div>
+
+<h2>
+Let's talk about<br>
+<span class="gradient">finance & opportunities.</span>
+</h2>
+
+<p>
+I'm interested in opportunities where financial analysis,
+valuation and strategic thinking can create measurable
+business impact.
+</p>
+
+<div class="contact-buttons">
+
+<a class="btn primary"
+href="mailto:tanishajain315@gmail.com">
+✉ Email Me
+</a>
+
+<a class="btn secondary"
+href="https://www.linkedin.com/in/tanisha-jain207"
+target="_blank">
+in LinkedIn
+</a>
+
+</div>
+
+<div class="contact-info">
+tanishajain315@gmail.com • India
+</div>
+
+</div>
+</section>
+
+
+<footer>
+
+<div class="container footer">
+
+<div>
+<div class="footer-logo">TJ<span>.</span></div>
+<small>Finance • Valuation • Corporate Finance</small>
+</div>
+
+<small>© 2026 Tanisha Jain</small>
+
+<a href="https://www.linkedin.com/in/tanisha-jain207"
+target="_blank">
+LinkedIn ↗
+</a>
+
+</div>
+</footer>
+
+
+<!-- PROJECT MODAL -->
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal()">×</button>
+
+<div class="small" id="modalCategory"></div>
+
+<h2 id="modalTitle"></h2>
+
+<p class="modal-desc">
+Key work and outcomes from this project:
+</p>
+
+<!-- IMAGE UPLOAD -->
+<div class="modal-image">
+
+<img id="modalImage">
+
+<div class="modal-image-text" id="modalImageText">
+
+🖼️<br>
+
+Add an image related to this project
+
+<br>
+
+<label class="upload" for="projectImageInput">
+Upload Project Image
+</label>
+
+<input id="projectImageInput"
+type="file"
+accept="image/*">
+
+</div>
+
+</div>
+
+<div class="modal-list" id="modalList"></div>
+
+</div>
+</div>
+
+
+<script>
+
+/* THEME */
+function theme(){
+
+document.body.classList.toggle("light");
+
+let b=document.querySelector(".theme");
+
+if(document.body.classList.contains("light")){
+
+b.innerHTML="🌙";
+localStorage.setItem("theme","light");
+
+}else{
+
+b.innerHTML="☀";
+localStorage.setItem("theme","dark");
+
+}
+
+}
+
+if(localStorage.getItem("theme")==="light"){
+
+document.body.classList.add("light");
+document.querySelector(".theme").innerHTML="🌙";
+
+}
+
+
+/* MOBILE MENU */
+function menu(){
+
+document
+.getElementById("links")
+.classList.toggle("open");
+
+}
+
+
+/* PROFILE PHOTO */
+document.getElementById("profileInput")
+.addEventListener("change",function(e){
+
+let file=e.target.files[0];
+if(!file)return;
+
+let reader=new FileReader();
+
+reader.onload=function(x){
+
+let img=document.getElementById("profileImage");
+
+img.src=x.target.result;
+img.style.display="block";
+
+document.getElementById("profilePlaceholder")
+.style.display="none";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+
+/* INTERNSHIP PHOTO */
+document.getElementById("internshipInput")
+.addEventListener("change",function(e){
+
+let file=e.target.files[0];
+if(!file)return;
+
+let reader=new FileReader();
+
+reader.onload=function(x){
+
+let img=document.getElementById("internshipImage");
+
+img.src=x.target.result;
+img.style.display="block";
+
+document.getElementById("internshipPlaceholder")
+.style.display="none";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+
+/* PROJECT FILTER */
+function filterProjects(category,button){
+
+document.querySelectorAll(".filter")
+.forEach(x=>x.classList.remove("active"));
+
+button.classList.add("active");
+
+document.querySelectorAll(".project")
+.forEach(project=>{
+
+if(category==="all" ||
+project.dataset.category===category){
+
+project.style.display="block";
+
+}else{
+
+project.style.display="none";
+
+}
+
+});
+
+}
+
+
+/* PROJECT MODAL */
+function openProject(title,category,details){
+
+document.getElementById("modal")
+.classList.add("show");
+
+document.getElementById("modalTitle")
+.innerText=title;
+
+document.getElementById("modalCategory")
+.innerText=category.toUpperCase();
+
+let list=document.getElementById("modalList");
+
+list.innerHTML="";
+
+details.forEach(item=>{
+
+let div=document.createElement("div");
+
+div.innerHTML=
+"<span>✓</span><p>"+item+"</p>";
+
+list.appendChild(div);
+
+});
+
+
+/* RESET IMAGE */
+
+document.getElementById("modalImage")
+.style.display="none";
+
+document.getElementById("modalImageText")
+.style.display="block";
+
+document.getElementById("projectImageInput")
+.value="";
+
+}
+
+
+/* PROJECT IMAGE */
+document.getElementById("projectImageInput")
+.addEventListener("change",function(e){
+
+let file=e.target.files[0];
+
+if(!file)return;
+
+let reader=new FileReader();
+
+reader.onload=function(x){
+
+let img=document.getElementById("modalImage");
+
+img.src=x.target.result;
+
+img.style.display="block";
+
+document.getElementById("modalImageText")
+.style.display="none";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+
+/* CLOSE */
+function closeModal(){
+
+document.getElementById("modal")
+.classList.remove("show");
+
+}
+
+document.getElementById("modal")
+.addEventListener("click",function(e){
+
+if(e.target===this)closeModal();
+
+});
+
+
+/* CS PHOTO */
+document.getElementById("csInput")
+.addEventListener("change",function(e){
+
+let file=e.target.files[0];
+
+if(!file)return;
+
+let reader=new FileReader();
+
+reader.onload=function(x){
+
+let img=document.getElementById("csImage");
+
+img.src=x.target.result;
+
+img.style.display="block";
+
+document.getElementById("csPlaceholder")
+.style.display="none";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+
+/* CERTIFICATES */
+function certificate(input,preview){
+
+document.getElementById(input)
+.addEventListener("change",function(e){
+
+let file=e.target.files[0];
+
+if(!file)return;
+
+let reader=new FileReader();
+
+reader.onload=function(x){
+
+let img=document.getElementById(preview);
+
+img.src=x.target.result;
+
+img.style.display="block";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+}
+
+certificate("cert1","certPreview1");
+certificate("cert2","certPreview2");
+certificate("cert3","certPreview3");
+certificate("cert4","certPreview4");
+certificate("cert5","certPreview5");
+
+</script>
+
+</body>
+</html>
